@@ -7,21 +7,73 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0F607621EDEF8200A79945 /* clients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607521EDEF8200A79945 /* clients.swift */; };
+		BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607721EDF3CE00A79945 /* ClientsVC.swift */; };
+		BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607921EE0C4E00A79945 /* ClientsVC+tableView.swift */; };
+		BB0F607C21EE196A00A79945 /* VisitsVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607B21EE196A00A79945 /* VisitsVC+tableView.swift */; };
+		BB0F607E21EE19FA00A79945 /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607D21EE19FA00A79945 /* extentions.swift */; };
+		BB580A5621DBA981000B8A60 /* HomeShadowButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */; };
+		BB580A5C21DBD35D000B8A60 /* VisitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5B21DBD35D000B8A60 /* VisitsVC.swift */; };
+		BB580A5F21DBDA1D000B8A60 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5D21DBDA1D000B8A60 /* VisitTableViewCell.swift */; };
+		BB580A6021DBDA1D000B8A60 /* VisitTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB580A5E21DBDA1D000B8A60 /* VisitTableViewCell.xib */; };
+		BB5CF21021F0990E001D140F /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF20F21F0990E001D140F /* APIClient.swift */; };
+		BB5CF21221F0A6E0001D140F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF21121F0A6E0001D140F /* Endpoint.swift */; };
+		BB5CF21421F0D4DB001D140F /* unsplashVisits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF21321F0D4DB001D140F /* unsplashVisits.swift */; };
+		BB5CF21621F0E427001D140F /* VisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF21521F0E427001D140F /* VisitViewModel.swift */; };
+		BB6901792202188400585AB7 /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6901782202188400585AB7 /* BalanceVC.swift */; };
+		BB69017B220219A800585AB7 /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017A220219A800585AB7 /* BalanceViewModel.swift */; };
+		BB69017D220219AD00585AB7 /* BalanceVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */; };
+		BB69017F22021B6D00585AB7 /* unsplashBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017E22021B6D00585AB7 /* unsplashBalance.swift */; };
 		BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95358C21B0370400280D42 /* AppDelegate.swift */; };
-		BB95358F21B0370400280D42 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95358E21B0370400280D42 /* ViewController.swift */; };
+		BB95358F21B0370400280D42 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95358E21B0370400280D42 /* SignInVC.swift */; };
 		BB95359221B0370400280D42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB95359021B0370400280D42 /* Main.storyboard */; };
 		BB95359421B0370400280D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB95359321B0370400280D42 /* Assets.xcassets */; };
 		BB95359721B0370400280D42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB95359521B0370400280D42 /* LaunchScreen.storyboard */; };
+		BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9535A021B050CD00280D42 /* NavigationShadow.swift */; };
+		BB95CD7021DE47E700603DB4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95CD6F21DE47E700603DB4 /* UserModel.swift */; };
+		BBA745A52201C81D0074005E /* Balace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA745A42201C81D0074005E /* Balace.swift */; };
+		BBAFB5AC21E2718C000D04D6 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */; };
+		BBB53BDF21FE3476004A9109 /* unsplashClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB53BDE21FE3476004A9109 /* unsplashClients.swift */; };
+		BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC172AD21FE27EA0031153B /* ClientViewModel.swift */; };
+		BBD7BA0421DCE6F3004B5CA5 /* visits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD7BA0321DCE6F3004B5CA5 /* visits.swift */; };
+		C53A152B893527D95140DD78 /* Pods_Sales.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFEE441C7B16F5C900B718 /* Pods_Sales.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB0F607521EDEF8200A79945 /* clients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clients.swift; sourceTree = "<group>"; };
+		BB0F607721EDF3CE00A79945 /* ClientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsVC.swift; sourceTree = "<group>"; };
+		BB0F607921EE0C4E00A79945 /* ClientsVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClientsVC+tableView.swift"; sourceTree = "<group>"; };
+		BB0F607B21EE196A00A79945 /* VisitsVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisitsVC+tableView.swift"; sourceTree = "<group>"; };
+		BB0F607D21EE19FA00A79945 /* extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentions.swift; sourceTree = "<group>"; };
+		BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShadowButtom.swift; sourceTree = "<group>"; };
+		BB580A5B21DBD35D000B8A60 /* VisitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsVC.swift; sourceTree = "<group>"; };
+		BB580A5D21DBDA1D000B8A60 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
+		BB580A5E21DBDA1D000B8A60 /* VisitTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = VisitTableViewCell.xib; sourceTree = "<group>"; };
+		BB5CF20F21F0990E001D140F /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		BB5CF21121F0A6E0001D140F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		BB5CF21321F0D4DB001D140F /* unsplashVisits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashVisits.swift; sourceTree = "<group>"; };
+		BB5CF21521F0E427001D140F /* VisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitViewModel.swift; sourceTree = "<group>"; };
+		BB6901782202188400585AB7 /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
+		BB69017A220219A800585AB7 /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
+		BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceVC+tableView.swift"; sourceTree = "<group>"; };
+		BB69017E22021B6D00585AB7 /* unsplashBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashBalance.swift; sourceTree = "<group>"; };
 		BB95358921B0370400280D42 /* Sales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB95358C21B0370400280D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BB95358E21B0370400280D42 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BB95358E21B0370400280D42 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
 		BB95359121B0370400280D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB95359321B0370400280D42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB95359621B0370400280D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB95359821B0370400280D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BB9535A021B050CD00280D42 /* NavigationShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationShadow.swift; sourceTree = "<group>"; };
+		BB95CD6F21DE47E700603DB4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BBA745A42201C81D0074005E /* Balace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balace.swift; sourceTree = "<group>"; };
+		BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BBB53BDE21FE3476004A9109 /* unsplashClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashClients.swift; sourceTree = "<group>"; };
+		BBC172AD21FE27EA0031153B /* ClientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
+		BBD7BA0321DCE6F3004B5CA5 /* visits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visits.swift; sourceTree = "<group>"; };
+		DACFEE441C7B16F5C900B718 /* Pods_Sales.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sales.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E032F2302E774534490FE365 /* Pods-Sales.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sales.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sales/Pods-Sales.release.xcconfig"; sourceTree = "<group>"; };
+		F0C6F1B6DADA093FDD38339B /* Pods-Sales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sales/Pods-Sales.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +81,72 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBAFB5AC21E2718C000D04D6 /* NVActivityIndicatorView.framework in Frameworks */,
+				C53A152B893527D95140DD78 /* Pods_Sales.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C9CB4827A029C4FCCF627DE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */,
+				DACFEE441C7B16F5C900B718 /* Pods_Sales.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD19AC80B018EA86BDE2D28D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F0C6F1B6DADA093FDD38339B /* Pods-Sales.debug.xcconfig */,
+				E032F2302E774534490FE365 /* Pods-Sales.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB580A5021DB99C1000B8A60 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				BB95359321B0370400280D42 /* Assets.xcassets */,
+				BB95358C21B0370400280D42 /* AppDelegate.swift */,
+				BB95359521B0370400280D42 /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		BB690177220217A000585AB7 /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				BB6901782202188400585AB7 /* BalanceVC.swift */,
+				BB69017A220219A800585AB7 /* BalanceViewModel.swift */,
+				BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		BB6B54E721EF9F4400803E42 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				BB5CF20F21F0990E001D140F /* APIClient.swift */,
+				BB5CF21121F0A6E0001D140F /* Endpoint.swift */,
+				BB5CF21321F0D4DB001D140F /* unsplashVisits.swift */,
+				BBB53BDE21FE3476004A9109 /* unsplashClients.swift */,
+				BB69017E22021B6D00585AB7 /* unsplashBalance.swift */,
+			);
+			name = Network;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		BB95358021B0370400280D42 = {
 			isa = PBXGroup;
 			children = (
 				BB95358B21B0370400280D42 /* Sales */,
 				BB95358A21B0370400280D42 /* Products */,
+				AD19AC80B018EA86BDE2D28D /* Pods */,
+				8C9CB4827A029C4FCCF627DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +161,109 @@
 		BB95358B21B0370400280D42 /* Sales */ = {
 			isa = PBXGroup;
 			children = (
-				BB95358C21B0370400280D42 /* AppDelegate.swift */,
-				BB95358E21B0370400280D42 /* ViewController.swift */,
-				BB95359021B0370400280D42 /* Main.storyboard */,
-				BB95359321B0370400280D42 /* Assets.xcassets */,
-				BB95359521B0370400280D42 /* LaunchScreen.storyboard */,
+				BB6B54E721EF9F4400803E42 /* Network */,
+				BB580A5021DB99C1000B8A60 /* Supporting files */,
+				BB95CD6621DE39F500603DB4 /* shadows */,
+				BB95CD6821DE3A1400603DB4 /* Model */,
+				BB95CD6721DE3A0500603DB4 /* View Controllers */,
+				BB95CD6A21DE3B4100603DB4 /* Views */,
 				BB95359821B0370400280D42 /* Info.plist */,
 			);
 			path = Sales;
+			sourceTree = "<group>";
+		};
+		BB95CD6621DE39F500603DB4 /* shadows */ = {
+			isa = PBXGroup;
+			children = (
+				BB9535A021B050CD00280D42 /* NavigationShadow.swift */,
+				BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */,
+			);
+			path = shadows;
+			sourceTree = "<group>";
+		};
+		BB95CD6721DE3A0500603DB4 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				BB690177220217A000585AB7 /* Balance */,
+				BBC172AB21FE26930031153B /* Visits */,
+				BBC172AF21FE27F80031153B /* Client */,
+				BB95358E21B0370400280D42 /* SignInVC.swift */,
+				BB0F607D21EE19FA00A79945 /* extentions.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		BB95CD6821DE3A1400603DB4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BBC172AA21FE26350031153B /* Visits */,
+				BBA745A32201C7D00074005E /* Balance */,
+				BBC172AC21FE27490031153B /* Client */,
+				BB95CD6F21DE47E700603DB4 /* UserModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BB95CD6921DE3ADE00603DB4 /* VisitsCell */ = {
+			isa = PBXGroup;
+			children = (
+				BB580A5D21DBDA1D000B8A60 /* VisitTableViewCell.swift */,
+				BB580A5E21DBDA1D000B8A60 /* VisitTableViewCell.xib */,
+			);
+			path = VisitsCell;
+			sourceTree = "<group>";
+		};
+		BB95CD6A21DE3B4100603DB4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BB95CD6921DE3ADE00603DB4 /* VisitsCell */,
+				BB95359021B0370400280D42 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		BBA745A32201C7D00074005E /* Balance */ = {
+			isa = PBXGroup;
+			children = (
+				BBA745A42201C81D0074005E /* Balace.swift */,
+			);
+			path = Balance;
+			sourceTree = "<group>";
+		};
+		BBC172AA21FE26350031153B /* Visits */ = {
+			isa = PBXGroup;
+			children = (
+				BBD7BA0321DCE6F3004B5CA5 /* visits.swift */,
+			);
+			path = Visits;
+			sourceTree = "<group>";
+		};
+		BBC172AB21FE26930031153B /* Visits */ = {
+			isa = PBXGroup;
+			children = (
+				BB580A5B21DBD35D000B8A60 /* VisitsVC.swift */,
+				BB5CF21521F0E427001D140F /* VisitViewModel.swift */,
+				BB0F607B21EE196A00A79945 /* VisitsVC+tableView.swift */,
+			);
+			path = Visits;
+			sourceTree = "<group>";
+		};
+		BBC172AC21FE27490031153B /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				BB0F607521EDEF8200A79945 /* clients.swift */,
+			);
+			path = Client;
+			sourceTree = "<group>";
+		};
+		BBC172AF21FE27F80031153B /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				BB0F607721EDF3CE00A79945 /* ClientsVC.swift */,
+				BBC172AD21FE27EA0031153B /* ClientViewModel.swift */,
+				BB0F607921EE0C4E00A79945 /* ClientsVC+tableView.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +273,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB95359B21B0370400280D42 /* Build configuration list for PBXNativeTarget "Sales" */;
 			buildPhases = (
+				B201C3F24DDC859FC561E17C /* [CP] Check Pods Manifest.lock */,
 				BB95358521B0370400280D42 /* Sources */,
 				BB95358621B0370400280D42 /* Frameworks */,
 				BB95358721B0370400280D42 /* Resources */,
+				B858459C18C6B5A6CACAD51F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -96,6 +300,7 @@
 				TargetAttributes = {
 					BB95358821B0370400280D42 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -124,6 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB95359721B0370400280D42 /* LaunchScreen.storyboard in Resources */,
+				BB580A6021DBDA1D000B8A60 /* VisitTableViewCell.xib in Resources */,
 				BB95359421B0370400280D42 /* Assets.xcassets in Resources */,
 				BB95359221B0370400280D42 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +337,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		B201C3F24DDC859FC561E17C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Sales-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B858459C18C6B5A6CACAD51F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Sales/Pods-Sales-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sales/Pods-Sales-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BB95358521B0370400280D42 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB95358F21B0370400280D42 /* ViewController.swift in Sources */,
+				BBD7BA0421DCE6F3004B5CA5 /* visits.swift in Sources */,
+				BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */,
+				BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */,
+				BB95358F21B0370400280D42 /* SignInVC.swift in Sources */,
 				BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */,
+				BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */,
+				BB580A5F21DBDA1D000B8A60 /* VisitTableViewCell.swift in Sources */,
+				BBB53BDF21FE3476004A9109 /* unsplashClients.swift in Sources */,
+				BB5CF21021F0990E001D140F /* APIClient.swift in Sources */,
+				BB580A5C21DBD35D000B8A60 /* VisitsVC.swift in Sources */,
+				BB5CF21621F0E427001D140F /* VisitViewModel.swift in Sources */,
+				BBA745A52201C81D0074005E /* Balace.swift in Sources */,
+				BB5CF21221F0A6E0001D140F /* Endpoint.swift in Sources */,
+				BB0F607621EDEF8200A79945 /* clients.swift in Sources */,
+				BB6901792202188400585AB7 /* BalanceVC.swift in Sources */,
+				BB5CF21421F0D4DB001D140F /* unsplashVisits.swift in Sources */,
+				BB69017F22021B6D00585AB7 /* unsplashBalance.swift in Sources */,
+				BB69017B220219A800585AB7 /* BalanceViewModel.swift in Sources */,
+				BB0F607E21EE19FA00A79945 /* extentions.swift in Sources */,
+				BB95CD7021DE47E700603DB4 /* UserModel.swift in Sources */,
+				BB580A5621DBA981000B8A60 /* HomeShadowButtom.swift in Sources */,
+				BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */,
+				BB0F607C21EE196A00A79945 /* VisitsVC+tableView.swift in Sources */,
+				BB69017D220219AD00585AB7 /* BalanceVC+tableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,13 +539,17 @@
 		};
 		BB95359C21B0370400280D42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0C6F1B6DADA093FDD38339B /* Pods-Sales.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Sales/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Awab.Sales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sales/View Controllers/Balance/Sales-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -286,13 +557,16 @@
 		};
 		BB95359D21B0370400280D42 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E032F2302E774534490FE365 /* Pods-Sales.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Sales/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Awab.Sales;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Sales/View Controllers/Balance/Sales-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
