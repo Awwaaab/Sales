@@ -11,6 +11,7 @@ import NVActivityIndicatorView
 extension UITableView {
     func handlAnimation(animationIsOn : Bool ,activityIndicator : NVActivityIndicatorView ,scrolView : UIScrollView?){
         if animationIsOn == true {
+           
             activityIndicator.startAnimating()
             self.isHidden = true
             scrolView?.isHidden = true

@@ -9,7 +9,8 @@
 import UIKit
 import NVActivityIndicatorView
 class BalanceVC: UIViewController {
-
+    
+    @IBOutlet weak var balanceTableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var MainScrollView: UIScrollView!
     @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     @IBOutlet weak var balanceTabelView: UITableView!
@@ -18,23 +19,45 @@ class BalanceVC: UIViewController {
     let balanceViewModel = BalanceViewModel(client: unsplashBalance())
     
     override func viewDidLoad() {
-       super.viewDidLoad()
-       balanceTabelView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :MainScrollView)
+        super.viewDidLoad()
+        
+        balanceTabelView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        
+        
+        handleDelegateAndDatasource()
+        balanceTabelView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :MainScrollView)
+        
+        
+        
         balanceViewModel.showError = { error in
             print(error)
-
+            
         }
-//
         balanceViewModel.reloadData = {
-  
             self.balanceTabelView.handlAnimation(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView : self.MainScrollView)
             self.noOfBalance.text = self.balanceViewModel.Balance
-            }
-//
+        }
+        
+        
         balanceViewModel.fetchBalance()
         
     }
-
-
-
+    
+    deinit {
+        balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    
+    //    override func viewWillDisappear(_ animated: Bool) {
+    //        super.viewWillDisappear(animated)
+    //        balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
+    //    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let obj = object as? UITableView{
+            if obj == self.balanceTabelView && keyPath == "contentSize" {
+                balanceTableViewHeight.constant = balanceTabelView.contentSize.height
+            }
+        }
+    }
+    
 }

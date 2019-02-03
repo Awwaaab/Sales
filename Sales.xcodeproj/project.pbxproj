@@ -12,6 +12,10 @@
 		BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607921EE0C4E00A79945 /* ClientsVC+tableView.swift */; };
 		BB0F607C21EE196A00A79945 /* VisitsVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607B21EE196A00A79945 /* VisitsVC+tableView.swift */; };
 		BB0F607E21EE19FA00A79945 /* extentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607D21EE19FA00A79945 /* extentions.swift */; };
+		BB4404492207558F005D51A8 /* MoreVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4404482207558F005D51A8 /* MoreVC.swift */; };
+		BB44044D22075879005D51A8 /* MoreVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44044C22075879005D51A8 /* MoreVC+TableView.swift */; };
+		BB4404532207665F005D51A8 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4404512207665F005D51A8 /* MoreTableViewCell.swift */; };
+		BB4404542207665F005D51A8 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4404522207665F005D51A8 /* MoreTableViewCell.xib */; };
 		BB580A5621DBA981000B8A60 /* HomeShadowButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */; };
 		BB580A5C21DBD35D000B8A60 /* VisitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5B21DBD35D000B8A60 /* VisitsVC.swift */; };
 		BB580A5F21DBDA1D000B8A60 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5D21DBDA1D000B8A60 /* VisitTableViewCell.swift */; };
@@ -45,6 +49,10 @@
 		BB0F607921EE0C4E00A79945 /* ClientsVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClientsVC+tableView.swift"; sourceTree = "<group>"; };
 		BB0F607B21EE196A00A79945 /* VisitsVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VisitsVC+tableView.swift"; sourceTree = "<group>"; };
 		BB0F607D21EE19FA00A79945 /* extentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extentions.swift; sourceTree = "<group>"; };
+		BB4404482207558F005D51A8 /* MoreVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreVC.swift; sourceTree = "<group>"; };
+		BB44044C22075879005D51A8 /* MoreVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoreVC+TableView.swift"; sourceTree = "<group>"; };
+		BB4404512207665F005D51A8 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
+		BB4404522207665F005D51A8 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
 		BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShadowButtom.swift; sourceTree = "<group>"; };
 		BB580A5B21DBD35D000B8A60 /* VisitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsVC.swift; sourceTree = "<group>"; };
 		BB580A5D21DBDA1D000B8A60 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
@@ -105,6 +113,24 @@
 				E032F2302E774534490FE365 /* Pods-Sales.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB44044722075567005D51A8 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				BB4404482207558F005D51A8 /* MoreVC.swift */,
+				BB44044C22075879005D51A8 /* MoreVC+TableView.swift */,
+			);
+			path = More;
+			sourceTree = "<group>";
+		};
+		BB44044E22076610005D51A8 /* More */ = {
+			isa = PBXGroup;
+			children = (
+				BB4404512207665F005D51A8 /* MoreTableViewCell.swift */,
+				BB4404522207665F005D51A8 /* MoreTableViewCell.xib */,
+			);
+			path = More;
 			sourceTree = "<group>";
 		};
 		BB580A5021DB99C1000B8A60 /* Supporting files */ = {
@@ -184,6 +210,7 @@
 		BB95CD6721DE3A0500603DB4 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				BB44044722075567005D51A8 /* More */,
 				BB690177220217A000585AB7 /* Balance */,
 				BBC172AB21FE26930031153B /* Visits */,
 				BBC172AF21FE27F80031153B /* Client */,
@@ -216,6 +243,7 @@
 		BB95CD6A21DE3B4100603DB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BB44044E22076610005D51A8 /* More */,
 				BB95CD6921DE3ADE00603DB4 /* VisitsCell */,
 				BB95359021B0370400280D42 /* Main.storyboard */,
 			);
@@ -329,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB95359721B0370400280D42 /* LaunchScreen.storyboard in Resources */,
+				BB4404542207665F005D51A8 /* MoreTableViewCell.xib in Resources */,
 				BB580A6021DBDA1D000B8A60 /* VisitTableViewCell.xib in Resources */,
 				BB95359421B0370400280D42 /* Assets.xcassets in Resources */,
 				BB95359221B0370400280D42 /* Main.storyboard in Resources */,
@@ -385,14 +414,17 @@
 				BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */,
 				BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */,
 				BB95358F21B0370400280D42 /* SignInVC.swift in Sources */,
+				BB4404532207665F005D51A8 /* MoreTableViewCell.swift in Sources */,
 				BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */,
 				BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */,
 				BB580A5F21DBDA1D000B8A60 /* VisitTableViewCell.swift in Sources */,
 				BBB53BDF21FE3476004A9109 /* unsplashClients.swift in Sources */,
 				BB5CF21021F0990E001D140F /* APIClient.swift in Sources */,
+				BB4404492207558F005D51A8 /* MoreVC.swift in Sources */,
 				BB580A5C21DBD35D000B8A60 /* VisitsVC.swift in Sources */,
 				BB5CF21621F0E427001D140F /* VisitViewModel.swift in Sources */,
 				BBA745A52201C81D0074005E /* Balace.swift in Sources */,
+				BB44044D22075879005D51A8 /* MoreVC+TableView.swift in Sources */,
 				BB5CF21221F0A6E0001D140F /* Endpoint.swift in Sources */,
 				BB0F607621EDEF8200A79945 /* clients.swift in Sources */,
 				BB6901792202188400585AB7 /* BalanceVC.swift in Sources */,

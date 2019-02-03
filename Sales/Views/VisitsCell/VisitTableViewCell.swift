@@ -47,7 +47,7 @@ class VisitTableViewCell: UITableViewCell {
         thirdAPIDataLabel.attributedText = NSAttributedString(string:ClientsData.phone2)
         fourthAPIDataLabel.attributedText = NSAttributedString(string: ClientsData.category)
         fifthAPIDataLabel.attributedText = NSAttributedString(string:ClientsData.address)
-        func handelTages(){
+      
             firstLabel.text = "Name"
             secondLabel.text = "Phone 1"
             thirdLabel.text = "Phone 2"
@@ -55,8 +55,7 @@ class VisitTableViewCell: UITableViewCell {
             fifthLabel.text = "Address "
             sixthLabel.isHidden = true
             sixthAPIDataLabel.isHidden = true
-        }
-       handelTages()
+        
     }
     
     func handleOutlets(Balance : Balances){
@@ -64,7 +63,7 @@ class VisitTableViewCell: UITableViewCell {
         secondAPIDataLabel.attributedText = NSAttributedString(string: Balance.sale_name)
         thirdAPIDataLabel.attributedText = NSAttributedString(string:Balance.value)
        
-        func handelTages(){
+       
             firstLabel.text = "Date"
             secondLabel.text = "Client"
             thirdLabel.text = "Price"
@@ -74,9 +73,7 @@ class VisitTableViewCell: UITableViewCell {
             fourthAPIDataLabel.isHidden = true
             fifthAPIDataLabel.isHidden = true
             sixthAPIDataLabel.isHidden = true
-            
-        }
-        handelTages()
+       
         
     }
    

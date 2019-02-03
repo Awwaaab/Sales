@@ -26,4 +26,5 @@ extension BalanceVC : UITableViewDataSource , UITableViewDelegate{
         balanceTabelView.delegate = self
         balanceTabelView.dataSource = self
     }
+    
 }
