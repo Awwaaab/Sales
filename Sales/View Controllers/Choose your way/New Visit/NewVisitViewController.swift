@@ -11,6 +11,11 @@ import UIKit
 class NewVisitViewController: UIViewController {
 
    
+    @IBAction func getdate(_ sender:UIButton){
+     performSegue(withIdentifier: "GetDate", sender: sender)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
