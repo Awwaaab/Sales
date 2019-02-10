@@ -1,0 +1,16 @@
+PODS:
+  - NVActivityIndicatorView/AppExtension (4.0.1)
+
+DEPENDENCIES:
+  - NVActivityIndicatorView/AppExtension (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - NVActivityIndicatorView
+
+SPEC CHECKSUMS:
+  NVActivityIndicatorView: 77ed6d7b571643e24899e7858bf9ae2ee4c21f31
+
+PODFILE CHECKSUM: 255a197fe1dc812d9bfb2cc161abd0c97fd47f2e
+
+COCOAPODS: 1.5.3

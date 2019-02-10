@@ -20,22 +20,11 @@ extension MoreVC : UITableViewDataSource , UITableViewDelegate {
         cell.handel(indexpath: indexPath)
         return cell
     }
-    
-//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-//        let headerView = UIView()
-//        headerView.backgroundColor = UIColor.clear
-//        return headerView
-//    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CellHeight
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(indexPath.row)
     }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return  Cellspacing
-    }
-    
-    
+
+
     func handelDelegateAndDataSource(){
         MenuTableView.delegate = self
         MenuTableView.dataSource = self

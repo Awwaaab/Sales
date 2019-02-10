@@ -12,8 +12,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="AvenirNext.ttc">
-            <string>AvenirNext-DemiBold</string>
+        <array key="HelveticaNeue.ttc">
+            <string>HelveticaNeue-Medium</string>
         </array>
     </customFonts>
     <objects>
@@ -27,26 +27,23 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xCP-qk-026">
-                        <rect key="frame" x="37" y="31" width="38" height="38"/>
+                        <rect key="frame" x="37" y="33" width="24.5" height="27"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="38" id="K9a-z3-zvd"/>
-                            <constraint firstAttribute="width" secondItem="xCP-qk-026" secondAttribute="height" multiplier="1:1" id="wW5-oW-oMK"/>
+                            <constraint firstAttribute="height" constant="27" id="K9a-z3-zvd"/>
+                            <constraint firstAttribute="width" secondItem="xCP-qk-026" secondAttribute="height" multiplier="18:20" id="WfE-O9-RO8"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcY-dx-1Ja">
-                        <rect key="frame" x="84" y="28.5" width="297" height="44"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="44" id="N7Q-SC-GAe"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PcY-dx-1Ja">
+                        <rect key="frame" x="74.5" y="34" width="306.5" height="25.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="21"/>
                         <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="xCP-qk-026" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="20" id="6YP-BB-0cp"/>
+                    <constraint firstItem="xCP-qk-026" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="BL0-CI-i9y"/>
                     <constraint firstItem="PcY-dx-1Ja" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Tf1-NV-KPw"/>
-                    <constraint firstItem="PcY-dx-1Ja" firstAttribute="leading" secondItem="xCP-qk-026" secondAttribute="trailing" constant="9" id="dqN-t8-IJL"/>
+                    <constraint firstItem="PcY-dx-1Ja" firstAttribute="leading" secondItem="xCP-qk-026" secondAttribute="trailing" constant="13" id="dqN-t8-IJL"/>
                     <constraint firstItem="PcY-dx-1Ja" firstAttribute="centerY" secondItem="xCP-qk-026" secondAttribute="centerY" id="fSk-lf-fwn"/>
                     <constraint firstItem="xCP-qk-026" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="17" id="sqN-V6-NOa"/>
                 </constraints>
