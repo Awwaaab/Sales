@@ -24,6 +24,7 @@
 		BB5CF21221F0A6E0001D140F /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF21121F0A6E0001D140F /* Endpoint.swift */; };
 		BB5CF21421F0D4DB001D140F /* unsplashVisits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF21321F0D4DB001D140F /* unsplashVisits.swift */; };
 		BB5CF21621F0E427001D140F /* VisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB5CF21521F0E427001D140F /* VisitViewModel.swift */; };
+		BB62F06322130FAB00CE236E /* delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB62F06222130FAB00CE236E /* delegate.swift */; };
 		BB6901792202188400585AB7 /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6901782202188400585AB7 /* BalanceVC.swift */; };
 		BB69017B220219A800585AB7 /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017A220219A800585AB7 /* BalanceViewModel.swift */; };
 		BB69017D220219AD00585AB7 /* BalanceVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */; };
@@ -66,6 +67,7 @@
 		BB5CF21121F0A6E0001D140F /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		BB5CF21321F0D4DB001D140F /* unsplashVisits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashVisits.swift; sourceTree = "<group>"; };
 		BB5CF21521F0E427001D140F /* VisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitViewModel.swift; sourceTree = "<group>"; };
+		BB62F06222130FAB00CE236E /* delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delegate.swift; sourceTree = "<group>"; };
 		BB6901782202188400585AB7 /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
 		BB69017A220219A800585AB7 /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
 		BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceVC+tableView.swift"; sourceTree = "<group>"; };
@@ -213,8 +215,8 @@
 			children = (
 				BB9535A021B050CD00280D42 /* NavigationShadow.swift */,
 				BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */,
-				BBAEEEEF22106D6F0060994E /* NewVisitshadowStack.swift */,
 				BBE6FB5A2209A0B5000C874E /* customWideButton.swift */,
+				BBAEEEEF22106D6F0060994E /* NewVisitshadowStack.swift */,
 			);
 			path = "shadows+classes";
 			sourceTree = "<group>";
@@ -312,6 +314,7 @@
 			children = (
 				BBE6FB53220999D3000C874E /* NewVisitViewController.swift */,
 				BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */,
+				BB62F06222130FAB00CE236E /* delegate.swift */,
 			);
 			path = "New Visit";
 			sourceTree = "<group>";
@@ -473,6 +476,7 @@
 				BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */,
 				BB0F607C21EE196A00A79945 /* VisitsVC+tableView.swift in Sources */,
 				BB69017D220219AD00585AB7 /* BalanceVC+tableView.swift in Sources */,
+				BB62F06322130FAB00CE236E /* delegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

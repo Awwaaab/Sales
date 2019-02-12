@@ -12,7 +12,10 @@ class ChooseYourWay: UIViewController {
 
     
     @IBAction func NewVisit(_ sender : UIButton){
-       performSegue(withIdentifier: "GoToNewVisit", sender: sender)
+//        let storyBord = UIStoryboard(name: "Main", bundle: nil)
+//        let controller = storyBord.instantiateViewController(withIdentifier: "NewVisitID")
+//        self.navigationController?.pushViewController(controller, animated: true)
+      performSegue(withIdentifier: "GoToNewVisit", sender: sender)
     }
     
     override func viewDidLoad() {

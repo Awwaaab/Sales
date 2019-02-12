@@ -8,22 +8,35 @@
 
 import UIKit
 
-class NewVisitViewController: UIViewController {
+import UIKit
 
+class NewVisitViewController: UIViewController , DateDelegate{
+    
+    
+    
+    
+    func didSelectDate(date: String) {
+        label.text = date
+    }
    
+    @IBOutlet weak var label : UILabel!
     @IBAction func getdate(_ sender:UIButton){
-     performSegue(withIdentifier: "GetDate", sender: sender)
+        performSegue(withIdentifier: "GetDate", sender: sender)
+        
+      
     }
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "GetDate"{
+            let contrroller = segue.destination as? DatePikerViewcontroller
+            contrroller?.delegate = self
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
         
         
     }
-
-
-   
 }
+
