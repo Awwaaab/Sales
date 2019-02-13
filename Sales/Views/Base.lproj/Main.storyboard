@@ -174,7 +174,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybd-po-gaH">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybd-po-gaH">
                                 <rect key="frame" x="0.0" y="56.5" width="375" height="554"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TdX-f3-zmJ">
@@ -489,7 +489,7 @@
                         <viewLayoutGuide key="safeArea" id="dYu-lp-fAd"/>
                     </view>
                     <connections>
-                        <outlet property="label" destination="5D0-yn-mps" id="kW0-Dh-tE3"/>
+                        <outlet property="choosedDateLabel" destination="5D0-yn-mps" id="kW0-Dh-tE3"/>
                         <segue destination="ir8-ey-eWY" kind="showDetail" identifier="GetDate" id="rXO-vd-9Iu"/>
                     </connections>
                 </viewController>
@@ -505,7 +505,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1Z-Wk-rYI">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1Z-Wk-rYI">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xRp-UI-8GN" customClass="customWideButton" customModule="Sales" customModuleProvider="target">
@@ -519,7 +519,7 @@
                                             <action selector="conferm:" destination="ir8-ey-eWY" eventType="touchUpInside" id="8QW-Ml-3Aj"/>
                                         </connections>
                                     </button>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="r6R-YR-OnI">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="r6R-YR-OnI">
                                         <rect key="frame" x="27" y="124" width="320" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="571504896.40947604">
                                             <!--2019-02-10 15:21:36 +0000-->
