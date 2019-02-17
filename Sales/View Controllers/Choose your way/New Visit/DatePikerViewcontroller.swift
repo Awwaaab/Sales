@@ -24,33 +24,26 @@ class DatePikerViewcontroller: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let date = Date()
-//        let dateFormater = DateFormatter()
-//        dateFormater.dateStyle = DateFormatter.Style.medium
-//        didSelectDate = dateFormater.string(from: date)
-       otherhandleDidSelectDate(date: date)
-     //   handleDidSelectDate()
+        let _ = Date()
+        
+        
+        handleDidSelectDate()
         DatePicker.addTarget(self, action: #selector(DatePikerViewcontroller.dataChanged), for: .valueChanged)
         
     }
     
+ //   func setDate(_ date: Date, animated: Bool)
     
-    func otherhandleDidSelectDate(date : Date){
+    func handleDidSelectDate(){
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.medium
-        didSelectDate = dateFormatter.string(from:date)
+        dateFormatter.dateFormat = "dd MMM,yyyy hh:mm a"
+        didSelectDate = dateFormatter.string(from:DatePicker.date)
+        
     }
     
-//    func handleDidSelectDate(){
-//        let dateFormatter = DateFormatter()
-//        dateFormatter.dateStyle = DateFormatter.Style.medium
-//        didSelectDate = dateFormatter.string(from:DatePicker.date)
-//    }
-    
     @objc func dataChanged(){
-      otherhandleDidSelectDate(date: DatePicker.date)
+        handleDidSelectDate()
     }
     
 }
-
-
+ 

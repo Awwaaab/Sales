@@ -20,6 +20,25 @@ extension VisitsVC : UITableViewDataSource , UITableViewDelegate{
         cell.handleOutlets(VisitData: VisitViewModel.visits[indexPath.row])
         return cell
     }
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let angle = CGFloat(90 * Float.pi/180)
+        let x:CGFloat = 0.0
+        let y:CGFloat = 0.0
+        let z:CGFloat = 1.0
+        let duration : Double = 0.5
+        let acnchorPoint = CGPoint(x:0,y:0)
+        
+        var rotation=CATransform3DMakeRotation(angle,x,y,z)
+       
+        rotation.m34 = 1 / -500
+        cell.contentView.layer.transform = rotation
+        cell.contentView.layer.anchorPoint = acnchorPoint
+        UIView.beginAnimations("rotation", context:nil)
+        UIView.setAnimationDuration(duration)
+        cell.contentView.layer.transform = CATransform3DIdentity
+        UIView.commitAnimations()
+
+    }
     
     
     func handleDelegateAndDatasource(){

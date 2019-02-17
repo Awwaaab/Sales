@@ -15,6 +15,7 @@ class ClientViewMode {
     //MARK: properties
   private var client : APIClient
      var clients : [Clients] = []
+  
 
     //MARK: UI
 

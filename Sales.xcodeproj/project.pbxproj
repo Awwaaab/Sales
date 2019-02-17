@@ -41,6 +41,7 @@
 		BBAEEEF222107AAB0060994E /* DatePikerViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */; };
 		BBAFB5AC21E2718C000D04D6 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */; };
 		BBB53BDF21FE3476004A9109 /* unsplashClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB53BDE21FE3476004A9109 /* unsplashClients.swift */; };
+		BBB6BE5F2215C63B00002A9B /* SelectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6BE5E2215C63B00002A9B /* SelectClient.swift */; };
 		BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC172AD21FE27EA0031153B /* ClientViewModel.swift */; };
 		BBD7BA0421DCE6F3004B5CA5 /* visits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD7BA0321DCE6F3004B5CA5 /* visits.swift */; };
 		BBE6FB54220999D3000C874E /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB53220999D3000C874E /* NewVisitViewController.swift */; };
@@ -86,6 +87,7 @@
 		BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePikerViewcontroller.swift; sourceTree = "<group>"; };
 		BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB53BDE21FE3476004A9109 /* unsplashClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashClients.swift; sourceTree = "<group>"; };
+		BBB6BE5E2215C63B00002A9B /* SelectClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClient.swift; sourceTree = "<group>"; };
 		BBC172AD21FE27EA0031153B /* ClientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		BBD7BA0321DCE6F3004B5CA5 /* visits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visits.swift; sourceTree = "<group>"; };
 		BBE6FB53220999D3000C874E /* NewVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE6FB53220999D3000C874E /* NewVisitViewController.swift */,
+				BBB6BE5E2215C63B00002A9B /* SelectClient.swift */,
 				BB538B8E221474EF00BC5C02 /* DateDelegateProtocol.swift */,
 				BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */,
 			);
@@ -450,6 +453,7 @@
 				BB95358F21B0370400280D42 /* SignInVC.swift in Sources */,
 				BBAEEEF022106D700060994E /* NewVisitshadowStack.swift in Sources */,
 				BB4404532207665F005D51A8 /* MoreTableViewCell.swift in Sources */,
+				BBB6BE5F2215C63B00002A9B /* SelectClient.swift in Sources */,
 				BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */,
 				BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */,
 				BB538B8F221474EF00BC5C02 /* DateDelegateProtocol.swift in Sources */,

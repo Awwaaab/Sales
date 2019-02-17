@@ -314,17 +314,20 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="QvC-Nu-ZyR" userLabel="Labels Stack View">
                                         <rect key="frame" x="16.5" y="60" width="343" height="345"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xQ4-zq-xpR">
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xQ4-zq-xpR">
                                                 <rect key="frame" x="0.0" y="0.0" width="343" height="56"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tut-xl-jgm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="161.5" height="56"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="56"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" priority="450" constant="60" id="Au0-gP-AHZ"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                                         <color key="textColor" red="0.2666666667" green="0.76470588240000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5D0-yn-mps">
-                                                        <rect key="frame" x="181.5" y="0.0" width="161.5" height="56"/>
+                                                        <rect key="frame" x="80" y="0.0" width="263" height="56"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" white="0.77000000000000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -429,6 +432,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Fy-cU-56M">
                                                 <rect key="frame" x="0.0" y="58" width="343" height="55.5"/>
+                                                <connections>
+                                                    <action selector="getClient:" destination="h1R-Po-wcn" eventType="touchUpInside" id="Y9D-pN-SCa"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cc-ky-ilV">
                                                 <rect key="frame" x="0.0" y="115.5" width="343" height="56"/>
@@ -491,11 +497,65 @@
                     <connections>
                         <outlet property="choosedDateLabel" destination="5D0-yn-mps" id="kW0-Dh-tE3"/>
                         <segue destination="ir8-ey-eWY" kind="showDetail" identifier="GetDate" id="rXO-vd-9Iu"/>
+                        <segue destination="8qI-22-LRg" kind="show" identifier="getClient" id="fS0-nu-bLz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hch-yO-y43" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5884" y="-807.34632683658174"/>
+        </scene>
+        <!--Select Client-->
+        <scene sceneID="qAR-bM-iS9">
+            <objects>
+                <viewController id="8qI-22-LRg" customClass="SelectClient" customModule="Sales" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FaK-hd-wrR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="kpm-TY-ck9">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="selectClientCell" textLabel="AaV-eY-G0H" style="IBUITableViewCellStyleDefault" id="RKg-1r-lRH" customClass="MoreTableViewCell" customModule="Sales" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RKg-1r-lRH" id="ZiB-1n-KIs">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AaV-eY-G0H">
+                                                    <rect key="frame" x="15" y="0.0" width="345" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="8qI-22-LRg" id="O7a-kP-1w8"/>
+                                    <outlet property="delegate" destination="8qI-22-LRg" id="I6n-FO-gBB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kpm-TY-ck9" firstAttribute="bottom" secondItem="A60-mc-XaS" secondAttribute="bottom" id="Jcw-pN-us7"/>
+                            <constraint firstItem="kpm-TY-ck9" firstAttribute="leading" secondItem="A60-mc-XaS" secondAttribute="leading" id="YmD-FT-94y"/>
+                            <constraint firstItem="kpm-TY-ck9" firstAttribute="trailing" secondItem="A60-mc-XaS" secondAttribute="trailing" id="dOh-pv-LdB"/>
+                            <constraint firstItem="kpm-TY-ck9" firstAttribute="top" secondItem="FaK-hd-wrR" secondAttribute="top" id="hmh-Ru-RZD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="A60-mc-XaS"/>
+                    </view>
+                    <connections>
+                        <outlet property="selectClientTableView" destination="kpm-TY-ck9" id="tjv-OK-y1i"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YGD-Ef-CnW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6792.8000000000002" y="-584.25787106446785"/>
         </scene>
         <!--Date Piker Viewcontroller-->
         <scene sceneID="nS8-dF-aH5">
@@ -519,10 +579,16 @@
                                             <action selector="conferm:" destination="ir8-ey-eWY" eventType="touchUpInside" id="8QW-Ml-3Aj"/>
                                         </connections>
                                     </button>
-                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="r6R-YR-OnI">
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="r6R-YR-OnI">
                                         <rect key="frame" x="27" y="124" width="320" height="216"/>
                                         <date key="date" timeIntervalSinceReferenceDate="571504896.40947604">
                                             <!--2019-02-10 15:21:36 +0000-->
+                                        </date>
+                                        <date key="minimumDate" timeIntervalSinceReferenceDate="-31582800">
+                                            <!--2000-01-01 11:00:00 +0000-->
+                                        </date>
+                                        <date key="maximumDate" timeIntervalSinceReferenceDate="1577790000">
+                                            <!--2050-12-31 11:00:00 +0000-->
                                         </date>
                                     </datePicker>
                                 </subviews>
@@ -553,7 +619,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9x-LG-cYJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6608.8000000000002" y="-807.34632683658174"/>
+            <point key="canvasLocation" x="6762" y="-1255"/>
         </scene>
         <!--Visits-->
         <scene sceneID="Xlc-aB-oIn">

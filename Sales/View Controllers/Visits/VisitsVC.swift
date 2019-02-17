@@ -28,7 +28,7 @@ class VisitsVC: UIViewController {
         
         VisitViewModel.reloadData = {
          
-            self.VisitsTableView.handlAnimation(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView :nil)
+            self.VisitsTableView.handlAnimation(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView : nil)
         }
         
         VisitViewModel.fetchVisits()
