@@ -47,6 +47,11 @@
 		BBE6FB54220999D3000C874E /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB53220999D3000C874E /* NewVisitViewController.swift */; };
 		BBE6FB5922099AE7000C874E /* ChooseYourWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB5822099AE7000C874E /* ChooseYourWay.swift */; };
 		BBE6FB5B2209A0B5000C874E /* customWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB5A2209A0B5000C874E /* customWideButton.swift */; };
+		BBEF898F2219AB6F00A09B7B /* addVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF898E2219AB6F00A09B7B /* addVisit.swift */; };
+		BBEF89912219B27300A09B7B /* unsplashNewVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF89902219B27300A09B7B /* unsplashNewVisit.swift */; };
+		BBEF89952219B3A500A09B7B /* NewVisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */; };
+		BBEF899B2219BE8500A09B7B /* NewVisitClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF89992219BE8500A09B7B /* NewVisitClientCell.swift */; };
+		BBEF899C2219BE8500A09B7B /* NewVisitClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBEF899A2219BE8500A09B7B /* NewVisitClientCell.xib */; };
 		C53A152B893527D95140DD78 /* Pods_Sales.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFEE441C7B16F5C900B718 /* Pods_Sales.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,6 +98,11 @@
 		BBE6FB53220999D3000C874E /* NewVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
 		BBE6FB5822099AE7000C874E /* ChooseYourWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourWay.swift; sourceTree = "<group>"; };
 		BBE6FB5A2209A0B5000C874E /* customWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customWideButton.swift; sourceTree = "<group>"; };
+		BBEF898E2219AB6F00A09B7B /* addVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addVisit.swift; sourceTree = "<group>"; };
+		BBEF89902219B27300A09B7B /* unsplashNewVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashNewVisit.swift; sourceTree = "<group>"; };
+		BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewModel.swift; sourceTree = "<group>"; };
+		BBEF89992219BE8500A09B7B /* NewVisitClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitClientCell.swift; sourceTree = "<group>"; };
+		BBEF899A2219BE8500A09B7B /* NewVisitClientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewVisitClientCell.xib; sourceTree = "<group>"; };
 		DACFEE441C7B16F5C900B718 /* Pods_Sales.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sales.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E032F2302E774534490FE365 /* Pods-Sales.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sales.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sales/Pods-Sales.release.xcconfig"; sourceTree = "<group>"; };
 		F0C6F1B6DADA093FDD38339B /* Pods-Sales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sales/Pods-Sales.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,6 +185,7 @@
 				BB5CF21321F0D4DB001D140F /* unsplashVisits.swift */,
 				BBB53BDE21FE3476004A9109 /* unsplashClients.swift */,
 				BB69017E22021B6D00585AB7 /* unsplashBalance.swift */,
+				BBEF89902219B27300A09B7B /* unsplashNewVisit.swift */,
 			);
 			name = Network;
 			path = "New Group";
@@ -240,6 +251,7 @@
 		BB95CD6821DE3A1400603DB4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BBEF89932219B32500A09B7B /* NewVisit */,
 				BBC172AA21FE26350031153B /* Visits */,
 				BBA745A32201C7D00074005E /* Balance */,
 				BBC172AC21FE27490031153B /* Client */,
@@ -260,6 +272,7 @@
 		BB95CD6A21DE3B4100603DB4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BBEF89982219BE0C00A09B7B /* NewVisitClientCell */,
 				BB44044E22076610005D51A8 /* More */,
 				BB95CD6921DE3ADE00603DB4 /* VisitsCell */,
 				BB95359021B0370400280D42 /* Main.storyboard */,
@@ -315,9 +328,8 @@
 			isa = PBXGroup;
 			children = (
 				BBE6FB53220999D3000C874E /* NewVisitViewController.swift */,
-				BBB6BE5E2215C63B00002A9B /* SelectClient.swift */,
-				BB538B8E221474EF00BC5C02 /* DateDelegateProtocol.swift */,
-				BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */,
+				BBEF89972219B9C700A09B7B /* selectClient */,
+				BBEF89962219B99C00A09B7B /* Date picker */,
 			);
 			path = "New Visit";
 			sourceTree = "<group>";
@@ -329,6 +341,41 @@
 				BBE6FB5822099AE7000C874E /* ChooseYourWay.swift */,
 			);
 			path = "Choose your way";
+			sourceTree = "<group>";
+		};
+		BBEF89932219B32500A09B7B /* NewVisit */ = {
+			isa = PBXGroup;
+			children = (
+				BBEF898E2219AB6F00A09B7B /* addVisit.swift */,
+			);
+			path = NewVisit;
+			sourceTree = "<group>";
+		};
+		BBEF89962219B99C00A09B7B /* Date picker */ = {
+			isa = PBXGroup;
+			children = (
+				BB538B8E221474EF00BC5C02 /* DateDelegateProtocol.swift */,
+				BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */,
+			);
+			path = "Date picker";
+			sourceTree = "<group>";
+		};
+		BBEF89972219B9C700A09B7B /* selectClient */ = {
+			isa = PBXGroup;
+			children = (
+				BBB6BE5E2215C63B00002A9B /* SelectClient.swift */,
+				BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */,
+			);
+			path = selectClient;
+			sourceTree = "<group>";
+		};
+		BBEF89982219BE0C00A09B7B /* NewVisitClientCell */ = {
+			isa = PBXGroup;
+			children = (
+				BBEF89992219BE8500A09B7B /* NewVisitClientCell.swift */,
+				BBEF899A2219BE8500A09B7B /* NewVisitClientCell.xib */,
+			);
+			path = NewVisitClientCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -396,6 +443,7 @@
 				BB95359721B0370400280D42 /* LaunchScreen.storyboard in Resources */,
 				BB4404542207665F005D51A8 /* MoreTableViewCell.xib in Resources */,
 				BB580A6021DBDA1D000B8A60 /* VisitTableViewCell.xib in Resources */,
+				BBEF899C2219BE8500A09B7B /* NewVisitClientCell.xib in Resources */,
 				BB95359421B0370400280D42 /* Assets.xcassets in Resources */,
 				BB95359221B0370400280D42 /* Main.storyboard in Resources */,
 			);
@@ -451,8 +499,10 @@
 				BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */,
 				BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */,
 				BB95358F21B0370400280D42 /* SignInVC.swift in Sources */,
+				BBEF89912219B27300A09B7B /* unsplashNewVisit.swift in Sources */,
 				BBAEEEF022106D700060994E /* NewVisitshadowStack.swift in Sources */,
 				BB4404532207665F005D51A8 /* MoreTableViewCell.swift in Sources */,
+				BBEF89952219B3A500A09B7B /* NewVisitViewModel.swift in Sources */,
 				BBB6BE5F2215C63B00002A9B /* SelectClient.swift in Sources */,
 				BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */,
 				BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */,
@@ -466,7 +516,9 @@
 				BB5CF21621F0E427001D140F /* VisitViewModel.swift in Sources */,
 				BBA745A52201C81D0074005E /* Balace.swift in Sources */,
 				BBAEEEF222107AAB0060994E /* DatePikerViewcontroller.swift in Sources */,
+				BBEF899B2219BE8500A09B7B /* NewVisitClientCell.swift in Sources */,
 				BB44044D22075879005D51A8 /* MoreVC+TableView.swift in Sources */,
+				BBEF898F2219AB6F00A09B7B /* addVisit.swift in Sources */,
 				BB5CF21221F0A6E0001D140F /* Endpoint.swift in Sources */,
 				BB0F607621EDEF8200A79945 /* clients.swift in Sources */,
 				BB6901792202188400585AB7 /* BalanceVC.swift in Sources */,

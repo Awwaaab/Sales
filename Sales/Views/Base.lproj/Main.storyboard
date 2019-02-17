@@ -438,6 +438,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Cc-ky-ilV">
                                                 <rect key="frame" x="0.0" y="115.5" width="343" height="56"/>
+                                                <connections>
+                                                    <action selector="gettype:" destination="h1R-Po-wcn" eventType="touchUpInside" id="yzp-ig-UiA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdo-Vm-BVb">
                                                 <rect key="frame" x="0.0" y="173.5" width="343" height="56"/>

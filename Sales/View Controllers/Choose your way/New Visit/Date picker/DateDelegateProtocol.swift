@@ -11,3 +11,6 @@ import UIKit
 protocol DateDelegate :  NSObjectProtocol{
     func didSelectDate(date : String)
 }
+protocol controllerDelegate :  NSObjectProtocol{
+    func didSelectcontroller(controller : selectController)
+}

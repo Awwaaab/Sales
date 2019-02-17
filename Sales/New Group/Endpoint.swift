@@ -17,12 +17,18 @@ protocol  EndPoint {
     var urlParametares : [URLQueryItem] {get}
    
 }
+/////////////
 
+enum selectController {
+    case client , type
+}
 
+/////////
 enum unsplashEndpoint  : EndPoint{
     case visit(user_id: String , number: String)
     case client(user_id: String , number: String)
     case balances(user_id: String)
+    case newVisit(user_id : String)
     var baseURL : String {
         return unsplashVisits.baseurl
     }
@@ -32,6 +38,7 @@ enum unsplashEndpoint  : EndPoint{
 //        switch self {
 //        case .visit:
 //            return "http://hyper-design.com/NewSales/api"
+    //
 //            
 //        }
 //    }
@@ -41,6 +48,7 @@ enum unsplashEndpoint  : EndPoint{
         case .visit : return "/visits"
         case .client : return "/clients"
         case .balances: return "/user/balance"
+        case .newVisit : return "/visit/add"
         }
     }
     var urlParametares: [URLQueryItem] {
@@ -55,6 +63,9 @@ enum unsplashEndpoint  : EndPoint{
             ]
         case .balances(let id) : return[
              URLQueryItem(name: "user_id", value: id)
+            ]
+        case .newVisit(let id) : return[
+            URLQueryItem(name: "user_id", value: id)
             ]
         }
     }
