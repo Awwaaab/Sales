@@ -41,7 +41,6 @@
 		BBAEEEF222107AAB0060994E /* DatePikerViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */; };
 		BBAFB5AC21E2718C000D04D6 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */; };
 		BBB53BDF21FE3476004A9109 /* unsplashClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB53BDE21FE3476004A9109 /* unsplashClients.swift */; };
-		BBB6BE5F2215C63B00002A9B /* SelectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB6BE5E2215C63B00002A9B /* SelectClient.swift */; };
 		BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC172AD21FE27EA0031153B /* ClientViewModel.swift */; };
 		BBD7BA0421DCE6F3004B5CA5 /* visits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD7BA0321DCE6F3004B5CA5 /* visits.swift */; };
 		BBE6FB54220999D3000C874E /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB53220999D3000C874E /* NewVisitViewController.swift */; };
@@ -52,6 +51,7 @@
 		BBEF89952219B3A500A09B7B /* NewVisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */; };
 		BBEF899B2219BE8500A09B7B /* NewVisitClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF89992219BE8500A09B7B /* NewVisitClientCell.swift */; };
 		BBEF899C2219BE8500A09B7B /* NewVisitClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBEF899A2219BE8500A09B7B /* NewVisitClientCell.xib */; };
+		BBF86E3B221ABE7600FF8E96 /* LayerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF86E3A221ABE7600FF8E96 /* LayerExtentions.swift */; };
 		C53A152B893527D95140DD78 /* Pods_Sales.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DACFEE441C7B16F5C900B718 /* Pods_Sales.framework */; };
 /* End PBXBuildFile section */
 
@@ -92,7 +92,6 @@
 		BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePikerViewcontroller.swift; sourceTree = "<group>"; };
 		BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB53BDE21FE3476004A9109 /* unsplashClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashClients.swift; sourceTree = "<group>"; };
-		BBB6BE5E2215C63B00002A9B /* SelectClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectClient.swift; sourceTree = "<group>"; };
 		BBC172AD21FE27EA0031153B /* ClientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		BBD7BA0321DCE6F3004B5CA5 /* visits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visits.swift; sourceTree = "<group>"; };
 		BBE6FB53220999D3000C874E /* NewVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +102,7 @@
 		BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewModel.swift; sourceTree = "<group>"; };
 		BBEF89992219BE8500A09B7B /* NewVisitClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitClientCell.swift; sourceTree = "<group>"; };
 		BBEF899A2219BE8500A09B7B /* NewVisitClientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewVisitClientCell.xib; sourceTree = "<group>"; };
+		BBF86E3A221ABE7600FF8E96 /* LayerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerExtentions.swift; sourceTree = "<group>"; };
 		DACFEE441C7B16F5C900B718 /* Pods_Sales.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sales.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E032F2302E774534490FE365 /* Pods-Sales.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sales.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sales/Pods-Sales.release.xcconfig"; sourceTree = "<group>"; };
 		F0C6F1B6DADA093FDD38339B /* Pods-Sales.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sales.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sales/Pods-Sales.debug.xcconfig"; sourceTree = "<group>"; };
@@ -182,10 +182,7 @@
 			children = (
 				BB5CF20F21F0990E001D140F /* APIClient.swift */,
 				BB5CF21121F0A6E0001D140F /* Endpoint.swift */,
-				BB5CF21321F0D4DB001D140F /* unsplashVisits.swift */,
-				BBB53BDE21FE3476004A9109 /* unsplashClients.swift */,
-				BB69017E22021B6D00585AB7 /* unsplashBalance.swift */,
-				BBEF89902219B27300A09B7B /* unsplashNewVisit.swift */,
+				BBF86E39221AAD3A00FF8E96 /* Unplash(fetching) */,
 			);
 			name = Network;
 			path = "New Group";
@@ -226,6 +223,7 @@
 		BB95CD6621DE39F500603DB4 /* shadows+classes */ = {
 			isa = PBXGroup;
 			children = (
+				BBF86E3A221ABE7600FF8E96 /* LayerExtentions.swift */,
 				BB9535A021B050CD00280D42 /* NavigationShadow.swift */,
 				BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */,
 				BBE6FB5A2209A0B5000C874E /* customWideButton.swift */,
@@ -328,7 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				BBE6FB53220999D3000C874E /* NewVisitViewController.swift */,
-				BBEF89972219B9C700A09B7B /* selectClient */,
+				BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */,
 				BBEF89962219B99C00A09B7B /* Date picker */,
 			);
 			path = "New Visit";
@@ -360,15 +358,6 @@
 			path = "Date picker";
 			sourceTree = "<group>";
 		};
-		BBEF89972219B9C700A09B7B /* selectClient */ = {
-			isa = PBXGroup;
-			children = (
-				BBB6BE5E2215C63B00002A9B /* SelectClient.swift */,
-				BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */,
-			);
-			path = selectClient;
-			sourceTree = "<group>";
-		};
 		BBEF89982219BE0C00A09B7B /* NewVisitClientCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -376,6 +365,17 @@
 				BBEF899A2219BE8500A09B7B /* NewVisitClientCell.xib */,
 			);
 			path = NewVisitClientCell;
+			sourceTree = "<group>";
+		};
+		BBF86E39221AAD3A00FF8E96 /* Unplash(fetching) */ = {
+			isa = PBXGroup;
+			children = (
+				BB5CF21321F0D4DB001D140F /* unsplashVisits.swift */,
+				BBB53BDE21FE3476004A9109 /* unsplashClients.swift */,
+				BB69017E22021B6D00585AB7 /* unsplashBalance.swift */,
+				BBEF89902219B27300A09B7B /* unsplashNewVisit.swift */,
+			);
+			path = "Unplash(fetching)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -503,7 +503,6 @@
 				BBAEEEF022106D700060994E /* NewVisitshadowStack.swift in Sources */,
 				BB4404532207665F005D51A8 /* MoreTableViewCell.swift in Sources */,
 				BBEF89952219B3A500A09B7B /* NewVisitViewModel.swift in Sources */,
-				BBB6BE5F2215C63B00002A9B /* SelectClient.swift in Sources */,
 				BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */,
 				BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */,
 				BB538B8F221474EF00BC5C02 /* DateDelegateProtocol.swift in Sources */,
@@ -521,6 +520,7 @@
 				BBEF898F2219AB6F00A09B7B /* addVisit.swift in Sources */,
 				BB5CF21221F0A6E0001D140F /* Endpoint.swift in Sources */,
 				BB0F607621EDEF8200A79945 /* clients.swift in Sources */,
+				BBF86E3B221ABE7600FF8E96 /* LayerExtentions.swift in Sources */,
 				BB6901792202188400585AB7 /* BalanceVC.swift in Sources */,
 				BB5CF21421F0D4DB001D140F /* unsplashVisits.swift in Sources */,
 				BB69017F22021B6D00585AB7 /* unsplashBalance.swift in Sources */,

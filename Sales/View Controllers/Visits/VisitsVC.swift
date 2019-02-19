@@ -21,8 +21,16 @@ class VisitsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
        VisitsTableView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :nil)
-        VisitViewModel.showError = { error in
-            print(error)
+        VisitViewModel.showError = { (error) in
+            print("==================================\(error)=================================")
+            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+//                print("go to root")
+           self.tabBarController?.selectedIndex=0
+//                 let storyBord = UIStoryboard(name: "Main", bundle: nil)
+//                let controller = storyBord.instantiateViewController(withIdentifier: "choseYourway")
+//                self.navigationController?.pushViewController(controller, animated: true)
+
+            })
             
         }
         

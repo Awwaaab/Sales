@@ -35,10 +35,7 @@ class NewVisitViewController: UIViewController , DateDelegate  {
             let controller = segue.destination as? DatePikerViewcontroller
             controller?.delegate = self
         }
-        if segue.identifier == "getClient" {
-            let controller = segue.destination as? SelectClient
-            self.delegate = controller
-        }
+        
     }
     
     
@@ -48,24 +45,22 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         performSegue(withIdentifier: "GetDate", sender: sender)
     }
     @IBAction func getClient(_ sender:UIButton){
-        // performSegue(withIdentifier: "getClient", sender: nil)
         toViewController = selectController.client
-        // delegate?.didSelectcontroller(controller: toViewController)
         selectorPickerView.isHidden = false
-//        selectorPickerView.reloadAllComponents()
+        selectorPickerView.reloadAllComponents()
     }
     @IBAction func gettype(_ sender:UIButton){
-        //        performSegue(withIdentifier: "getClient", sender: nil)
+      
         toViewController = selectController.type
         selectorPickerView.isHidden = false
         selectorPickerView.reloadAllComponents()
-        //        delegate?.didSelectcontroller(controller: toViewController)
+
     }
     let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
     
     @IBAction func saveButton(_ sender: UIButton) {
         selectorPickerView.isHidden = true
-        selectorPickerView.isOpaque = false
+      
         
     }
     
