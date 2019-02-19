@@ -20,8 +20,4 @@ class MoreVC: UIViewController {
    handelDelegateAndDataSource()
     }
 
-   
-    
-
-
 }

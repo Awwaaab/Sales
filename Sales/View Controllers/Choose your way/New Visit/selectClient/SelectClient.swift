@@ -5,14 +5,14 @@
 //  Created by Awab Aly-mac on 14/2/19.
 //  Copyright © 2019 Awab Aly-mac. All rights reserved.
 //
-//////////////// reciver
+
 import UIKit
 
 class SelectClient: UIViewController , controllerDelegate{
    
     
     var Controller : selectController = selectController.client
-
+   
     func didSelectcontroller(controller: selectController) {
         Controller = controller
     }
@@ -32,8 +32,8 @@ class SelectClient: UIViewController , controllerDelegate{
         newVisitViewModel.reloadData = {
             self.selectClientTableView.reloadData()
         }
-    newVisitViewModel.NewVisit()
-        print(self.Controller)
+    newVisitViewModel.fetchNewVisit()
+      
     }
 
   
@@ -58,7 +58,14 @@ extension SelectClient : UITableViewDelegate , UITableViewDataSource {
             cell.handleLabel(typeAV : newVisitViewModel.selectType[indexPath.row])
         }
        
-      
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if Controller == selectController.client{
+          
+        }else if Controller == selectController.type{
+          
+        }
     }
 }

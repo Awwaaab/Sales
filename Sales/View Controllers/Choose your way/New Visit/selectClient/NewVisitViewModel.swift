@@ -17,6 +17,9 @@ class NewVisitViewMode {
     
     var selectCLient : [ClientsAV] = []
     var selectType : [TypesAV] = []
+    
+    var onlyClient : [String] = []
+    var onlytype : [String] = []
     //MARK: UI
     
     var showError : ((Error) -> Void)?
@@ -28,15 +31,23 @@ class NewVisitViewMode {
     }
     
     
-    func NewVisit(){
+    func fetchNewVisit(){
         if let client = client as? unsplashNewVisit{
             let endpoint = unsplashEndpoint.newVisit(user_id: "2")
             client.fetechNewVisit(with: endpoint, completion: { (either) in
                 switch either {
                 case .success(let rootNewVisits):
+                    
                     self.selectCLient = rootNewVisits.clients
                     self.selectType = rootNewVisits.types
-                   print(self.selectCLient)
+                    for oClient in rootNewVisits.clients{
+                        self.onlyClient.append(oClient.name)
+                    }
+                    for otype in rootNewVisits.types{
+                        self.onlytype.append(otype.name)
+                    }
+                    print(self.onlyClient)
+                   //print(self.selectCLient)
                     self.reloadData?()
                 case .error(let error):
                     self.showError!(error)
@@ -45,9 +56,6 @@ class NewVisitViewMode {
             })
         }
     }
-    
-    
-    
     
     
 }

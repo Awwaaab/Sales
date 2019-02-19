@@ -6,30 +6,37 @@
 //  Copyright © 2019 Awab Aly-mac. All rights reserved.
 //
 //
-//////////////sender
+
 import UIKit
 
+enum selectController {
+    case client , type
+}
+
 class NewVisitViewController: UIViewController , DateDelegate  {
+    
+    @IBOutlet weak var selectorPickerView: UIPickerView!
+    @IBOutlet weak var chosenClient: UILabel!
+    @IBOutlet weak var chosenType: UILabel!
+    
+    var toViewController : selectController?
+    
+    weak var   delegate : controllerDelegate?
+    
     
     
     func didSelectDate(date: String) {
         choosedDateLabel.text = date
     }
-    var toViewController : selectController = selectController.client
-  
     
-    
-    weak var   delegate : controllerDelegate?
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-
         if segue.identifier == "GetDate"{
-        let controller = segue.destination as? DatePikerViewcontroller
+            let controller = segue.destination as? DatePikerViewcontroller
             controller?.delegate = self
         }
-        
         if segue.identifier == "getClient" {
-        let controller = segue.destination as? SelectClient
+            let controller = segue.destination as? SelectClient
             self.delegate = controller
         }
     }
@@ -41,21 +48,102 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         performSegue(withIdentifier: "GetDate", sender: sender)
     }
     @IBAction func getClient(_ sender:UIButton){
-        performSegue(withIdentifier: "getClient", sender: nil)
+        // performSegue(withIdentifier: "getClient", sender: nil)
         toViewController = selectController.client
-         delegate?.didSelectcontroller(controller: toViewController)
+        // delegate?.didSelectcontroller(controller: toViewController)
+        selectorPickerView.isHidden = false
+//        selectorPickerView.reloadAllComponents()
     }
     @IBAction func gettype(_ sender:UIButton){
-        performSegue(withIdentifier: "getClient", sender: nil)
+        //        performSegue(withIdentifier: "getClient", sender: nil)
         toViewController = selectController.type
-         delegate?.didSelectcontroller(controller: toViewController)
+        selectorPickerView.isHidden = false
+        selectorPickerView.reloadAllComponents()
+        //        delegate?.didSelectcontroller(controller: toViewController)
     }
+    let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
+    
+    @IBAction func saveButton(_ sender: UIButton) {
+        selectorPickerView.isHidden = true
+        selectorPickerView.isOpaque = false
+        
+    }
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        selectorPickerView.backgroundColor = UIColor.cyan
+        selectorPickerView.isHidden = true
+        
+        
+        
+        newVisitViewModel.showError = { (error) in
+            print("==================================\(error)=================================")
+            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+                 self.navigationController?.popViewController(animated: true)
+            })
+     
+        }
+        
+        newVisitViewModel.reloadData = {
+            self.selectorPickerView.reloadAllComponents()
+        }
+        newVisitViewModel.fetchNewVisit()
+        
+        
     }
+    
+   
+
 }
 
+
+
+
+
+extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1    
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        
+        
+        
+        if toViewController == selectController.client{
+            return newVisitViewModel.onlyClient.count
+        }else{
+            return newVisitViewModel.onlytype.count
+        }
+
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        
+       
+        if toViewController == selectController.client{
+            return newVisitViewModel.onlyClient[row]
+        }else{
+            return newVisitViewModel.onlytype[row]
+        }
+        
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+         
+        if toViewController == selectController.client{
+            self.chosenClient.text = newVisitViewModel.onlyClient[row]
+        }else{
+            self.chosenType.text = newVisitViewModel.onlytype[row]
+        }
+        
+    }
+    
+}
 
 

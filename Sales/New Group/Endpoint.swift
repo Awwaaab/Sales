@@ -8,22 +8,13 @@
 
 import Foundation
 
-
-
-
 protocol  EndPoint {
     var baseURL : String {get}
     var path : String {get}
     var urlParametares : [URLQueryItem] {get}
    
 }
-/////////////
 
-enum selectController {
-    case client , type
-}
-
-/////////
 enum unsplashEndpoint  : EndPoint{
     case visit(user_id: String , number: String)
     case client(user_id: String , number: String)
@@ -33,15 +24,6 @@ enum unsplashEndpoint  : EndPoint{
         return unsplashVisits.baseurl
     }
     
-    
-//    var baseURL: String {
-//        switch self {
-//        case .visit:
-//            return "http://hyper-design.com/NewSales/api"
-    //
-//            
-//        }
-//    }
     
     var path : String {
         switch self {

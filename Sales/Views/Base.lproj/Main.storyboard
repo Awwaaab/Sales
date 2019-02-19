@@ -466,7 +466,17 @@
                                         <state key="normal" title="Save">
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="saveButton:" destination="h1R-Po-wcn" eventType="touchUpInside" id="mXU-6m-RpX"/>
+                                        </connections>
                                     </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqH-ee-2Ub">
+                                        <rect key="frame" x="16" y="60" width="343" height="345"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="h1R-Po-wcn" id="WZL-NA-Bip"/>
+                                            <outlet property="delegate" destination="h1R-Po-wcn" id="1uv-FH-KtS"/>
+                                        </connections>
+                                    </pickerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="PJo-6D-xkh" firstAttribute="leading" secondItem="K1W-OX-JKJ" secondAttribute="leading" constant="16" id="0PG-a7-y8n"/>
@@ -475,6 +485,8 @@
                                     <constraint firstItem="VFR-Ly-Aw7" firstAttribute="centerX" secondItem="lZ0-Ro-Xr5" secondAttribute="centerX" id="Ace-Wn-Gzy"/>
                                     <constraint firstItem="VFR-Ly-Aw7" firstAttribute="top" secondItem="lZ0-Ro-Xr5" secondAttribute="bottom" constant="48" id="AtM-KT-ePr"/>
                                     <constraint firstAttribute="trailing" secondItem="PJo-6D-xkh" secondAttribute="trailing" constant="16" id="FAt-HT-DtS"/>
+                                    <constraint firstItem="lqH-ee-2Ub" firstAttribute="width" secondItem="PJo-6D-xkh" secondAttribute="width" id="ScJ-vk-4az"/>
+                                    <constraint firstItem="lqH-ee-2Ub" firstAttribute="height" secondItem="PJo-6D-xkh" secondAttribute="height" id="Wq8-yG-pi0"/>
                                     <constraint firstItem="PJo-6D-xkh" firstAttribute="top" secondItem="K1W-OX-JKJ" secondAttribute="top" constant="60" id="Yna-eU-MG3"/>
                                     <constraint firstItem="QvC-Nu-ZyR" firstAttribute="centerX" secondItem="PJo-6D-xkh" secondAttribute="centerX" id="arR-hf-XTW"/>
                                     <constraint firstItem="lZ0-Ro-Xr5" firstAttribute="centerX" secondItem="QvC-Nu-ZyR" secondAttribute="centerX" id="cIn-UY-PUy"/>
@@ -483,7 +495,9 @@
                                     <constraint firstItem="QvC-Nu-ZyR" firstAttribute="height" secondItem="PJo-6D-xkh" secondAttribute="height" id="hI0-FV-UOa"/>
                                     <constraint firstItem="VFR-Ly-Aw7" firstAttribute="width" secondItem="lZ0-Ro-Xr5" secondAttribute="width" id="jPH-EL-0vk"/>
                                     <constraint firstItem="lZ0-Ro-Xr5" firstAttribute="width" secondItem="QvC-Nu-ZyR" secondAttribute="width" id="jQa-C7-HQm"/>
+                                    <constraint firstItem="lqH-ee-2Ub" firstAttribute="centerX" secondItem="PJo-6D-xkh" secondAttribute="centerX" id="v8b-IH-aYi"/>
                                     <constraint firstItem="QvC-Nu-ZyR" firstAttribute="centerY" secondItem="PJo-6D-xkh" secondAttribute="centerY" id="wA7-bH-kMB"/>
+                                    <constraint firstItem="lqH-ee-2Ub" firstAttribute="centerY" secondItem="PJo-6D-xkh" secondAttribute="centerY" id="ybs-Ho-DPp"/>
                                     <constraint firstItem="PJo-6D-xkh" firstAttribute="centerX" secondItem="K1W-OX-JKJ" secondAttribute="centerX" id="zgX-DB-EZA"/>
                                 </constraints>
                             </scrollView>
@@ -499,6 +513,9 @@
                     </view>
                     <connections>
                         <outlet property="choosedDateLabel" destination="5D0-yn-mps" id="kW0-Dh-tE3"/>
+                        <outlet property="chosenClient" destination="4ZI-3e-lhU" id="ZQp-jg-rC8"/>
+                        <outlet property="chosenType" destination="ZPj-xe-lVQ" id="116-gr-iaM"/>
+                        <outlet property="selectorPickerView" destination="lqH-ee-2Ub" id="Uau-Dn-iwS"/>
                         <segue destination="ir8-ey-eWY" kind="showDetail" identifier="GetDate" id="rXO-vd-9Iu"/>
                         <segue destination="8qI-22-LRg" kind="show" identifier="getClient" id="fS0-nu-bLz"/>
                     </connections>
@@ -770,7 +787,7 @@
             </objects>
             <point key="canvasLocation" x="5101.6000000000004" y="629.2353823088456"/>
         </scene>
-        <!--Balance-->
+        <!--Balanec-->
         <scene sceneID="OCK-gx-snt">
             <objects>
                 <viewController id="Cn6-ol-UTf" customClass="BalanceVC" customModule="Sales" customModuleProvider="target" sceneMemberID="viewController">
@@ -872,7 +889,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FUG-Tr-LRV"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Balance" id="2L0-Oo-3z6"/>
+                    <navigationItem key="navigationItem" title="Balanec" id="bkK-rm-wTy"/>
                     <connections>
                         <outlet property="MainScrollView" destination="EVn-Cu-pGc" id="ynu-gU-iCY"/>
                         <outlet property="activityIndicatorView" destination="oTn-aq-gWy" id="pLc-B0-SeP"/>

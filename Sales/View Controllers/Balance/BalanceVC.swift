@@ -46,7 +46,7 @@ class BalanceVC: UIViewController {
     deinit {
         balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
     }
-    
+                // you can use this peace of code to do the remivew
     //    override func viewWillDisappear(_ animated: Bool) {
     //        super.viewWillDisappear(animated)
     //        balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
