@@ -62,6 +62,31 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
             self.view.layoutIfNeeded()}
     }
     
+    func writeThePriceAlertController(){
+        let alertcont = UIAlertController(title: "Price",message: "Please write price" ,preferredStyle:.alert)
+        let alertactCancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        let alertactSave = UIAlertAction(title: "Save", style: .default ,  handler: { (action) in
+            self.priceTextFiled = self.alertTextfiled?.text ?? ""
+            self.writenPirce.text = self.priceTextFiled
+            
+            
+        })
+        
+        
+        alertcont.addAction(alertactCancel)
+        alertcont.addAction(alertactSave)
+        alertcont.addTextField{ (alertTextfiled) in
+            alertTextfiled.placeholder = "price"
+            alertTextfiled.borderStyle = UITextBorderStyle.bezel
+            
+            self.alertTextfiled = alertTextfiled
+        }
+        
+        self.present(alertcont, animated: true, completion: nil)
+        
+        
+    }
+    
 }
 
 

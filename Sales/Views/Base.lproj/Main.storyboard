@@ -450,6 +450,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFU-Nr-Tj7">
                                                 <rect key="frame" x="0.0" y="231.5" width="343" height="55.5"/>
+                                                <connections>
+                                                    <action selector="writePrice:" destination="h1R-Po-wcn" eventType="touchUpInside" id="kbl-mH-XPA"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5gD-6K-DOt">
                                                 <rect key="frame" x="0.0" y="289" width="343" height="56"/>
@@ -523,6 +526,7 @@
                         <outlet property="chosenType" destination="ZPj-xe-lVQ" id="116-gr-iaM"/>
                         <outlet property="selectorPickerVIewXPostion" destination="ybs-Ho-DPp" id="prW-3V-FlC"/>
                         <outlet property="selectorPickerView" destination="lqH-ee-2Ub" id="Uau-Dn-iwS"/>
+                        <outlet property="writenPirce" destination="iwk-Da-Faq" id="cXw-62-BNc"/>
                         <segue destination="ir8-ey-eWY" kind="showDetail" identifier="GetDate" id="rXO-vd-9Iu"/>
                     </connections>
                 </viewController>

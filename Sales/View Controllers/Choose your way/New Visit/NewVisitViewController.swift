@@ -26,10 +26,11 @@ class NewVisitViewController: UIViewController , DateDelegate  {
     @IBOutlet weak var chosenClient: UILabel!
     @IBOutlet weak var chosenType: UILabel!
     @IBOutlet weak var chosenPurpose : UILabel!
+    @IBOutlet weak var writenPirce : UILabel!
     
     var toViewController : selectController?
-
-    
+    var priceTextFiled = ""
+    var alertTextfiled : UITextField?
     
     //MARK: date delegate
     weak var   delegate : controllerDelegate?
@@ -67,6 +68,10 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         handleSelectorAnimation()
     }
     
+    @IBAction func writePrice(_ sender:UIButton){
+        writeThePriceAlertController()
+    }
+    
     @IBAction func saveButton(_ sender: UIButton) {
       handleSelectorAnimation()
     }
@@ -85,11 +90,15 @@ class NewVisitViewController: UIViewController , DateDelegate  {
     
     }
     
+   
+    
       let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
     
     override func viewDidLoad() {
         super.viewDidLoad()
       hideSelectorPickeriewWhenTappedAround()
+        self.selectorPickerView.layer.cornerRadius = 27
+         self.selectorPickerView.clipsToBounds = true
   
        // selectorPickerView.isHidden = true
     }
@@ -99,9 +108,9 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         super.viewWillAppear(animated)
         newVisitViewModel.showError = { (error) in
             print("==================================\(error)=================================")
-//            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
-//                self.navigationController?.popViewController(animated: true)
-//            })
+            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+                self.navigationController?.popViewController(animated: true)
+            })
         }
         newVisitViewModel.reloadData = {
             self.selectorPickerView.reloadAllComponents()
