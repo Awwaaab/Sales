@@ -22,31 +22,32 @@ class BalanceVC: UIViewController {
         super.viewDidLoad()
         
         balanceTabelView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        
-        
         handleDelegateAndDatasource()
         balanceTabelView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :MainScrollView)
         
-        
-        
-        balanceViewModel.showError = { error in
-            print(error)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        balanceViewModel.showError = { (error) in
+            print("==================================\(error)=================================")
+            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+                self.tabBarController?.selectedIndex=0
+                
+            })
             
         }
         balanceViewModel.reloadData = {
             self.balanceTabelView.handlAnimation(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView : self.MainScrollView)
             self.noOfBalance.text = self.balanceViewModel.Balance
         }
-        
-        
         balanceViewModel.fetchBalance()
-        
     }
     
     deinit {
         balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
     }
-                // you can use this peace of code to do the remivew
+    // you can use this peace of code to do the remivew
     //    override func viewWillDisappear(_ animated: Bool) {
     //        super.viewWillDisappear(animated)
     //        balanceTabelView.removeObserver(self, forKeyPath: "contentSize")

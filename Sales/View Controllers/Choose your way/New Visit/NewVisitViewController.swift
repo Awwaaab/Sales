@@ -7,24 +7,32 @@
 //
 //
 
+//    SidemenyLayout.constant = (SidemenyLayout.constant == 0 ) ? self.view.frame.size.width * 0.7 : 0
+//    UIView.animate(withDuration: 1) {
+//    self.view.layoutIfNeeded()}
+
+
+
 import UIKit
 
 enum selectController {
-    case client , type
+    case client , type , purposes
 }
 
 class NewVisitViewController: UIViewController , DateDelegate  {
     
+    @IBOutlet weak var selectorPickerVIewXPostion: NSLayoutConstraint!
     @IBOutlet weak var selectorPickerView: UIPickerView!
     @IBOutlet weak var chosenClient: UILabel!
     @IBOutlet weak var chosenType: UILabel!
+    @IBOutlet weak var chosenPurpose : UILabel!
     
     var toViewController : selectController?
+
     
+    
+    //MARK: date delegate
     weak var   delegate : controllerDelegate?
-    
-    
-    
     func didSelectDate(date: String) {
         choosedDateLabel.text = date
     }
@@ -38,50 +46,63 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         
     }
     
-    
-    
     @IBOutlet weak var choosedDateLabel : UILabel!
     @IBAction func getdate(_ sender:UIButton){
         performSegue(withIdentifier: "GetDate", sender: sender)
     }
     @IBAction func getClient(_ sender:UIButton){
         toViewController = selectController.client
-        selectorPickerView.isHidden = false
         selectorPickerView.reloadAllComponents()
+         handleSelectorAnimation()
     }
     @IBAction func gettype(_ sender:UIButton){
-      
         toViewController = selectController.type
-        selectorPickerView.isHidden = false
-        selectorPickerView.reloadAllComponents()
+         selectorPickerView.reloadAllComponents()
+         handleSelectorAnimation()
 
     }
-    let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
+    @IBAction func getPurposes(_ sender:UIButton){
+        toViewController = selectController.purposes
+        selectorPickerView.reloadAllComponents()
+        handleSelectorAnimation()
+    }
     
     @IBAction func saveButton(_ sender: UIButton) {
-        selectorPickerView.isHidden = true
-      
-        
+      handleSelectorAnimation()
     }
     
     
+    
+    func hideSelectorPickeriewWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewVisitViewController.dismissSelectorPickeriew))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissSelectorPickeriew() {
+        selectorPickerVIewXPostion.constant = 600
+        UIView.animate(withDuration: 0.35) {
+            self.view.layoutIfNeeded()}
+    
+    }
+    
+      let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        selectorPickerView.backgroundColor = UIColor.cyan
-        selectorPickerView.isHidden = true
-        
-        
-        
+      hideSelectorPickeriewWhenTappedAround()
+  
+       // selectorPickerView.isHidden = true
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         newVisitViewModel.showError = { (error) in
             print("==================================\(error)=================================")
-            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
-                 self.navigationController?.popViewController(animated: true)
-            })
-     
+//            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+//                self.navigationController?.popViewController(animated: true)
+//            })
         }
-        
         newVisitViewModel.reloadData = {
             self.selectorPickerView.reloadAllComponents()
         }
@@ -89,56 +110,9 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         
         
     }
-    
    
 
 }
 
-
-
-
-
-extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1    
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        
-        
-        if toViewController == selectController.client{
-            return newVisitViewModel.onlyClient.count
-        }else{
-            return newVisitViewModel.onlytype.count
-        }
-
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-       
-        if toViewController == selectController.client{
-            return newVisitViewModel.onlyClient[row]
-        }else{
-            return newVisitViewModel.onlytype[row]
-        }
-        
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        
-        
-         
-        if toViewController == selectController.client{
-            self.chosenClient.text = newVisitViewModel.onlyClient[row]
-        }else{
-            self.chosenType.text = newVisitViewModel.onlytype[row]
-        }
-        
-    }
-    
-}
 
 

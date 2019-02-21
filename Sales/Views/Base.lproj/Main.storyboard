@@ -444,6 +444,9 @@
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xdo-Vm-BVb">
                                                 <rect key="frame" x="0.0" y="173.5" width="343" height="56"/>
+                                                <connections>
+                                                    <action selector="getPurposes:" destination="h1R-Po-wcn" eventType="touchUpInside" id="Zzo-qa-4pZ"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jFU-Nr-Tj7">
                                                 <rect key="frame" x="0.0" y="231.5" width="343" height="55.5"/>
@@ -470,8 +473,12 @@
                                             <action selector="saveButton:" destination="h1R-Po-wcn" eventType="touchUpInside" id="mXU-6m-RpX"/>
                                         </connections>
                                     </button>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lqH-ee-2Ub">
-                                        <rect key="frame" x="16" y="60" width="343" height="345"/>
+                                    <pickerView contentMode="scaleAspectFit" semanticContentAttribute="playback" translatesAutoresizingMaskIntoConstraints="NO" id="lqH-ee-2Ub" userLabel="Selector Picker Viewer" customClass="PickerViewShadow" customModule="Sales" customModuleProvider="target">
+                                        <rect key="frame" x="87.5" y="724.5" width="200" height="216"/>
+                                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="L3J-6w-3Lg"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="dataSource" destination="h1R-Po-wcn" id="WZL-NA-Bip"/>
                                             <outlet property="delegate" destination="h1R-Po-wcn" id="1uv-FH-KtS"/>
@@ -485,8 +492,6 @@
                                     <constraint firstItem="VFR-Ly-Aw7" firstAttribute="centerX" secondItem="lZ0-Ro-Xr5" secondAttribute="centerX" id="Ace-Wn-Gzy"/>
                                     <constraint firstItem="VFR-Ly-Aw7" firstAttribute="top" secondItem="lZ0-Ro-Xr5" secondAttribute="bottom" constant="48" id="AtM-KT-ePr"/>
                                     <constraint firstAttribute="trailing" secondItem="PJo-6D-xkh" secondAttribute="trailing" constant="16" id="FAt-HT-DtS"/>
-                                    <constraint firstItem="lqH-ee-2Ub" firstAttribute="width" secondItem="PJo-6D-xkh" secondAttribute="width" id="ScJ-vk-4az"/>
-                                    <constraint firstItem="lqH-ee-2Ub" firstAttribute="height" secondItem="PJo-6D-xkh" secondAttribute="height" id="Wq8-yG-pi0"/>
                                     <constraint firstItem="PJo-6D-xkh" firstAttribute="top" secondItem="K1W-OX-JKJ" secondAttribute="top" constant="60" id="Yna-eU-MG3"/>
                                     <constraint firstItem="QvC-Nu-ZyR" firstAttribute="centerX" secondItem="PJo-6D-xkh" secondAttribute="centerX" id="arR-hf-XTW"/>
                                     <constraint firstItem="lZ0-Ro-Xr5" firstAttribute="centerX" secondItem="QvC-Nu-ZyR" secondAttribute="centerX" id="cIn-UY-PUy"/>
@@ -497,7 +502,7 @@
                                     <constraint firstItem="lZ0-Ro-Xr5" firstAttribute="width" secondItem="QvC-Nu-ZyR" secondAttribute="width" id="jQa-C7-HQm"/>
                                     <constraint firstItem="lqH-ee-2Ub" firstAttribute="centerX" secondItem="PJo-6D-xkh" secondAttribute="centerX" id="v8b-IH-aYi"/>
                                     <constraint firstItem="QvC-Nu-ZyR" firstAttribute="centerY" secondItem="PJo-6D-xkh" secondAttribute="centerY" id="wA7-bH-kMB"/>
-                                    <constraint firstItem="lqH-ee-2Ub" firstAttribute="centerY" secondItem="PJo-6D-xkh" secondAttribute="centerY" id="ybs-Ho-DPp"/>
+                                    <constraint firstItem="lqH-ee-2Ub" firstAttribute="centerY" secondItem="PJo-6D-xkh" secondAttribute="centerY" constant="600" id="ybs-Ho-DPp"/>
                                     <constraint firstItem="PJo-6D-xkh" firstAttribute="centerX" secondItem="K1W-OX-JKJ" secondAttribute="centerX" id="zgX-DB-EZA"/>
                                 </constraints>
                             </scrollView>
@@ -514,7 +519,9 @@
                     <connections>
                         <outlet property="choosedDateLabel" destination="5D0-yn-mps" id="kW0-Dh-tE3"/>
                         <outlet property="chosenClient" destination="4ZI-3e-lhU" id="ZQp-jg-rC8"/>
+                        <outlet property="chosenPurpose" destination="0Ot-ep-wyR" id="zqd-pH-Yik"/>
                         <outlet property="chosenType" destination="ZPj-xe-lVQ" id="116-gr-iaM"/>
+                        <outlet property="selectorPickerVIewXPostion" destination="ybs-Ho-DPp" id="prW-3V-FlC"/>
                         <outlet property="selectorPickerView" destination="lqH-ee-2Ub" id="Uau-Dn-iwS"/>
                         <segue destination="ir8-ey-eWY" kind="showDetail" identifier="GetDate" id="rXO-vd-9Iu"/>
                     </connections>

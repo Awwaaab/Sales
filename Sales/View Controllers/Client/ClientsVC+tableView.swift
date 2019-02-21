@@ -32,7 +32,6 @@ extension ClientsVC : UITableViewDataSource , UITableViewDelegate {
     }
     
     
-    
     func handlingTableViewDelegateAndDatasource(){
         clientsTableView.delegate = self
         clientsTableView.dataSource = self

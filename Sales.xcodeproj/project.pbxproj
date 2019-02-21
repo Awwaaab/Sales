@@ -36,6 +36,8 @@
 		BB95359721B0370400280D42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB95359521B0370400280D42 /* LaunchScreen.storyboard */; };
 		BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9535A021B050CD00280D42 /* NavigationShadow.swift */; };
 		BB95CD7021DE47E700603DB4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95CD6F21DE47E700603DB4 /* UserModel.swift */; };
+		BBA09640221ECB6D00EB1ED4 /* NewVisit+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0963F221ECB6D00EB1ED4 /* NewVisit+PickerView.swift */; };
+		BBA09642221EEC4200EB1ED4 /* PickerViewShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA09641221EEC4200EB1ED4 /* PickerViewShadow.swift */; };
 		BBA745A52201C81D0074005E /* Balace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA745A42201C81D0074005E /* Balace.swift */; };
 		BBAEEEF022106D700060994E /* NewVisitshadowStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEEEEF22106D6F0060994E /* NewVisitshadowStack.swift */; };
 		BBAEEEF222107AAB0060994E /* DatePikerViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */; };
@@ -87,6 +89,8 @@
 		BB95359821B0370400280D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9535A021B050CD00280D42 /* NavigationShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationShadow.swift; sourceTree = "<group>"; };
 		BB95CD6F21DE47E700603DB4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		BBA0963F221ECB6D00EB1ED4 /* NewVisit+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewVisit+PickerView.swift"; sourceTree = "<group>"; };
+		BBA09641221EEC4200EB1ED4 /* PickerViewShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewShadow.swift; sourceTree = "<group>"; };
 		BBA745A42201C81D0074005E /* Balace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balace.swift; sourceTree = "<group>"; };
 		BBAEEEEF22106D6F0060994E /* NewVisitshadowStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitshadowStack.swift; sourceTree = "<group>"; };
 		BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePikerViewcontroller.swift; sourceTree = "<group>"; };
@@ -326,6 +330,8 @@
 			isa = PBXGroup;
 			children = (
 				BBE6FB53220999D3000C874E /* NewVisitViewController.swift */,
+				BBA09641221EEC4200EB1ED4 /* PickerViewShadow.swift */,
+				BBA0963F221ECB6D00EB1ED4 /* NewVisit+PickerView.swift */,
 				BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */,
 				BBEF89962219B99C00A09B7B /* Date picker */,
 			);
@@ -496,6 +502,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD7BA0421DCE6F3004B5CA5 /* visits.swift in Sources */,
+				BBA09640221ECB6D00EB1ED4 /* NewVisit+PickerView.swift in Sources */,
 				BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */,
 				BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */,
 				BB95358F21B0370400280D42 /* SignInVC.swift in Sources */,
@@ -510,6 +517,7 @@
 				BBB53BDF21FE3476004A9109 /* unsplashClients.swift in Sources */,
 				BB5CF21021F0990E001D140F /* APIClient.swift in Sources */,
 				BB4404492207558F005D51A8 /* MoreVC.swift in Sources */,
+				BBA09642221EEC4200EB1ED4 /* PickerViewShadow.swift in Sources */,
 				BBE6FB5922099AE7000C874E /* ChooseYourWay.swift in Sources */,
 				BB580A5C21DBD35D000B8A60 /* VisitsVC.swift in Sources */,
 				BB5CF21621F0E427001D140F /* VisitViewModel.swift in Sources */,

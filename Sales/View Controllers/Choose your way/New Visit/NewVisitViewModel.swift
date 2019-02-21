@@ -20,6 +20,7 @@ class NewVisitViewMode {
     
     var onlyClient : [String] = []
     var onlytype : [String] = []
+    var onlyPurpose : [String] = []
     //MARK: UI
     
     var showError : ((Error) -> Void)?
@@ -45,6 +46,9 @@ class NewVisitViewMode {
                     }
                     for otype in rootNewVisits.types{
                         self.onlytype.append(otype.name)
+                    }
+                    for opurpose in rootNewVisits.purposes{
+                        self.onlyPurpose.append(opurpose.name)
                     }
                     print(self.onlyClient)
                    //print(self.selectCLient)

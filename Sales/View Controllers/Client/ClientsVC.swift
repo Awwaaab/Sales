@@ -13,7 +13,7 @@ class ClientsVC: UIViewController {
     //  var clientsDataArray = [Clients]()
     var FilteredData = [Clients]()
     var isSearching = false
-    
+    var rows = 0
     let clientViewModel = ClientViewMode(client: unsplashClients())
     
     @IBOutlet weak var clientsSearchBar: UISearchBar!
@@ -33,25 +33,37 @@ class ClientsVC: UIViewController {
     }
     
     
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         clientsSearchBar.isHidden = true
         handlingSearchBarDelegateAndKeytype()
         handlingTableViewDelegateAndDatasource()
         clientsTableView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :nil)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         clientViewModel.showError = { (error) in
-            print(error)
+            print("==================================\(error)=================================")
+            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+                self.tabBarController?.selectedIndex=0
+                
+            })
+            
         }
         clientViewModel.reloadData = {
-            
             self.clientsTableView.handlAnimation(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView :nil)
         }
         clientViewModel.fetchclients()
         
     }
-    
-    
     
 }
 

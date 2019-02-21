@@ -15,7 +15,7 @@ class ClientViewMode {
     //MARK: properties
   private var client : APIClient
      var clients : [Clients] = []
-  
+    var onlyClient : [String] = []
 
     //MARK: UI
 
@@ -35,6 +35,9 @@ class ClientViewMode {
                 switch either {
                 case .success(let clientRoot):
                    self.clients = clientRoot.clients
+                   for oclient in clientRoot.clients{
+                    self.onlyClient.append(oclient.name)
+                   }
                     print(self.clients)
                 self.reloadData?()
                 case .error(let error):
