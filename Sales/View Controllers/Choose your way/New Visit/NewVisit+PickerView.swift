@@ -77,7 +77,8 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
         alertcont.addAction(alertactSave)
         alertcont.addTextField{ (alertTextfiled) in
             alertTextfiled.placeholder = "price"
-            alertTextfiled.borderStyle = UITextBorderStyle.bezel
+            alertTextfiled.borderStyle = UITextBorderStyle.roundedRect
+            alertTextfiled.keyboardType = UIKeyboardType.numberPad
             
             self.alertTextfiled = alertTextfiled
         }

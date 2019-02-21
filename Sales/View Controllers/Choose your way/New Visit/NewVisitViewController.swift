@@ -29,7 +29,7 @@ class NewVisitViewController: UIViewController , DateDelegate  {
     @IBOutlet weak var writenPirce : UILabel!
     
     var toViewController : selectController?
-    var priceTextFiled = ""
+    var priceTextFiled  = ""
     var alertTextfiled : UITextField?
     
     //MARK: date delegate
