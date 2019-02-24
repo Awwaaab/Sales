@@ -15,11 +15,20 @@
 
 import UIKit
 
+
+protocol DelegateClient : NSObjectProtocol{
+    func moveData(data : String)
+}
+
 enum selectController {
     case client , type , purposes
 }
 
-class NewVisitViewController: UIViewController , DateDelegate  {
+class NewVisitViewController: UIViewController , DateDelegate  , DelegateClient{
+   
+    
+
+    
     
     @IBOutlet weak var selectorPickerVIewXPostion: NSLayoutConstraint!
     @IBOutlet weak var selectorPickerView: UIPickerView!
@@ -37,13 +46,25 @@ class NewVisitViewController: UIViewController , DateDelegate  {
     func didSelectDate(date: String) {
         choosedDateLabel.text = date
     }
-    
+     //MARK: client delegate
+    weak var ClientDelegate : DelegateClient?
+    func moveData(data: String) {
+        self.chosenClient?.text = data
+        print("************************\(data)*****************")
+    }
+  
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "GetDate"{
             let controller = segue.destination as? DatePikerViewcontroller
             controller?.delegate = self
         }
+        
+//        if segue.identifier == "GetClient"{
+//            let controller = segue.destination as? SelectClient
+//              self = controller?.delegateClient
+//        }
+        
         
     }
     
@@ -52,15 +73,16 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         performSegue(withIdentifier: "GetDate", sender: sender)
     }
     @IBAction func getClient(_ sender:UIButton){
-        toViewController = selectController.client
-        selectorPickerView.reloadAllComponents()
-         handleSelectorAnimation()
+        performSegue(withIdentifier: "GetClient", sender: sender)
+        //        toViewController = selectController.client
+        //        selectorPickerView.reloadAllComponents()
+        //         handleSelectorAnimation()
     }
     @IBAction func gettype(_ sender:UIButton){
         toViewController = selectController.type
-         selectorPickerView.reloadAllComponents()
-         handleSelectorAnimation()
-
+        selectorPickerView.reloadAllComponents()
+        handleSelectorAnimation()
+        
     }
     @IBAction func getPurposes(_ sender:UIButton){
         toViewController = selectController.purposes
@@ -73,7 +95,7 @@ class NewVisitViewController: UIViewController , DateDelegate  {
     }
     
     @IBAction func saveButton(_ sender: UIButton) {
-      handleSelectorAnimation()
+        handleSelectorAnimation()
     }
     
     
@@ -87,20 +109,20 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         selectorPickerVIewXPostion.constant = 600
         UIView.animate(withDuration: 0.35) {
             self.view.layoutIfNeeded()}
-    
+        
     }
     
-   
     
-      let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
+    
+    let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      hideSelectorPickeriewWhenTappedAround()
+        hideSelectorPickeriewWhenTappedAround()
         self.selectorPickerView.layer.cornerRadius = 27
-         self.selectorPickerView.clipsToBounds = true
-  
-       // selectorPickerView.isHidden = true
+        self.selectorPickerView.clipsToBounds = true
+        
+        // selectorPickerView.isHidden = true
     }
     
     
@@ -119,8 +141,8 @@ class NewVisitViewController: UIViewController , DateDelegate  {
         
         
     }
-   
-
+    
+    
 }
 
 
