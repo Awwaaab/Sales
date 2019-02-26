@@ -1,5 +1,5 @@
 //
-//  DateDelegateProtocol.swift
+//  DelegateProtocol.swift
 //  Sales
 //
 //  Created by Awab Aly-mac on 13/2/19.
@@ -8,9 +8,17 @@
 
 import UIKit
 
-protocol DateDelegate :  NSObjectProtocol{
-    func didSelectDate(date : String)
-}
+
 protocol controllerDelegate :  NSObjectProtocol{
     func didSelectcontroller(controller : selectController)
 }
+
+protocol DelegateClient : NSObjectProtocol{
+    func moveData(data : String)
+}
+
+//
+//enum selectController {
+//    case client , type , purposes
+//}
+

@@ -7,35 +7,27 @@
 //
 //
 
-//    SidemenyLayout.constant = (SidemenyLayout.constant == 0 ) ? self.view.frame.size.width * 0.7 : 0
-//    UIView.animate(withDuration: 1) {
-//    self.view.layoutIfNeeded()}
-
-
 
 import UIKit
-
-
-protocol DelegateClient : NSObjectProtocol{
-    func moveData(data : String)
-}
 
 enum selectController {
     case client , type , purposes
 }
 
-class NewVisitViewController: UIViewController , DateDelegate  , DelegateClient{
-   
-    
-
+class NewVisitViewController: UIViewController   , DelegateClient{
     
     
-    @IBOutlet weak var selectorPickerVIewXPostion: NSLayoutConstraint!
+    
+    
+    @IBOutlet weak var DatePickerView : UIDatePicker!
+    @IBOutlet weak var DatePickerVIewYPostion: NSLayoutConstraint!
+    @IBOutlet weak var selectorPickerVIewYPostion: NSLayoutConstraint!
     @IBOutlet weak var selectorPickerView: UIPickerView!
+    @IBOutlet weak var chosenDate: UILabel!
     @IBOutlet weak var chosenClient: UILabel!
     @IBOutlet weak var chosenType: UILabel!
     @IBOutlet weak var chosenPurpose : UILabel!
-    @IBOutlet weak var writenPirce : UILabel!
+  
     
     var toViewController : selectController?
     var priceTextFiled  = ""
@@ -43,73 +35,75 @@ class NewVisitViewController: UIViewController , DateDelegate  , DelegateClient{
     
     //MARK: date delegate
     weak var   delegate : controllerDelegate?
-    func didSelectDate(date: String) {
-        choosedDateLabel.text = date
-    }
-     //MARK: client delegate
-    weak var ClientDelegate : DelegateClient?
+
+    //MARK: client delegate
     func moveData(data: String) {
         self.chosenClient?.text = data
-        print("************************\(data)*****************")
+       
     }
-  
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "GetDate"{
-            let controller = segue.destination as? DatePikerViewcontroller
-            controller?.delegate = self
-        }
-        
-//        if segue.identifier == "GetClient"{
-//            let controller = segue.destination as? SelectClient
-//              self = controller?.delegateClient
-//        }
-        
-        
+                if segue.identifier == "GetClient"{
+                   let controller = segue.destination as? SelectClient
+                    controller?.delegateClient = self
+                }
     }
     
-    @IBOutlet weak var choosedDateLabel : UILabel!
+  
     @IBAction func getdate(_ sender:UIButton){
-        performSegue(withIdentifier: "GetDate", sender: sender)
+         let current = Date()
+       setDate(date: current)
+    handlePickerPostionViewAnimation(anchor: DatePickerVIewYPostion, centerConstant: -120)
     }
     @IBAction func getClient(_ sender:UIButton){
         performSegue(withIdentifier: "GetClient", sender: sender)
-        //        toViewController = selectController.client
-        //        selectorPickerView.reloadAllComponents()
-        //         handleSelectorAnimation()
+        
     }
     @IBAction func gettype(_ sender:UIButton){
         toViewController = selectController.type
         selectorPickerView.reloadAllComponents()
-        handleSelectorAnimation()
+        handlePickerPostionViewAnimation(anchor: selectorPickerVIewYPostion, centerConstant: 0)
         
     }
     @IBAction func getPurposes(_ sender:UIButton){
         toViewController = selectController.purposes
         selectorPickerView.reloadAllComponents()
-        handleSelectorAnimation()
+        handlePickerPostionViewAnimation(anchor: selectorPickerVIewYPostion, centerConstant: 0)
     }
     
-    @IBAction func writePrice(_ sender:UIButton){
-        writeThePriceAlertController()
-    }
+
     
     @IBAction func saveButton(_ sender: UIButton) {
-        handleSelectorAnimation()
+       hideSelectorAndDatePickerWhenUseSaveButton()
     }
     
     
+    private func handleDatePicker(){
+        DatePickerView.layer.cornerRadius = 20
+        DatePickerView.clipsToBounds = true
+        DatePickerView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
+    }
     
-    func hideSelectorPickeriewWhenTappedAround() {
+    
+    private func hideSelectorPickeriewWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewVisitViewController.dismissSelectorPickeriew))
         view.addGestureRecognizer(tap)
     }
     
     @objc func dismissSelectorPickeriew() {
-        selectorPickerVIewXPostion.constant = 600
+        selectorPickerVIewYPostion.constant = 600
         UIView.animate(withDuration: 0.35) {
             self.view.layoutIfNeeded()}
-        
+    }
+    
+    private func hideSelectorAndDatePickerWhenUseSaveButton(){
+        if selectorPickerVIewYPostion.constant == 0 {
+            handlePickerPostionViewAnimation(anchor: selectorPickerVIewYPostion, centerConstant: 600)
+        }
+        if DatePickerVIewYPostion.constant == -120 {
+            handlePickerPostionViewAnimation(anchor: DatePickerVIewYPostion, centerConstant: 480)
+        }
     }
     
     
@@ -138,10 +132,23 @@ class NewVisitViewController: UIViewController , DateDelegate  , DelegateClient{
             self.selectorPickerView.reloadAllComponents()
         }
         newVisitViewModel.fetchNewVisit()
-        
-        
+        handleDatePicker()
+        DatePickerView.addTarget(self, action: #selector(NewVisitViewController.putDateIntoITsLable), for: .valueChanged )
+       
     }
     
+    
+    //MARK: date func
+    @objc func putDateIntoITsLable(){
+       setDate(date: DatePickerView.date)
+    }
+    
+    func setDate(date : Date){
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd MMM,yyyy hh:mm a"
+        chosenDate.text = dateFormatter.string(from: date)
+        
+    }
     
 }
 

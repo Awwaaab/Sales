@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB0F5DD22225AA3100624E97 /* NewVisit+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F5DCE2225AA3000624E97 /* NewVisit+PickerView.swift */; };
+		BB0F5DD32225AA3100624E97 /* NewVisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F5DCF2225AA3000624E97 /* NewVisitViewModel.swift */; };
+		BB0F5DD42225AA3100624E97 /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F5DD02225AA3000624E97 /* NewVisitViewController.swift */; };
+		BB0F5DD52225AA3100624E97 /* DelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F5DD12225AA3100624E97 /* DelegateProtocol.swift */; };
+		BB0F5DD92225AA6800624E97 /* SelectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F5DD72225AA6800624E97 /* SelectClient.swift */; };
+		BB0F5DDA2225AA6800624E97 /* SelectClient+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F5DD82225AA6800624E97 /* SelectClient+TableView.swift */; };
+		BB0F5DDC2225AA9600624E97 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB0F5DDB2225AA9600624E97 /* Main.storyboard */; };
 		BB0F607621EDEF8200A79945 /* clients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607521EDEF8200A79945 /* clients.swift */; };
 		BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607721EDF3CE00A79945 /* ClientsVC.swift */; };
 		BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB0F607921EE0C4E00A79945 /* ClientsVC+tableView.swift */; };
@@ -16,7 +23,6 @@
 		BB44044D22075879005D51A8 /* MoreVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB44044C22075879005D51A8 /* MoreVC+TableView.swift */; };
 		BB4404532207665F005D51A8 /* MoreTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB4404512207665F005D51A8 /* MoreTableViewCell.swift */; };
 		BB4404542207665F005D51A8 /* MoreTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB4404522207665F005D51A8 /* MoreTableViewCell.xib */; };
-		BB538B8F221474EF00BC5C02 /* DateDelegateProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB538B8E221474EF00BC5C02 /* DateDelegateProtocol.swift */; };
 		BB580A5621DBA981000B8A60 /* HomeShadowButtom.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */; };
 		BB580A5C21DBD35D000B8A60 /* VisitsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5B21DBD35D000B8A60 /* VisitsVC.swift */; };
 		BB580A5F21DBDA1D000B8A60 /* VisitTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB580A5D21DBDA1D000B8A60 /* VisitTableViewCell.swift */; };
@@ -29,28 +35,22 @@
 		BB69017B220219A800585AB7 /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017A220219A800585AB7 /* BalanceViewModel.swift */; };
 		BB69017D220219AD00585AB7 /* BalanceVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */; };
 		BB69017F22021B6D00585AB7 /* unsplashBalance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017E22021B6D00585AB7 /* unsplashBalance.swift */; };
-		BB70FA902222AB35000AA3B0 /* SelectClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70FA8E2222AB35000AA3B0 /* SelectClient.swift */; };
 		BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95358C21B0370400280D42 /* AppDelegate.swift */; };
 		BB95358F21B0370400280D42 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95358E21B0370400280D42 /* SignInVC.swift */; };
-		BB95359221B0370400280D42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB95359021B0370400280D42 /* Main.storyboard */; };
 		BB95359421B0370400280D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB95359321B0370400280D42 /* Assets.xcassets */; };
 		BB95359721B0370400280D42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB95359521B0370400280D42 /* LaunchScreen.storyboard */; };
 		BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9535A021B050CD00280D42 /* NavigationShadow.swift */; };
 		BB95CD7021DE47E700603DB4 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95CD6F21DE47E700603DB4 /* UserModel.swift */; };
-		BBA09640221ECB6D00EB1ED4 /* NewVisit+PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA0963F221ECB6D00EB1ED4 /* NewVisit+PickerView.swift */; };
 		BBA745A52201C81D0074005E /* Balace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA745A42201C81D0074005E /* Balace.swift */; };
 		BBAEEEF022106D700060994E /* NewVisitshadowStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEEEEF22106D6F0060994E /* NewVisitshadowStack.swift */; };
-		BBAEEEF222107AAB0060994E /* DatePikerViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */; };
 		BBAFB5AC21E2718C000D04D6 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */; };
 		BBB53BDF21FE3476004A9109 /* unsplashClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB53BDE21FE3476004A9109 /* unsplashClients.swift */; };
 		BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC172AD21FE27EA0031153B /* ClientViewModel.swift */; };
 		BBD7BA0421DCE6F3004B5CA5 /* visits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD7BA0321DCE6F3004B5CA5 /* visits.swift */; };
-		BBE6FB54220999D3000C874E /* NewVisitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB53220999D3000C874E /* NewVisitViewController.swift */; };
 		BBE6FB5922099AE7000C874E /* ChooseYourWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB5822099AE7000C874E /* ChooseYourWay.swift */; };
 		BBE6FB5B2209A0B5000C874E /* customWideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB5A2209A0B5000C874E /* customWideButton.swift */; };
 		BBEF898F2219AB6F00A09B7B /* addVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF898E2219AB6F00A09B7B /* addVisit.swift */; };
 		BBEF89912219B27300A09B7B /* unsplashNewVisit.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF89902219B27300A09B7B /* unsplashNewVisit.swift */; };
-		BBEF89952219B3A500A09B7B /* NewVisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */; };
 		BBEF899B2219BE8500A09B7B /* NewVisitClientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBEF89992219BE8500A09B7B /* NewVisitClientCell.swift */; };
 		BBEF899C2219BE8500A09B7B /* NewVisitClientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BBEF899A2219BE8500A09B7B /* NewVisitClientCell.xib */; };
 		BBF86E3B221ABE7600FF8E96 /* LayerExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBF86E3A221ABE7600FF8E96 /* LayerExtentions.swift */; };
@@ -58,6 +58,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		BB0F5DCE2225AA3000624E97 /* NewVisit+PickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NewVisit+PickerView.swift"; sourceTree = "<group>"; };
+		BB0F5DCF2225AA3000624E97 /* NewVisitViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVisitViewModel.swift; sourceTree = "<group>"; };
+		BB0F5DD02225AA3000624E97 /* NewVisitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
+		BB0F5DD12225AA3100624E97 /* DelegateProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DelegateProtocol.swift; sourceTree = "<group>"; };
+		BB0F5DD72225AA6800624E97 /* SelectClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectClient.swift; sourceTree = "<group>"; };
+		BB0F5DD82225AA6800624E97 /* SelectClient+TableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelectClient+TableView.swift"; sourceTree = "<group>"; };
+		BB0F5DDB2225AA9600624E97 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BB0F607521EDEF8200A79945 /* clients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = clients.swift; sourceTree = "<group>"; };
 		BB0F607721EDF3CE00A79945 /* ClientsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientsVC.swift; sourceTree = "<group>"; };
 		BB0F607921EE0C4E00A79945 /* ClientsVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ClientsVC+tableView.swift"; sourceTree = "<group>"; };
@@ -67,7 +74,6 @@
 		BB44044C22075879005D51A8 /* MoreVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoreVC+TableView.swift"; sourceTree = "<group>"; };
 		BB4404512207665F005D51A8 /* MoreTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTableViewCell.swift; sourceTree = "<group>"; };
 		BB4404522207665F005D51A8 /* MoreTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoreTableViewCell.xib; sourceTree = "<group>"; };
-		BB538B8E221474EF00BC5C02 /* DateDelegateProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDelegateProtocol.swift; sourceTree = "<group>"; };
 		BB580A5521DBA981000B8A60 /* HomeShadowButtom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeShadowButtom.swift; sourceTree = "<group>"; };
 		BB580A5B21DBD35D000B8A60 /* VisitsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitsVC.swift; sourceTree = "<group>"; };
 		BB580A5D21DBDA1D000B8A60 /* VisitTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VisitTableViewCell.swift; sourceTree = "<group>"; };
@@ -80,30 +86,24 @@
 		BB69017A220219A800585AB7 /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
 		BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceVC+tableView.swift"; sourceTree = "<group>"; };
 		BB69017E22021B6D00585AB7 /* unsplashBalance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashBalance.swift; sourceTree = "<group>"; };
-		BB70FA8E2222AB35000AA3B0 /* SelectClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectClient.swift; sourceTree = "<group>"; };
 		BB95358921B0370400280D42 /* Sales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB95358C21B0370400280D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB95358E21B0370400280D42 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
-		BB95359121B0370400280D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BB95359321B0370400280D42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB95359621B0370400280D42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB95359821B0370400280D42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB9535A021B050CD00280D42 /* NavigationShadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationShadow.swift; sourceTree = "<group>"; };
 		BB95CD6F21DE47E700603DB4 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
-		BBA0963F221ECB6D00EB1ED4 /* NewVisit+PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewVisit+PickerView.swift"; sourceTree = "<group>"; };
 		BBA745A42201C81D0074005E /* Balace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balace.swift; sourceTree = "<group>"; };
 		BBAEEEEF22106D6F0060994E /* NewVisitshadowStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitshadowStack.swift; sourceTree = "<group>"; };
-		BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePikerViewcontroller.swift; sourceTree = "<group>"; };
 		BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBB53BDE21FE3476004A9109 /* unsplashClients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashClients.swift; sourceTree = "<group>"; };
 		BBC172AD21FE27EA0031153B /* ClientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		BBD7BA0321DCE6F3004B5CA5 /* visits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visits.swift; sourceTree = "<group>"; };
-		BBE6FB53220999D3000C874E /* NewVisitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewController.swift; sourceTree = "<group>"; };
 		BBE6FB5822099AE7000C874E /* ChooseYourWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourWay.swift; sourceTree = "<group>"; };
 		BBE6FB5A2209A0B5000C874E /* customWideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = customWideButton.swift; sourceTree = "<group>"; };
 		BBEF898E2219AB6F00A09B7B /* addVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addVisit.swift; sourceTree = "<group>"; };
 		BBEF89902219B27300A09B7B /* unsplashNewVisit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplashNewVisit.swift; sourceTree = "<group>"; };
-		BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitViewModel.swift; sourceTree = "<group>"; };
 		BBEF89992219BE8500A09B7B /* NewVisitClientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitClientCell.swift; sourceTree = "<group>"; };
 		BBEF899A2219BE8500A09B7B /* NewVisitClientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NewVisitClientCell.xib; sourceTree = "<group>"; };
 		BBF86E3A221ABE7600FF8E96 /* LayerExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayerExtentions.swift; sourceTree = "<group>"; };
@@ -141,6 +141,28 @@
 				E032F2302E774534490FE365 /* Pods-Sales.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		BB0F5DCD2225A9D800624E97 /* New Visit */ = {
+			isa = PBXGroup;
+			children = (
+				BB0F5DD62225AA4300624E97 /* selectClient */,
+				BB0F5DD12225AA3100624E97 /* DelegateProtocol.swift */,
+				BB0F5DCE2225AA3000624E97 /* NewVisit+PickerView.swift */,
+				BB0F5DD02225AA3000624E97 /* NewVisitViewController.swift */,
+				BB0F5DCF2225AA3000624E97 /* NewVisitViewModel.swift */,
+			);
+			name = "New Visit";
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		BB0F5DD62225AA4300624E97 /* selectClient */ = {
+			isa = PBXGroup;
+			children = (
+				BB0F5DD72225AA6800624E97 /* SelectClient.swift */,
+				BB0F5DD82225AA6800624E97 /* SelectClient+TableView.swift */,
+			);
+			path = selectClient;
 			sourceTree = "<group>";
 		};
 		BB44044722075567005D51A8 /* More */ = {
@@ -192,14 +214,6 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
-		BB70FA8C2222AB23000AA3B0 /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				BB70FA8E2222AB35000AA3B0 /* SelectClient.swift */,
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		BB95358021B0370400280D42 = {
 			isa = PBXGroup;
 			children = (
@@ -227,6 +241,7 @@
 				BB95CD6821DE3A1400603DB4 /* Model */,
 				BB95CD6721DE3A0500603DB4 /* View Controllers */,
 				BB95CD6A21DE3B4100603DB4 /* Views */,
+				BB0F5DDB2225AA9600624E97 /* Main.storyboard */,
 				BB95359821B0370400280D42 /* Info.plist */,
 			);
 			path = Sales;
@@ -285,7 +300,6 @@
 				BBEF89982219BE0C00A09B7B /* NewVisitClientCell */,
 				BB44044E22076610005D51A8 /* More */,
 				BB95CD6921DE3ADE00603DB4 /* VisitsCell */,
-				BB95359021B0370400280D42 /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -334,22 +348,10 @@
 			path = Client;
 			sourceTree = "<group>";
 		};
-		BBE6FB56220999EB000C874E /* New Visit */ = {
-			isa = PBXGroup;
-			children = (
-				BB70FA8C2222AB23000AA3B0 /* New Group */,
-				BBE6FB53220999D3000C874E /* NewVisitViewController.swift */,
-				BBA0963F221ECB6D00EB1ED4 /* NewVisit+PickerView.swift */,
-				BBEF89942219B3A500A09B7B /* NewVisitViewModel.swift */,
-				BBEF89962219B99C00A09B7B /* Date picker */,
-			);
-			path = "New Visit";
-			sourceTree = "<group>";
-		};
 		BBE6FB5722099AAE000C874E /* Choose your way */ = {
 			isa = PBXGroup;
 			children = (
-				BBE6FB56220999EB000C874E /* New Visit */,
+				BB0F5DCD2225A9D800624E97 /* New Visit */,
 				BBE6FB5822099AE7000C874E /* ChooseYourWay.swift */,
 			);
 			path = "Choose your way";
@@ -361,15 +363,6 @@
 				BBEF898E2219AB6F00A09B7B /* addVisit.swift */,
 			);
 			path = NewVisit;
-			sourceTree = "<group>";
-		};
-		BBEF89962219B99C00A09B7B /* Date picker */ = {
-			isa = PBXGroup;
-			children = (
-				BB538B8E221474EF00BC5C02 /* DateDelegateProtocol.swift */,
-				BBAEEEF122107AAB0060994E /* DatePikerViewcontroller.swift */,
-			);
-			path = "Date picker";
 			sourceTree = "<group>";
 		};
 		BBEF89982219BE0C00A09B7B /* NewVisitClientCell */ = {
@@ -457,9 +450,9 @@
 				BB95359721B0370400280D42 /* LaunchScreen.storyboard in Resources */,
 				BB4404542207665F005D51A8 /* MoreTableViewCell.xib in Resources */,
 				BB580A6021DBDA1D000B8A60 /* VisitTableViewCell.xib in Resources */,
+				BB0F5DDC2225AA9600624E97 /* Main.storyboard in Resources */,
 				BBEF899C2219BE8500A09B7B /* NewVisitClientCell.xib in Resources */,
 				BB95359421B0370400280D42 /* Assets.xcassets in Resources */,
-				BB95359221B0370400280D42 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,30 +503,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				BBD7BA0421DCE6F3004B5CA5 /* visits.swift in Sources */,
-				BBA09640221ECB6D00EB1ED4 /* NewVisit+PickerView.swift in Sources */,
-				BB70FA902222AB35000AA3B0 /* SelectClient.swift in Sources */,
 				BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */,
 				BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */,
 				BB95358F21B0370400280D42 /* SignInVC.swift in Sources */,
 				BBEF89912219B27300A09B7B /* unsplashNewVisit.swift in Sources */,
 				BBAEEEF022106D700060994E /* NewVisitshadowStack.swift in Sources */,
 				BB4404532207665F005D51A8 /* MoreTableViewCell.swift in Sources */,
-				BBEF89952219B3A500A09B7B /* NewVisitViewModel.swift in Sources */,
 				BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */,
 				BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */,
-				BB538B8F221474EF00BC5C02 /* DateDelegateProtocol.swift in Sources */,
 				BB580A5F21DBDA1D000B8A60 /* VisitTableViewCell.swift in Sources */,
 				BBB53BDF21FE3476004A9109 /* unsplashClients.swift in Sources */,
+				BB0F5DD32225AA3100624E97 /* NewVisitViewModel.swift in Sources */,
+				BB0F5DDA2225AA6800624E97 /* SelectClient+TableView.swift in Sources */,
 				BB5CF21021F0990E001D140F /* APIClient.swift in Sources */,
 				BB4404492207558F005D51A8 /* MoreVC.swift in Sources */,
 				BBE6FB5922099AE7000C874E /* ChooseYourWay.swift in Sources */,
 				BB580A5C21DBD35D000B8A60 /* VisitsVC.swift in Sources */,
 				BB5CF21621F0E427001D140F /* VisitViewModel.swift in Sources */,
 				BBA745A52201C81D0074005E /* Balace.swift in Sources */,
-				BBAEEEF222107AAB0060994E /* DatePikerViewcontroller.swift in Sources */,
 				BBEF899B2219BE8500A09B7B /* NewVisitClientCell.swift in Sources */,
 				BB44044D22075879005D51A8 /* MoreVC+TableView.swift in Sources */,
 				BBEF898F2219AB6F00A09B7B /* addVisit.swift in Sources */,
+				BB0F5DD92225AA6800624E97 /* SelectClient.swift in Sources */,
+				BB0F5DD42225AA3100624E97 /* NewVisitViewController.swift in Sources */,
 				BB5CF21221F0A6E0001D140F /* Endpoint.swift in Sources */,
 				BB0F607621EDEF8200A79945 /* clients.swift in Sources */,
 				BBF86E3B221ABE7600FF8E96 /* LayerExtentions.swift in Sources */,
@@ -541,9 +533,10 @@
 				BB5CF21421F0D4DB001D140F /* unsplashVisits.swift in Sources */,
 				BB69017F22021B6D00585AB7 /* unsplashBalance.swift in Sources */,
 				BB69017B220219A800585AB7 /* BalanceViewModel.swift in Sources */,
+				BB0F5DD22225AA3100624E97 /* NewVisit+PickerView.swift in Sources */,
+				BB0F5DD52225AA3100624E97 /* DelegateProtocol.swift in Sources */,
 				BB0F607E21EE19FA00A79945 /* extentions.swift in Sources */,
 				BB95CD7021DE47E700603DB4 /* UserModel.swift in Sources */,
-				BBE6FB54220999D3000C874E /* NewVisitViewController.swift in Sources */,
 				BBE6FB5B2209A0B5000C874E /* customWideButton.swift in Sources */,
 				BB580A5621DBA981000B8A60 /* HomeShadowButtom.swift in Sources */,
 				BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */,
@@ -555,14 +548,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		BB95359021B0370400280D42 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BB95359121B0370400280D42 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		BB95359521B0370400280D42 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
