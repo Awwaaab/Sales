@@ -16,11 +16,14 @@ class NewVisitViewMode {
     private var client : APIClient
     
     var selectCLient : [ClientsAV] = []
+    var currentCLient : [ClientsAV] = []
     var selectType : [TypesAV] = []
     
-    var onlyClient : [String] = []
+// geting the type , Purpose in array to put it into a picker view
     var onlytype : [String] = []
+    var dedupetype : [String] = []
     var onlyPurpose : [String] = []
+    var dedupePurpose : [String] = []
     //MARK: UI
     
     var showError : ((Error) -> Void)?
@@ -32,6 +35,24 @@ class NewVisitViewMode {
     }
     
     
+    
+    func removeDuplicates(array: [String]) -> [String] {
+        var encountered = Set<String>()
+        var result: [String] = []
+        for value in array {
+            if encountered.contains(value) {
+               
+            }
+            else {
+                encountered.insert(value)
+                result.append(value)
+            }
+        }
+        return result
+    }
+
+    
+    
     func fetchNewVisit(){
         if let client = client as? unsplashNewVisit{
             let endpoint = unsplashEndpoint.newVisit(user_id: "2")
@@ -40,18 +61,19 @@ class NewVisitViewMode {
                 case .success(let rootNewVisits):
                     
                     self.selectCLient = rootNewVisits.clients
-                    self.selectType = rootNewVisits.types
-                    for oClient in rootNewVisits.clients{
-                        self.onlyClient.append(oClient.name)
-                    }
+                    self.currentCLient =  rootNewVisits.clients
                     for otype in rootNewVisits.types{
                         self.onlytype.append(otype.name)
                     }
                     for opurpose in rootNewVisits.purposes{
                         self.onlyPurpose.append(opurpose.name)
                     }
-                    print(self.onlyClient)
-                   //print(self.selectCLient)
+                   
+                     self.dedupetype = self.removeDuplicates(array: self.onlytype)
+                    self.dedupePurpose = self.removeDuplicates(array: self.onlyPurpose)
+                
+                    
+                    
                     self.reloadData?()
                 case .error(let error):
                     self.showError!(error)

@@ -18,12 +18,11 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
         
         
         
-        if toViewController == selectController.client{
-            return newVisitViewModel.onlyClient.count
-        }else if toViewController == selectController.type{
-            return newVisitViewModel.onlytype.count
-        }else{
-            return newVisitViewModel.onlyPurpose.count
+        if toViewController == selectController.type{
+            return newVisitViewModel.dedupetype.count
+          
+        }else {
+            return newVisitViewModel.dedupePurpose.count
         }
         
         
@@ -32,24 +31,20 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         
         
-        if toViewController == selectController.client{
-            return newVisitViewModel.onlyClient[row]
-        }else  if toViewController == selectController.type{
-            return newVisitViewModel.onlytype[row]
+          if toViewController == selectController.type{
+            return newVisitViewModel.dedupetype[row]
         } else{
-            return newVisitViewModel.onlyPurpose[row]
+            return newVisitViewModel.dedupePurpose[row]
         }
         
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        if toViewController == selectController.client{
-            self.chosenClient.text = newVisitViewModel.onlyClient[row]
-        }else if toViewController == selectController.type{
-            self.chosenType.text = newVisitViewModel.onlytype[row]
+         if toViewController == selectController.type{
+            self.chosenType.text = newVisitViewModel.dedupetype[row]
         } else{
-            self.chosenPurpose.text = newVisitViewModel.onlyPurpose[row]
+            self.chosenPurpose.text = newVisitViewModel.dedupePurpose[row]
         }
         
     }

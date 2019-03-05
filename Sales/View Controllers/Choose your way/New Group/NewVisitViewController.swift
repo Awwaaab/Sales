@@ -11,12 +11,10 @@
 import UIKit
 
 enum selectController {
-    case client , type , purposes
+    case  type , purposes
 }
 
 class NewVisitViewController: UIViewController   , DelegateClient{
-    
-    
     
     
     @IBOutlet weak var DatePickerView : UIDatePicker!
@@ -33,8 +31,7 @@ class NewVisitViewController: UIViewController   , DelegateClient{
     var priceTextFiled  = ""
     var alertTextfiled : UITextField?
     
-    //MARK: date delegate
-    weak var   delegate : controllerDelegate?
+   
 
     //MARK: client delegate
     func moveData(data: String) {
@@ -46,7 +43,7 @@ class NewVisitViewController: UIViewController   , DelegateClient{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 if segue.identifier == "GetClient"{
                    let controller = segue.destination as? SelectClient
-                    controller?.delegateClient = self
+                   controller?.delegateClient = self
                 }
     }
     

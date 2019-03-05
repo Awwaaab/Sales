@@ -8,33 +8,23 @@
 
 import UIKit
 
-class SelectClient: UIViewController , controllerDelegate {
-   
-    var ChosenCLient : String = ""
-    var Controller : selectController = selectController.client
-   
-    
-    weak var delegateClient : DelegateClient?
-    
-    
-    
-   
-    func didSelectcontroller(controller: selectController) {
-        Controller = controller
-    }
+class SelectClient: UIViewController  {
+  
     
     @IBOutlet weak var selectClientTableView : UITableView!
+    @IBOutlet weak var ClientSearchBar: UISearchBar!
+  
+    
+    var ChosenCLient : String = ""
+   
+    weak var delegateClient : DelegateClient?
+   
+    
+
     let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
 
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-  
-       
-
         newVisitViewModel.showError = { (error) in
             print(error)
         }

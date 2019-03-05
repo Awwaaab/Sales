@@ -8,17 +8,6 @@
 
 import UIKit
 
-
-protocol controllerDelegate :  NSObjectProtocol{
-    func didSelectcontroller(controller : selectController)
-}
-
 protocol DelegateClient : NSObjectProtocol{
     func moveData(data : String)
 }
-
-//
-//enum selectController {
-//    case client , type , purposes
-//}
-
