@@ -148,8 +148,8 @@
 			children = (
 				BB0F5DD62225AA4300624E97 /* selectClient */,
 				BB0F5DD12225AA3100624E97 /* DelegateProtocol.swift */,
-				BB0F5DCE2225AA3000624E97 /* NewVisit+PickerView.swift */,
 				BB0F5DD02225AA3000624E97 /* NewVisitViewController.swift */,
+				BB0F5DCE2225AA3000624E97 /* NewVisit+PickerView.swift */,
 				BB0F5DCF2225AA3000624E97 /* NewVisitViewModel.swift */,
 			);
 			name = "New Visit";

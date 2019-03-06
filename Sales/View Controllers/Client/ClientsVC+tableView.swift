@@ -32,6 +32,7 @@ extension ClientsVC : UITableViewDataSource , UITableViewDelegate {
     }
     
     
+    
     func handlingTableViewDelegateAndDatasource(){
         clientsTableView.delegate = self
         clientsTableView.dataSource = self
@@ -44,20 +45,24 @@ extension ClientsVC :  UISearchBarDelegate{
     
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if searchBar.text == nil || searchBar.text == "" {
+        if searchText.isEmpty  {
             isSearching = false
             view.endEditing(true)
             clientsTableView.reloadData()
         }else{
             isSearching = true
-            FilteredData = clientViewModel.clients.filter({$0.name.contains(searchText)})
+            FilteredData = clientViewModel.clients.filter({ (client) -> Bool in
+                client.name.lowercased().contains(searchText.lowercased())
+            })
             clientsTableView.reloadData()
         }
     }
     
-    func handlingSearchBarDelegateAndKeytype(){
-        clientsSearchBar.delegate = self
-        clientsSearchBar.returnKeyType = UIReturnKeyType.done
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.clientsSearchBar.endEditing(true)
     }
+
+    
+    
     
 }

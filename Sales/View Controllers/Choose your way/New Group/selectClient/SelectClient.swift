@@ -9,22 +9,20 @@
 import UIKit
 
 class SelectClient: UIViewController  {
-  
-    
+   
     @IBOutlet weak var selectClientTableView : UITableView!
-    @IBOutlet weak var ClientSearchBar: UISearchBar!
-  
-    
+    @IBOutlet weak var clientsSearchBar : UISearchBar!
     var ChosenCLient : String = ""
-   
     weak var delegateClient : DelegateClient?
-   
-    
 
     let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        clientsSearchBar.returnKeyType = UIReturnKeyType.done
         newVisitViewModel.showError = { (error) in
             print(error)
         }
@@ -34,8 +32,6 @@ class SelectClient: UIViewController  {
         newVisitViewModel.fetchNewVisit()
        
     }
-
-  
 
 }
 

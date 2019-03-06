@@ -56,10 +56,11 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
         UIView.animate(withDuration: 0.35) {
             self.view.layoutIfNeeded()}
     }
-    
-    
-    
 }
 
-
-
+extension NewVisitViewController :  UITextFieldDelegate {
+    func textFieldShouldReturn(_ scoreText: UITextField) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+}

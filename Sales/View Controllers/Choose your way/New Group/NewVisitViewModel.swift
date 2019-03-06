@@ -19,7 +19,7 @@ class NewVisitViewMode {
     var currentCLient : [ClientsAV] = []
     var selectType : [TypesAV] = []
     
-// geting the type , Purpose in array to put it into a picker view
+    // geting the type , Purpose in array to put it into a picker view
     var onlytype : [String] = []
     var dedupetype : [String] = []
     var onlyPurpose : [String] = []
@@ -41,7 +41,7 @@ class NewVisitViewMode {
         var result: [String] = []
         for value in array {
             if encountered.contains(value) {
-               
+                
             }
             else {
                 encountered.insert(value)
@@ -50,7 +50,7 @@ class NewVisitViewMode {
         }
         return result
     }
-
+    
     
     
     func fetchNewVisit(){
@@ -68,10 +68,10 @@ class NewVisitViewMode {
                     for opurpose in rootNewVisits.purposes{
                         self.onlyPurpose.append(opurpose.name)
                     }
-                   
-                     self.dedupetype = self.removeDuplicates(array: self.onlytype)
+                    
+                    self.dedupetype = self.removeDuplicates(array: self.onlytype)
                     self.dedupePurpose = self.removeDuplicates(array: self.onlyPurpose)
-                
+                    
                     
                     
                     self.reloadData?()

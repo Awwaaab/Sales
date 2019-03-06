@@ -21,8 +21,6 @@ extension SelectClient : UITableViewDelegate , UITableViewDataSource {
         delegateClient?.moveData(data: ChosenCLient)
         self.navigationController?.popViewController(animated: true)
     }
-    
-    
 }
 
 extension SelectClient : UISearchBarDelegate {
@@ -32,6 +30,9 @@ extension SelectClient : UISearchBarDelegate {
             return client.name.lowercased().contains(searchText.lowercased())
         })
         self.selectClientTableView.reloadData()
+    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        self.clientsSearchBar.endEditing(true)
     }
 }
 

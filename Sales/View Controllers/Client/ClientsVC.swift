@@ -42,7 +42,7 @@ class ClientsVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         clientsSearchBar.isHidden = true
-        handlingSearchBarDelegateAndKeytype()
+        clientsSearchBar.returnKeyType = UIReturnKeyType.done
         handlingTableViewDelegateAndDatasource()
         clientsTableView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :nil)
     }
