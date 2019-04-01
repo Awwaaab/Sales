@@ -11,21 +11,78 @@ import UIKit
 class SignInVC: UIViewController {
 
     
-    @IBOutlet weak var loginEmailTextField: UITextField!
-    @IBOutlet weak var loginPasswordTextField: UILabel!
+    @IBOutlet var SingInANDPassword: [UITextField]!
+    
+
+    
+    
     @IBAction func signInButton(_ sender: UIButton) {
-        print("user name : \(String(describing: loginEmailTextField?.text))" )
-        print("user name : \(String(describing: loginPasswordTextField?.text))" ) 
+        
+        textValidator()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
      
-      
-
+    }
     
-
+    
+    
+    func textValidator(){
+        var valid = Bool()
+        for x in SingInANDPassword.indices{
+            switch x {
+            case 0:
+                if (SingInANDPassword[0].text?.isEmpty)!{
+                    SingInANDPassword[0].attributedPlaceholder = NSAttributedString(string: "please enter your email", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
+                    valid = false
+                }else{
+                    valid = isValidEmail(email: SingInANDPassword[0].text)
+                    if valid == false {
+                        self.AnimationShakeTextField(textField: SingInANDPassword[0])
+                    }
+                }
+            case 1:
+                if (SingInANDPassword[1].text?.isEmpty)!{
+                    SingInANDPassword[1].attributedPlaceholder = NSAttributedString(string: "please enter your password", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
+                    valid = false
+                }else if (SingInANDPassword[1].text?.count)! < 8 {
+                    SingInANDPassword[1].attributedPlaceholder = NSAttributedString(string: "the password must be at leat 8 ", attributes:[ NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+                    valid = false
+                }
+            default:
+                
+                self.showAlertController(alerTitle: "Error", alertMessage: "please contant your developer", alertPreferredStyle: .alert, alertActionTitle: "ok", alertActoinStyle: .default)
+                
+            }
+        }
+        //    return valid
     }
 
+
+    func isValidEmail(email:String?) -> Bool {
+        
+        guard email != nil else { return false }
+        
+        let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let pred = NSPredicate(format:"SELF MATCHES %@", regEx)
+        let result = pred.evaluate(with: email)
+        return result
+       
+    }
+    
+    
+    func AnimationShakeTextField(textField:UITextField){
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.07
+        animation.repeatCount = 4
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: .init(x: textField.center.x - 5, y: textField.center.y))
+        animation.toValue = NSValue(cgPoint: .init(x: textField.center.x  + 5, y: textField.center.y))
+        textField.layer.add(animation, forKey: "position")
+    }
+    
+    
 }
 

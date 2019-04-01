@@ -85,3 +85,46 @@ class NewVisitViewMode {
     
     
 }
+
+class AddVisitViewMode {
+    
+    
+    //MARK: properties
+    private var client : APIClient
+    
+    var selectCLient : String = ""
+   
+    //MARK: UI
+    
+    var showError : ((Error) -> Void)?
+    var reloadData : (() -> Void)?
+    
+    
+    init(client : APIClient) {
+        self.client = client
+    }
+    
+    
+    
+
+
+    
+    func fetchAddVisit(){
+        if let client = client as? unsplashAddVisit{
+            let endPoint = unsplashEndpoint.addVisit(sale: "2", client: "99", type: "5", purpose: "2", purpose_value: "123", comment: "xdfg", longitude: "30.001973999999997", latitude: "31.170903799999998")
+            client.fetchAddVisit(with: endPoint, completion: { (either) in
+                switch either {
+                case .success(let rootNewVisits):
+                    self.selectCLient = rootNewVisits.message
+                   print(self.selectCLient)
+                    self.reloadData?()
+                case .error(let error):
+                    self.showError!(error)
+                }
+                
+            })
+        }
+    }
+    
+    
+}

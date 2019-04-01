@@ -80,12 +80,12 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     
     
     
-    @IBAction func singleSelectionSaveButton(_ sender: UIButton) {
-        
+    @IBAction func SaveButton(_ sender: UIButton) {
+ 
         validator()
     }
     
-    @IBAction func SaveGivenDataButton(_ sender: UIButton) {
+    @IBAction func SaveGivenDataButtonThatAppearWithPickerView(_ sender: UIButton) {
         hideSelectorAndDatePickerWithAnimation()
     }
     
@@ -144,14 +144,22 @@ class NewVisitViewController: UIViewController  , DelegateClient {
         }else if vildatorCounter != 6  {
             self.showAlertController(alerTitle: "input Error", alertMessage: message, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
         }else{
-            print("succes")
+           newAddVisitViewModel.fetchAddVisit()
+            newAddVisitViewModel.showError = { (error) in
+                print("==================================\(error)=================================")
+                self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
+            }
         }
         
     }
     
     
+   
+    
+    
     
     let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
+    let newAddVisitViewModel = AddVisitViewMode(client: unsplashAddVisit())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -194,6 +202,4 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     }
     
 }
-
-
 
