@@ -12,42 +12,45 @@ class SignInVC: UIViewController {
 
     
     @IBOutlet var SingInANDPassword: [UITextField]!
-    
-
-    
+//    var valid : Bool!
+       var valid  = true
     
     @IBAction func signInButton(_ sender: UIButton) {
         
-        textValidator()
+        if(textValidator()){
+            print("send to API============ valid : \(valid )========")
+//                 print("send to API============ valid : \(valid ?? true )========")
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
+        
     }
     
     
     
-    func textValidator(){
-        var valid = Bool()
-        for x in SingInANDPassword.indices{
-            switch x {
-            case 0:
-                if (SingInANDPassword[0].text?.isEmpty)!{
-                    SingInANDPassword[0].attributedPlaceholder = NSAttributedString(string: "please enter your email", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
+    func textValidator() -> Bool{
+        valid = true
+        for x in SingInANDPassword{
+            switch x.textContentType{
+            case .emailAddress:
+                if (x.text?.isEmpty)!{
+                    x.attributedPlaceholder = NSAttributedString(string: "please enter your email", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
                     valid = false
                 }else{
-                    valid = isValidEmail(email: SingInANDPassword[0].text)
+                    valid = isValidEmail(email: x.text)
                     if valid == false {
-                        self.AnimationShakeTextField(textField: SingInANDPassword[0])
+                        self.AnimationShakeTextField(textField: x)
                     }
                 }
-            case 1:
-                if (SingInANDPassword[1].text?.isEmpty)!{
-                    SingInANDPassword[1].attributedPlaceholder = NSAttributedString(string: "please enter your password", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
+            case .password:
+                if (x.text?.isEmpty)!{
+                    x.attributedPlaceholder = NSAttributedString(string: "please enter your password", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
                     valid = false
-                }else if (SingInANDPassword[1].text?.count)! < 8 {
-                    SingInANDPassword[1].attributedPlaceholder = NSAttributedString(string: "the password must be at leat 8 ", attributes:[ NSAttributedStringKey.foregroundColor : UIColor.darkGray])
+                }else if (x.text?.count)! < 8 {
+                    x.text = ""
+                    x.attributedPlaceholder = NSAttributedString(string: "the password must be at least 8 ", attributes:[ NSAttributedStringKey.foregroundColor : UIColor.darkGray])
                     valid = false
                 }
             default:
@@ -56,10 +59,10 @@ class SignInVC: UIViewController {
                 
             }
         }
-        //    return valid
+        return valid
     }
-
-
+    
+    
     func isValidEmail(email:String?) -> Bool {
         
         guard email != nil else { return false }
@@ -69,7 +72,7 @@ class SignInVC: UIViewController {
         let pred = NSPredicate(format:"SELF MATCHES %@", regEx)
         let result = pred.evaluate(with: email)
         return result
-       
+        
     }
     
     
