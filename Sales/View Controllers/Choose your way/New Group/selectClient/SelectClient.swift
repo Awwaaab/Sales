@@ -15,7 +15,7 @@ class SelectClient: UIViewController  {
     var ChosenCLient : String = ""
     weak var delegateClient : DelegateClient?
 
-    let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
+    let newVisitViewModel = NewVisitViewMode(client: unsplash())
 
     
     

@@ -29,9 +29,9 @@ class ClientViewMode {
     
     
     func fetchclients(){
-        if let client = client as? unsplashClients{
+        if let client = client as? unsplash{
             let endpoint = unsplashEndpoint.client(user_id: "1", number: "0")
-            client.fetechClients(with: endpoint, completion: { (either) in
+            client.fetechClients(with: endpoint, completion: { (either : Either<clientsRoot>) in
                 switch either {
                 case .success(let clientRoot):
                    self.clients = clientRoot.clients

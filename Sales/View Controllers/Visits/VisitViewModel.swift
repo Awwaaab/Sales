@@ -28,9 +28,9 @@ class VisitViewMode {
     
     
     func fetchVisits(){
-        if let client = client as? unsplashVisits{
+        if let client = client as? unsplash{
             let endpoint = unsplashEndpoint.visit(user_id: "2", number: "0")
-            client.fetechVisits(with: endpoint, completion: { (either) in
+            client.fetechClients(with: endpoint, completion: { (either : Either<visitRoot>) in
                 switch either {
                 case .success(let rootVisits):
                     self.visits = rootVisits.visits

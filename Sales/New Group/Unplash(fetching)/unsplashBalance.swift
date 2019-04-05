@@ -8,7 +8,7 @@
 import Foundation
 
 class  unsplashBalance : APIClient{
-    static let baseurl = "http://hyper-design.com/NewSales/api/user"
+//    static let baseurl = "http://hyper-design.com/NewSales/api/user"
     
     
     func fetechBalance(with Endpoint : EndPoint , completion : @escaping (Either<balanceRoot>)-> Void){

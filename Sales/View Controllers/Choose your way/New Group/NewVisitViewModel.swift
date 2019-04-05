@@ -54,9 +54,9 @@ class NewVisitViewMode {
     
     
     func fetchNewVisit(){
-        if let client = client as? unsplashNewVisit{
+        if let client = client as? unsplash{
             let endpoint = unsplashEndpoint.newVisit(user_id: "2")
-            client.fetechNewVisit(with: endpoint, completion: { (either) in
+            client.fetechClients(with: endpoint, completion: { (either : Either<AddVisitRoot>) in
                 switch either {
                 case .success(let rootNewVisits):
                     
@@ -110,9 +110,9 @@ class AddVisitViewMode {
 
     
     func fetchAddVisit(){
-        if let client = client as? unsplashAddVisit{
+        if let client = client as? unsplash{
             let endPoint = unsplashEndpoint.addVisit(sale: "2", client: "99", type: "5", purpose: "2", purpose_value: "123", comment: "xdfg", longitude: "30.001973999999997", latitude: "31.170903799999998")
-            client.fetchAddVisit(with: endPoint, completion: { (either) in
+            client.fetechClients(with: endPoint, completion: { (either : Either<AddVisitMessage>) in
                 switch either {
                 case .success(let rootNewVisits):
                     self.selectCLient = rootNewVisits.message

@@ -46,7 +46,7 @@
                                                         <color key="textColor" red="0.15686274509803921" green="0.76470588235294112" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="I" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGv-Wj-Er1">
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PGv-Wj-Er1">
                                                         <rect key="frame" x="61" y="26" width="194.5" height="17"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -158,13 +158,16 @@
                     </view>
                     <navigationItem key="navigationItem" title="Sign in" id="FGc-k6-rTF"/>
                     <connections>
+                        <outlet property="EmailTextFeild" destination="PGv-Wj-Er1" id="73q-w7-GVp"/>
+                        <outlet property="passwordTextFeild" destination="air-N1-QTx" id="p18-NT-CVI"/>
                         <outletCollection property="SingInANDPassword" destination="PGv-Wj-Er1" collectionClass="NSMutableArray" id="sY1-uA-Ofw"/>
                         <outletCollection property="SingInANDPassword" destination="air-N1-QTx" collectionClass="NSMutableArray" id="iX3-wW-Lir"/>
+                        <segue destination="fGC-Aa-6VG" kind="presentation" identifier="SingIn" id="FoO-hU-nlw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1134" y="-664"/>
+            <point key="canvasLocation" x="1871" y="-645"/>
         </scene>
         <!--Choose Your Way -->
         <scene sceneID="xkk-lB-R6d">
@@ -258,7 +261,11 @@
                         <viewLayoutGuide key="safeArea" id="W0B-sI-zSw"/>
                     </view>
                     <navigationItem key="navigationItem" title="Choose Your Way " id="Fhh-O1-g7s">
-                        <barButtonItem key="rightBarButtonItem" image="image2" id="c9U-7v-Li0"/>
+                        <barButtonItem key="rightBarButtonItem" image="image2" id="c9U-7v-Li0">
+                            <connections>
+                                <action selector="signOut:" destination="lqT-Lp-66T" id="LZT-8a-TVR"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <segue destination="h1R-Po-wcn" kind="show" identifier="GoToNewVisit" id="OPg-0O-Q9I"/>
@@ -657,7 +664,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5t9-nZ-Yod" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="302" y="-664"/>
+            <point key="canvasLocation" x="1871" y="-1516"/>
         </scene>
         <!--Clients-->
         <scene sceneID="Du6-dl-Paa">
@@ -893,7 +900,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZ7-RD-vda" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2580" y="-664"/>
+            <point key="canvasLocation" x="2823" y="-645"/>
         </scene>
         <!--Home-->
         <scene sceneID="HVa-hk-PTo">

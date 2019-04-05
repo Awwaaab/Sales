@@ -14,7 +14,7 @@ class VisitsVC: UIViewController {
     @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     @IBOutlet weak var VisitsTableView: UITableView!
  
-    let VisitViewModel = VisitViewMode(client: unsplashVisits())
+    let VisitViewModel = VisitViewMode(client: unsplash())
     
     
     override func viewWillAppear(_ animated: Bool) {

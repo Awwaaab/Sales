@@ -158,8 +158,8 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     
     
     
-    let newVisitViewModel = NewVisitViewMode(client: unsplashNewVisit())
-    let newAddVisitViewModel = AddVisitViewMode(client: unsplashAddVisit())
+    let newVisitViewModel = NewVisitViewMode(client: unsplash())
+    let newAddVisitViewModel = AddVisitViewMode(client: unsplash())
     
     override func viewDidLoad() {
         super.viewDidLoad()

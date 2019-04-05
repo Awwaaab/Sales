@@ -45,7 +45,10 @@ extension APIClient{
                 return
             }
             guard let value = try? JSONDecoder().decode(T.self, from:data!) else{
-                completion(Either.error(APIError.decodingError))
+                completion(Either.error(APIError.decodingError)
+                
+                
+                )
                 return
             }
             DispatchQueue.main.async {

@@ -16,7 +16,7 @@ class BalanceVC: UIViewController {
     @IBOutlet weak var balanceTabelView: UITableView!
     @IBOutlet weak var noOfBalance: UILabel!
     
-    let balanceViewModel = BalanceViewModel(client: unsplashBalance())
+    let balanceViewModel = BalanceViewModel(client: unsplash())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,14 +44,14 @@ class BalanceVC: UIViewController {
         balanceViewModel.fetchBalance()
     }
     
-    deinit {
-        balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
-    }
+//    deinit {
+//        balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
+//    }
     // you can use this peace of code to do the remivew
-    //    override func viewWillDisappear(_ animated: Bool) {
-    //        super.viewWillDisappear(animated)
-    //        balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
-    //    }
+        override func viewWillDisappear(_ animated: Bool) {
+            super.viewWillDisappear(animated)
+            balanceTabelView.removeObserver(self, forKeyPath: "contentSize")
+        }
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let obj = object as? UITableView{

@@ -14,7 +14,7 @@ class ClientsVC: UIViewController {
     var FilteredData = [Clients]()
     var isSearching = false
     var rows = 0
-    let clientViewModel = ClientViewMode(client: unsplashClients())
+    let clientViewModel = ClientViewMode(client: unsplash())
     
     @IBOutlet weak var clientsSearchBar: UISearchBar!
     @IBOutlet weak var clientsTableView: UITableView!
