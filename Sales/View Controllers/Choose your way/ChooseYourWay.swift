@@ -28,7 +28,7 @@ class ChooseYourWay: UIViewController {
     }
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        signInViewModel.singIn = false
+        signInViewModel.shouldSingIn = false
         
     }
     override func didReceiveMemoryWarning() {

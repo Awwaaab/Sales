@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SignInVC: UIViewController {
+class SignInVC: UIViewController , UITextFieldDelegate{
 
     
     @IBOutlet weak var EmailTextFeild: UITextField!
@@ -31,36 +31,71 @@ class SignInVC: UIViewController {
             guard  let userEmail = EmailTextFeild.text ,  let userPassword = passwordTextFeild.text else {return}
             signInViewModel.fetchUser(email: userEmail, passowrd: userPassword)
             signInViewModel.reloadData = {
-                if self.signInViewModel.singIn == true {
+                if self.signInViewModel.shouldSingIn == true {
                     self.performSegue(withIdentifier: "SingIn", sender: nil)
                 }
             }
-           
-            
-          
-         
-
-            
         }
     }
     
     
-    
+    var alertMessageTitle = ""
+    var alertMessageDescription = ""
+   private let NetworkErrorResponse = "The Internet connection appears to be offline."
+   private let wrongPasswordResponse  = "The operation couldn’t be completed. (Sales.APIError error 1.)"
     override func viewDidLoad() {
         super.viewDidLoad()
         signInViewModel.showError = { (error) in
+         
+            switch error.localizedDescription {
+            case self.wrongPasswordResponse:
+                self.alertMessageTitle = "wrong password"
+                self.alertMessageDescription = "username or password is not valid please check them and try again"
+            case self.NetworkErrorResponse:
+                self.alertMessageTitle = "you are Offline!"
+                self.alertMessageDescription = "The Internet connection appears to be offline"
+            
+            default:
+                self.alertMessageTitle = "Unkown error"
+                self.alertMessageDescription = "please call your developer"
+            }
+            
+            
             print("==================================\(error)=================================")
             DispatchQueue.main.async {
-                self.showAlertController(alerTitle: "wrong password", alertMessage: "username or password is not valid please check them and try again", alertPreferredStyle: .alert, alertActionTitle: "ok", alertActoinStyle: .default)
+                self.showAlertController(alerTitle:  self.alertMessageTitle , alertMessage: self.alertMessageDescription, alertPreferredStyle: .alert, alertActionTitle: "ok", alertActoinStyle: .default)
                 
-                print(error.localizedDescription)
+                
+                print("this is what you looking for <<< \(error.localizedDescription)>>>>>")
             }
-           
-        }
-    
         
+        }
+
+        EmailTextFeild.returnKeyType = UIReturnKeyType.done
+        passwordTextFeild.returnKeyType = UIReturnKeyType.done
+        EmailTextFeild.delegate = self
+        passwordTextFeild.delegate = self
+        hideKeyBoardWhenTappedAround()
+    }
+    
+    
+    
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        EmailTextFeild.resignFirstResponder()
+        passwordTextFeild.resignFirstResponder()
+        return true
     }
    
+    private func hideKeyBoardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignInVC.dismissKeyBoard))
+        view.addGestureRecognizer(tap)
+    }
+    @objc func dismissKeyBoard() {
+        self.view.endEditing(true) //hiding the keyboard when tap around
+     
+    }
+
     
     func textValidator() -> Bool{
         valid = true

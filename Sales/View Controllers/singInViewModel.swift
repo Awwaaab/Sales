@@ -19,7 +19,7 @@ class SingInViewModel {
     
     //MARK: UI
     
-    var singIn : Bool = false
+    var shouldSingIn : Bool = false
     var showError : ((Error) -> Void)?
     var reloadData : (() -> Void)?
     init(client : APIClient) {
@@ -30,19 +30,18 @@ class SingInViewModel {
     
     func fetchUser(email : String, passowrd : String){
         if let client = client as? unsplash{
-//             let _ = unsplashEndpoint.user(email: "info@hyper-design.com" ,password: "23456")
+//             let adminEndpoint = unsplashEndpoint.user(email: "info@hyper-design.com" ,password: "123456")
               let endpoint = unsplashEndpoint.user(email: email ,password: passowrd)
             client.fetechClients(with: endpoint, completion: { (either : Either<UserRoot>) in
                 switch either {
                 case .success(let rootVisits):
                     self.userInfo = rootVisits.user
                     print(self.userInfo)
-                    self.singIn = true
+                    self.shouldSingIn = true
                     self.reloadData?()
                 case .error(let error):
                     self.showError!(error)
-                  self.singIn = false
-                    
+                  self.shouldSingIn = false
                 }
                 
             })
