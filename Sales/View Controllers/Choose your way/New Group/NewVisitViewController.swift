@@ -9,7 +9,7 @@
 
 
 import UIKit
-
+import CoreLocation
 enum selectController {
     case  type , purposes
 }
@@ -36,11 +36,15 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     var alertTextfiled : UITextField?
     var vildatorCounter = 0
     var message = " "
+    var locationManager:CLLocationManager!
+    var currentLatitude = ""
+    var currentLongtude = ""
+    var chosenClientObject : ClientsAV!
     
     //MARK: client delegate
-    func moveData(data: String) {
-        self.chosenClient?.text = data
-        
+    func moveData(data: ClientsAV) {
+        self.chosenClient?.text = data.name
+        self.chosenClientObject = data
     }
     
     
@@ -82,7 +86,19 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     
     @IBAction func SaveButton(_ sender: UIButton) {
  
-        validator()
+        if (validator()){
+            self.newAddVisitViewModel.fetchAddVisit()
+//            let chosenClientId = self.chosenClientObject.id
+//            guard let chosenDate = self.chosenDate.text  ,let chosenType = self.chosenType.text , let chosenPurpose = self.chosenPurpose.text ,  let Price = self.PriceTextField.text ,  let description = self.descriptionTextFeild.text   else {return}
+//            self.newAddVisitViewModel.fetchAddVisit(saleId: <#T##String#>, clientId: String(chosenClientId), type: <#T##String#>, purpose: <#T##String#>, purposValue: Price, comment: description, longtitde: currentLongtude, latidue: currentLatitude)
+            newAddVisitViewModel.showError = { (error) in
+                print("==================================\(error)=================================")
+                self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
+                
+                print("<<<<<this is what you are looking for\(error.localizedDescription)>>>>>>>")
+            }
+            
+        }
     }
     
     @IBAction func SaveGivenDataButtonThatAppearWithPickerView(_ sender: UIButton) {
@@ -117,7 +133,7 @@ class NewVisitViewController: UIViewController  , DelegateClient {
         }
     }
     
-    func validator(){
+    func validator() -> Bool{
         vildatorCounter = 0
         
         if (descriptionTextFeild.text?.isEmpty)! {
@@ -141,14 +157,12 @@ class NewVisitViewController: UIViewController  , DelegateClient {
 
         if vildatorCounter == 0 {
             self.showAlertController(alerTitle: "input Error", alertMessage: "All data requard", alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
+            return false
         }else if vildatorCounter != 6  {
             self.showAlertController(alerTitle: "input Error", alertMessage: message, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
+            return false
         }else{
-           newAddVisitViewModel.fetchAddVisit()
-            newAddVisitViewModel.showError = { (error) in
-                print("==================================\(error)=================================")
-                self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
-            }
+            return true
         }
         
     }
@@ -163,9 +177,22 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+      
+        
         hideSelectorPickeriewWhenTappedAround()
         self.selectorPickerView.layer.cornerRadius = 27
         self.selectorPickerView.clipsToBounds = true
+        
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        locationManager.requestAlwaysAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled(){
+            locationManager.startUpdatingLocation()
+        }
         
     }
     

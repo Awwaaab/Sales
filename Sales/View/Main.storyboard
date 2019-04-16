@@ -26,7 +26,7 @@
         <!--Sign in-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="SignInVC" customModule="Sales" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SignIn" id="BYZ-38-t0r" customClass="SignInVC" customModule="Sales" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -113,6 +113,9 @@
                                                 <state key="normal" title="Forget password ?">
                                                     <color key="titleColor" red="0.26051741839999998" green="0.2605243921" blue="0.260520637" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="forgetPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LvR-HJ-7p0"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -159,7 +162,13 @@
                     <navigationItem key="navigationItem" title="Sign in" id="FGc-k6-rTF"/>
                     <connections>
                         <outlet property="EmailTextFeild" destination="PGv-Wj-Er1" id="73q-w7-GVp"/>
+                        <outlet property="forgetpasswordOutlet" destination="FpM-3f-ndc" id="Ped-XE-dlw"/>
+                        <outlet property="passwordImage" destination="G0z-e3-PCe" id="zal-fM-4Ji"/>
+                        <outlet property="passwordLabel" destination="sgt-v4-UqO" id="KWb-8g-wQi"/>
+                        <outlet property="passwordShadow" destination="1TG-Cz-u9z" id="l5P-rQ-zkR"/>
                         <outlet property="passwordTextFeild" destination="air-N1-QTx" id="p18-NT-CVI"/>
+                        <outlet property="signInButtonOutlet" destination="xdJ-pc-BXA" id="0pO-Hr-eaI"/>
+                        <outlet property="usernameOrEmailLabel" destination="MIO-3K-upr" id="6pi-Vw-rN4"/>
                         <outletCollection property="SingInANDPassword" destination="PGv-Wj-Er1" collectionClass="NSMutableArray" id="sY1-uA-Ofw"/>
                         <outletCollection property="SingInANDPassword" destination="air-N1-QTx" collectionClass="NSMutableArray" id="iX3-wW-Lir"/>
                         <segue destination="fGC-Aa-6VG" kind="presentation" identifier="SingIn" id="FoO-hU-nlw"/>
@@ -643,7 +652,7 @@
         <!--Navigation Shadow-->
         <scene sceneID="g9j-ea-Kh9">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="urI-MU-UQw" customClass="NavigationShadow" customModule="Sales" customModuleProvider="target" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="logInNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="urI-MU-UQw" customClass="NavigationShadow" customModule="Sales" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="cKc-hy-ecK">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>

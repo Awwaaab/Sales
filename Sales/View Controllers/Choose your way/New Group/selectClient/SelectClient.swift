@@ -12,7 +12,7 @@ class SelectClient: UIViewController  {
    
     @IBOutlet weak var selectClientTableView : UITableView!
     @IBOutlet weak var clientsSearchBar : UISearchBar!
-    var ChosenCLient : String = ""
+    var ChosenCLient : ClientsAV!
     weak var delegateClient : DelegateClient?
 
     let newVisitViewModel = NewVisitViewMode(client: unsplash())

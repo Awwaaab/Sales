@@ -24,3 +24,26 @@ extension UITableView {
     }
 }
 
+enum UserDefaultsKeys : String{
+    case isLogedIn , userID , user
+}
+
+
+extension UserDefaults{
+    
+    //MARK: Check Login
+    func setLoggedIn(value: Bool) {
+        set(value, forKey: UserDefaultsKeys.isLogedIn.rawValue)
+        //synchronize()
+    }
+    
+    func isLoggedIn()-> Bool {
+        return bool(forKey: UserDefaultsKeys.isLogedIn.rawValue)
+    }
+    func setUserID(ID : String){
+        set(ID, forKey: UserDefaultsKeys.userID.rawValue)
+    }
+    func getUserID()-> String {
+        return UserDefaultsKeys.userID.rawValue
+    }
+}

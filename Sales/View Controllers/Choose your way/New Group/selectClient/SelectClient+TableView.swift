@@ -17,7 +17,7 @@ extension SelectClient : UITableViewDelegate , UITableViewDataSource {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.ChosenCLient = newVisitViewModel.currentCLient[indexPath.row].name
+        self.ChosenCLient = newVisitViewModel.currentCLient[indexPath.row]
         delegateClient?.moveData(data: ChosenCLient)
         self.navigationController?.popViewController(animated: true)
     }

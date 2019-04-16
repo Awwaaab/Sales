@@ -36,6 +36,9 @@
 		BB6901792202188400585AB7 /* BalanceVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB6901782202188400585AB7 /* BalanceVC.swift */; };
 		BB69017B220219A800585AB7 /* BalanceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017A220219A800585AB7 /* BalanceViewModel.swift */; };
 		BB69017D220219AD00585AB7 /* BalanceVC+tableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */; };
+		BB71AC28225C88D8004F3A22 /* SignInVC+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71AC27225C88D8004F3A22 /* SignInVC+Validation.swift */; };
+		BB71AC2A225CBEB7004F3A22 /* NewVisitViewController+CLLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB71AC29225CBEB7004F3A22 /* NewVisitViewController+CLLocationManager.swift */; };
+		BB77BA6F225E09A2002C9E87 /* AddVisitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB77BA6E225E09A2002C9E87 /* AddVisitViewModel.swift */; };
 		BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95358C21B0370400280D42 /* AppDelegate.swift */; };
 		BB95358F21B0370400280D42 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB95358E21B0370400280D42 /* SignInVC.swift */; };
 		BB95359421B0370400280D42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB95359321B0370400280D42 /* Assets.xcassets */; };
@@ -86,6 +89,9 @@
 		BB6901782202188400585AB7 /* BalanceVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceVC.swift; sourceTree = "<group>"; };
 		BB69017A220219A800585AB7 /* BalanceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceViewModel.swift; sourceTree = "<group>"; };
 		BB69017C220219AD00585AB7 /* BalanceVC+tableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BalanceVC+tableView.swift"; sourceTree = "<group>"; };
+		BB71AC27225C88D8004F3A22 /* SignInVC+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SignInVC+Validation.swift"; sourceTree = "<group>"; };
+		BB71AC29225CBEB7004F3A22 /* NewVisitViewController+CLLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NewVisitViewController+CLLocationManager.swift"; sourceTree = "<group>"; };
+		BB77BA6E225E09A2002C9E87 /* AddVisitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddVisitViewModel.swift; sourceTree = "<group>"; };
 		BB95358921B0370400280D42 /* Sales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB95358C21B0370400280D42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB95358E21B0370400280D42 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -145,10 +151,11 @@
 			isa = PBXGroup;
 			children = (
 				BB0F5DD62225AA4300624E97 /* selectClient */,
-				BB0F5DD12225AA3100624E97 /* DelegateProtocol.swift */,
 				BB0F5DD02225AA3000624E97 /* NewVisitViewController.swift */,
+				BB71AC29225CBEB7004F3A22 /* NewVisitViewController+CLLocationManager.swift */,
 				BB0F5DCE2225AA3000624E97 /* NewVisit+PickerView.swift */,
 				BB0F5DCF2225AA3000624E97 /* NewVisitViewModel.swift */,
+				BB77BA6E225E09A2002C9E87 /* AddVisitViewModel.swift */,
 			);
 			name = "New Visit";
 			path = "New Group";
@@ -194,6 +201,8 @@
 			children = (
 				BB95CD6621DE39F500603DB4 /* shadows+classes */,
 				BB95359321B0370400280D42 /* Assets.xcassets */,
+				BB0F607D21EE19FA00A79945 /* extentions.swift */,
+				BB0F5DD12225AA3100624E97 /* DelegateProtocol.swift */,
 				BB95358C21B0370400280D42 /* AppDelegate.swift */,
 				BB95359521B0370400280D42 /* LaunchScreen.storyboard */,
 			);
@@ -213,8 +222,8 @@
 		BB6B54E721EF9F4400803E42 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				BB5CF20F21F0990E001D140F /* APIClient.swift */,
 				BB5CF21121F0A6E0001D140F /* Endpoint.swift */,
+				BB5CF20F21F0990E001D140F /* APIClient.swift */,
 				BBB53BDE21FE3476004A9109 /* unsplash.swift */,
 			);
 			name = Network;
@@ -247,7 +256,6 @@
 				BB95CD6821DE3A1400603DB4 /* Model */,
 				BB95CD6721DE3A0500603DB4 /* View Controllers */,
 				BB95CD6A21DE3B4100603DB4 /* View */,
-				BB0F5DDB2225AA9600624E97 /* Main.storyboard */,
 				BB95359821B0370400280D42 /* Info.plist */,
 			);
 			path = Sales;
@@ -273,9 +281,7 @@
 				BBC172AF21FE27F80031153B /* Client */,
 				BB690177220217A000585AB7 /* Balance */,
 				BB44044722075567005D51A8 /* More */,
-				BB95358E21B0370400280D42 /* SignInVC.swift */,
-				BB283E732253C58A000DA5DF /* singInViewModel.swift */,
-				BB0F607D21EE19FA00A79945 /* extentions.swift */,
+				BBC873DD2265E5D2009F4BAA /* SignIn */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -304,6 +310,7 @@
 		BB95CD6A21DE3B4100603DB4 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BB0F5DDB2225AA9600624E97 /* Main.storyboard */,
 				BBEF89982219BE0C00A09B7B /* NewVisitClientCell */,
 				BB44044E22076610005D51A8 /* More */,
 				BB95CD6921DE3ADE00603DB4 /* VisitsCell */,
@@ -354,6 +361,16 @@
 				BB0F607921EE0C4E00A79945 /* ClientsVC+tableView.swift */,
 			);
 			path = Client;
+			sourceTree = "<group>";
+		};
+		BBC873DD2265E5D2009F4BAA /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				BB95358E21B0370400280D42 /* SignInVC.swift */,
+				BB71AC27225C88D8004F3A22 /* SignInVC+Validation.swift */,
+				BB283E732253C58A000DA5DF /* singInViewModel.swift */,
+			);
+			path = SignIn;
 			sourceTree = "<group>";
 		};
 		BBE6FB5722099AAE000C874E /* Choose your way */ = {
@@ -503,6 +520,7 @@
 				BB0F607A21EE0C4E00A79945 /* ClientsVC+tableView.swift in Sources */,
 				BB9535A121B050CD00280D42 /* NavigationShadow.swift in Sources */,
 				BB95358F21B0370400280D42 /* SignInVC.swift in Sources */,
+				BB77BA6F225E09A2002C9E87 /* AddVisitViewModel.swift in Sources */,
 				BBAEEEF022106D700060994E /* NewVisitshadowStack.swift in Sources */,
 				BB4404532207665F005D51A8 /* MoreTableViewCell.swift in Sources */,
 				BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */,
@@ -518,6 +536,7 @@
 				BB580A5C21DBD35D000B8A60 /* VisitsVC.swift in Sources */,
 				BB5CF21621F0E427001D140F /* VisitViewModel.swift in Sources */,
 				BBA745A52201C81D0074005E /* Balace.swift in Sources */,
+				BB71AC2A225CBEB7004F3A22 /* NewVisitViewController+CLLocationManager.swift in Sources */,
 				BBEF899B2219BE8500A09B7B /* NewVisitClientCell.swift in Sources */,
 				BB44044D22075879005D51A8 /* MoreVC+TableView.swift in Sources */,
 				BBEF898F2219AB6F00A09B7B /* addVisit.swift in Sources */,
@@ -534,6 +553,7 @@
 				BB2726F82236846900E71452 /* AddVisit.swift in Sources */,
 				BB0F607E21EE19FA00A79945 /* extentions.swift in Sources */,
 				BBE6FB5B2209A0B5000C874E /* customWideButton.swift in Sources */,
+				BB71AC28225C88D8004F3A22 /* SignInVC+Validation.swift in Sources */,
 				BB580A5621DBA981000B8A60 /* HomeShadowButtom.swift in Sources */,
 				BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */,
 				BB0F607C21EE196A00A79945 /* VisitsVC+tableView.swift in Sources */,

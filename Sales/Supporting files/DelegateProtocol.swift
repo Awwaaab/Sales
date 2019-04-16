@@ -9,5 +9,6 @@
 import UIKit
 
 protocol DelegateClient : NSObjectProtocol{
-    func moveData(data : String)
+    func moveData(data : ClientsAV)
 }
+

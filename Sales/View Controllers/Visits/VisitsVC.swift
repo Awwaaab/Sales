@@ -16,6 +16,7 @@ class VisitsVC: UIViewController {
  
     let VisitViewModel = VisitViewMode(client: unsplash())
     
+    var something : [String] = []
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

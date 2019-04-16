@@ -18,6 +18,8 @@ class NewVisitViewMode {
     var selectCLient : [ClientsAV] = []
     var currentCLient : [ClientsAV] = []
     var selectType : [TypesAV] = []
+  
+    
     
     // geting the type , Purpose in array to put it into a picker view
     var onlytype : [String] = []
@@ -61,6 +63,7 @@ class NewVisitViewMode {
                 case .success(let rootNewVisits):
                     
                     self.selectCLient = rootNewVisits.clients
+//                    print(self.selectCLient)
                     self.currentCLient =  rootNewVisits.clients
                     for otype in rootNewVisits.types{
                         self.onlytype.append(otype.name)
@@ -86,45 +89,3 @@ class NewVisitViewMode {
     
 }
 
-class AddVisitViewMode {
-    
-    
-    //MARK: properties
-    private var client : APIClient
-    
-    var selectCLient : String = ""
-   
-    //MARK: UI
-    
-    var showError : ((Error) -> Void)?
-    var reloadData : (() -> Void)?
-    
-    
-    init(client : APIClient) {
-        self.client = client
-    }
-    
-    
-    
-
-
-    
-    func fetchAddVisit(){
-        if let client = client as? unsplash{
-            let endPoint = unsplashEndpoint.addVisit(sale: "2", client: "99", type: "5", purpose: "2", purpose_value: "123", comment: "xdfg", longitude: "30.001973999999997", latitude: "31.170903799999998")
-            client.fetechClients(with: endPoint, completion: { (either : Either<AddVisitMessage>) in
-                switch either {
-                case .success(let rootNewVisits):
-                    self.selectCLient = rootNewVisits.message
-                   print(self.selectCLient)
-                    self.reloadData?()
-                case .error(let error):
-                    self.showError!(error)
-                }
-                
-            })
-        }
-    }
-    
-    
-}

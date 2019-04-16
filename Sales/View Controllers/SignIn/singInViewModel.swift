@@ -21,7 +21,7 @@ class SingInViewModel {
     
     var shouldSingIn : Bool = false
     var showError : ((Error) -> Void)?
-    var reloadData : (() -> Void)?
+    var perfromSingIn : (() -> Void)?
     init(client : APIClient) {
         self.client = client
     }
@@ -34,11 +34,11 @@ class SingInViewModel {
               let endpoint = unsplashEndpoint.user(email: email ,password: passowrd)
             client.fetechClients(with: endpoint, completion: { (either : Either<UserRoot>) in
                 switch either {
-                case .success(let rootVisits):
-                    self.userInfo = rootVisits.user
-                    print(self.userInfo)
-                    self.shouldSingIn = true
-                    self.reloadData?()
+                case .success(let rootUser):
+                    self.userInfo = rootUser.user
+//                    print("HERE WE ARE :))))))    \(self.userInfo)")
+                    UserDefaults.standard.setUserID(ID: String(self.userInfo.id) )
+                    self.perfromSingIn?()
                 case .error(let error):
                     self.showError!(error)
                   self.shouldSingIn = false

@@ -12,8 +12,16 @@ class ChooseYourWay: UIViewController {
 
      let signInViewModel = SingInViewModel(client: unsplash())
     
+    var userInfo : User?
+    
     @IBAction func signOut(_ sender: UIBarButtonItem) {
-        self.dismiss(animated: true, completion: nil)
+      
+      
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let controller = storyboard.instantiateViewController(withIdentifier: "logInNavigationController")
+            self.show(controller, sender: self)
+        
+      UserDefaults.standard.setLoggedIn(value: false)
     }
     
     
@@ -24,13 +32,9 @@ class ChooseYourWay: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
+        print("THIS IS WHAT YOU WANT :\(userInfo?.id ?? 0)")
     }
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        signInViewModel.shouldSingIn = false
-        
-    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
