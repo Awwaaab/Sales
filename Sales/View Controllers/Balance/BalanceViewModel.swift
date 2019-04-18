@@ -29,8 +29,8 @@ class BalanceViewModel {
     
     
     func fetchBalance(){
-        if let client = client as? unsplash{
-            let endpoint = unsplashEndpoint.balances(user_id: "2")
+        if let client = client as? Unsplash{
+            let endpoint = unsplashEndpoint.balances(user_id: CustomUserDefaults.userID)
             client.fetechClients(with: endpoint, completion: { (either : Either<balanceRoot>) in
                 switch either {
                 case .success(let rootBalance):

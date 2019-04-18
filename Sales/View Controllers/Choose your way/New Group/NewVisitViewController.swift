@@ -89,6 +89,11 @@ class NewVisitViewController: UIViewController  , DelegateClient {
  
         if (validator()){
             self.newAddVisitViewModel.fetchAddVisit(clientId: String(chosenClientObject.id), purposValue: PriceTextField.text ?? "", type: String(chosentypeID), purpose: String(chosenPurposID), comment: descriptionTextFeild.text ?? "", longtitde: currentLongtude, latitude: currentLatitude)
+            newAddVisitViewModel.fetchHandler = {
+                self.showAlertController(alerTitle: "Saved", alertMessage: "thank your for your visit ", alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+                    self.navigationController?.popViewController(animated: true)
+                })
+            }
             newAddVisitViewModel.showError = { (error) in
                 print("==================================\(error)=================================")
                 self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
@@ -170,8 +175,8 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     
     
     
-    let newVisitViewModel = NewVisitViewMode(client: unsplash())
-    let newAddVisitViewModel = AddVisitViewMode(client: unsplash())
+    let newVisitViewModel = NewVisitViewMode(client: Unsplash())
+    let newAddVisitViewModel = AddVisitViewMode(client: Unsplash())
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -200,11 +205,10 @@ class NewVisitViewController: UIViewController  , DelegateClient {
                 self.navigationController?.popViewController(animated: true)
             })
         }
-        newVisitViewModel.reloadData = {
-            self.selectorPickerView.reloadAllComponents()
-        }
+    
         newVisitViewModel.fetchNewVisit()
         newVisitViewModel.reloadData = {
+            self.selectorPickerView.reloadAllComponents()
             self.chosentypeID = self.newVisitViewModel.selectType[0].id
             self.chosenPurposID = self.newVisitViewModel.selectPurpose[0].id
         }

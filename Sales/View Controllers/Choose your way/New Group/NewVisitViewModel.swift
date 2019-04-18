@@ -53,8 +53,8 @@ class NewVisitViewMode {
     
     
     func fetchNewVisit(){
-        if let client = client as? unsplash{
-            let endpoint = unsplashEndpoint.newVisit(user_id: "2")
+        if let client = client as? Unsplash{
+            let endpoint = unsplashEndpoint.newVisit(user_id: CustomUserDefaults.userID)
             client.fetechClients(with: endpoint, completion: { (either : Either<AddVisitRoot>) in
                 switch either {
                 case .success(let rootNewVisits):

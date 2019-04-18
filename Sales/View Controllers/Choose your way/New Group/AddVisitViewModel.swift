@@ -19,8 +19,8 @@ class AddVisitViewMode {
     //MARK: UI
     
     var showError : ((Error) -> Void)?
-    var reloadData : (() -> Void)?
-    var userID = UserDefaults.standard.value(forKey: UserDefaultsKeys.userID.rawValue) as! String
+    var fetchHandler : (() -> Void)?
+   
     
     
     
@@ -34,15 +34,14 @@ class AddVisitViewMode {
     
     
     func fetchAddVisit(clientId:String , purposValue : String  , type : String , purpose : String , comment : String , longtitde : String , latitude : String){
-        if let client = client as? unsplash{
-            let endPoint = unsplashEndpoint.addVisit(sale: userID, client: clientId, type: type, purpose: purpose, purpose_value: purposValue, comment: comment, longitude: longtitde, latitude: latitude)
+        if let client = client as? Unsplash{
+            let endPoint = unsplashEndpoint.addVisit(sale: CustomUserDefaults.userID, client: clientId, type: type, purpose: purpose, purpose_value: purposValue, comment: comment, longitude: longtitde, latitude: latitude)
 
             client.fetechClients(with: endPoint, completion: { (either : Either<AddVisitMessage>) in
                 switch either {
                 case .success(let rootNewVisits):
                     self.selectCLient = rootNewVisits.message
-                    print(self.selectCLient , self.userID , clientId , longtitde , latitude , comment , purposValue , type , purpose)
-                    self.reloadData?()
+                    self.fetchHandler?()
                 case .error(let error):
                     self.showError!(error)
                 }

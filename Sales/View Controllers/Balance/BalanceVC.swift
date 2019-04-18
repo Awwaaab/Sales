@@ -16,7 +16,7 @@ class BalanceVC: UIViewController {
     @IBOutlet weak var balanceTabelView: UITableView!
     @IBOutlet weak var noOfBalance: UILabel!
     
-    let balanceViewModel = BalanceViewModel(client: unsplash())
+    let balanceViewModel = BalanceViewModel(client: Unsplash())
     
     override func viewDidLoad() {
         super.viewDidLoad()

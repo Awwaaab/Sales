@@ -25,7 +25,7 @@ class SignInVC: UIViewController , UITextFieldDelegate{
     
   
     
-      let signInViewModel = SingInViewModel(client: unsplash())
+      let signInViewModel = SingInViewModel(client: Unsplash())
   
     @IBAction func signInButton(_ sender: UIButton) {
        

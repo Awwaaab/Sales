@@ -10,7 +10,7 @@ import UIKit
 
 class ChooseYourWay: UIViewController {
 
-     let signInViewModel = SingInViewModel(client: unsplash())
+     let signInViewModel = SingInViewModel(client: Unsplash())
     
     var userInfo : User?
     

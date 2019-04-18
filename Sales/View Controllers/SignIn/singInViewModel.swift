@@ -29,7 +29,7 @@ class SingInViewModel {
     
     
     func fetchUser(email : String, passowrd : String){
-        if let client = client as? unsplash{
+        if let client = client as? Unsplash{
 //             let adminEndpoint = unsplashEndpoint.user(email: "info@hyper-design.com" ,password: "123456")
               let endpoint = unsplashEndpoint.user(email: email ,password: passowrd)
             client.fetechClients(with: endpoint, completion: { (either : Either<UserRoot>) in

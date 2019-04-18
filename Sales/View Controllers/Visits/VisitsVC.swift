@@ -14,7 +14,7 @@ class VisitsVC: UIViewController {
     @IBOutlet weak var activityIndicatorView: NVActivityIndicatorView!
     @IBOutlet weak var VisitsTableView: UITableView!
  
-    let VisitViewModel = VisitViewMode(client: unsplash())
+    let VisitViewModel = VisitViewMode(client: Unsplash())
     
     var something : [String] = []
     

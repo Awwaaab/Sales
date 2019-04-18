@@ -47,7 +47,7 @@
 		BBA745A52201C81D0074005E /* Balace.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBA745A42201C81D0074005E /* Balace.swift */; };
 		BBAEEEF022106D700060994E /* NewVisitshadowStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAEEEEF22106D6F0060994E /* NewVisitshadowStack.swift */; };
 		BBAFB5AC21E2718C000D04D6 /* NVActivityIndicatorView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */; };
-		BBB53BDF21FE3476004A9109 /* unsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB53BDE21FE3476004A9109 /* unsplash.swift */; };
+		BBB53BDF21FE3476004A9109 /* Unsplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBB53BDE21FE3476004A9109 /* Unsplash.swift */; };
 		BBC172AE21FE27EA0031153B /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBC172AD21FE27EA0031153B /* ClientViewModel.swift */; };
 		BBD7BA0421DCE6F3004B5CA5 /* visits.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBD7BA0321DCE6F3004B5CA5 /* visits.swift */; };
 		BBE6FB5922099AE7000C874E /* ChooseYourWay.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBE6FB5822099AE7000C874E /* ChooseYourWay.swift */; };
@@ -102,7 +102,7 @@
 		BBA745A42201C81D0074005E /* Balace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Balace.swift; sourceTree = "<group>"; };
 		BBAEEEEF22106D6F0060994E /* NewVisitshadowStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVisitshadowStack.swift; sourceTree = "<group>"; };
 		BBAFB5AD21E2718C000D04D6 /* NVActivityIndicatorView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NVActivityIndicatorView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BBB53BDE21FE3476004A9109 /* unsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = unsplash.swift; sourceTree = "<group>"; };
+		BBB53BDE21FE3476004A9109 /* Unsplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unsplash.swift; sourceTree = "<group>"; };
 		BBC172AD21FE27EA0031153B /* ClientViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		BBD7BA0321DCE6F3004B5CA5 /* visits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = visits.swift; sourceTree = "<group>"; };
 		BBE6FB5822099AE7000C874E /* ChooseYourWay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseYourWay.swift; sourceTree = "<group>"; };
@@ -224,7 +224,7 @@
 			children = (
 				BB5CF21121F0A6E0001D140F /* Endpoint.swift */,
 				BB5CF20F21F0990E001D140F /* APIClient.swift */,
-				BBB53BDE21FE3476004A9109 /* unsplash.swift */,
+				BBB53BDE21FE3476004A9109 /* Unsplash.swift */,
 			);
 			name = Network;
 			path = "New Group";
@@ -526,7 +526,7 @@
 				BB95358D21B0370400280D42 /* AppDelegate.swift in Sources */,
 				BB0F607821EDF3CE00A79945 /* ClientsVC.swift in Sources */,
 				BB580A5F21DBDA1D000B8A60 /* VisitTableViewCell.swift in Sources */,
-				BBB53BDF21FE3476004A9109 /* unsplash.swift in Sources */,
+				BBB53BDF21FE3476004A9109 /* Unsplash.swift in Sources */,
 				BB0F5DD32225AA3100624E97 /* NewVisitViewModel.swift in Sources */,
 				BB283E742253C58A000DA5DF /* singInViewModel.swift in Sources */,
 				BB0F5DDA2225AA6800624E97 /* SelectClient+TableView.swift in Sources */,

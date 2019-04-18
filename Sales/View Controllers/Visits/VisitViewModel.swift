@@ -15,7 +15,7 @@ class VisitViewMode {
     //MARK: properties
   private var client : APIClient
      var visits : [Visit] = []
-
+  
     //MARK: UI
 
     var showError : ((Error) -> Void)?
@@ -28,8 +28,8 @@ class VisitViewMode {
     
     
     func fetchVisits(){
-        if let client = client as? unsplash{
-            let endpoint = unsplashEndpoint.visit(user_id: "2", number: "0")
+        if let client = client as? Unsplash{
+            let endpoint = unsplashEndpoint.visit(user_id: CustomUserDefaults.userID, number: "6")
             client.fetechClients(with: endpoint, completion: { (either : Either<visitRoot>) in
                 switch either {
                 case .success(let rootVisits):

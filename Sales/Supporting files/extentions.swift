@@ -46,4 +46,12 @@ extension UserDefaults{
     func getUserID()-> String {
         return UserDefaultsKeys.userID.rawValue
     }
+    
+    
 }
+
+
+class CustomUserDefaults: UserDefaults {
+     static let userID = UserDefaults.standard.value(forKey: UserDefaultsKeys.userID.rawValue) as! String
+}
+
