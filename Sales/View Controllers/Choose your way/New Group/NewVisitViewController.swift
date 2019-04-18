@@ -32,7 +32,6 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     
     
     var toViewController : selectController?
-    var priceTextFiled  = ""
     var alertTextfiled : UITextField?
     var vildatorCounter = 0
     var message = " "
@@ -40,6 +39,8 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     var currentLatitude = ""
     var currentLongtude = ""
     var chosenClientObject : ClientsAV!
+    var chosentypeID : Int!
+    var chosenPurposID : Int!
     
     //MARK: client delegate
     func moveData(data: ClientsAV) {
@@ -71,7 +72,7 @@ class NewVisitViewController: UIViewController  , DelegateClient {
         selectorPickerView.reloadAllComponents()
         handlePickerPostionViewAnimation(anchor: selectorPickerVIewYPostion, centerConstant: 0)
         handlePickerPostionViewAnimation(anchor: selectionSaveButtonYPostion, centerConstant: 5)
-        chosenType.text = newVisitViewModel.dedupetype[0]
+        chosenType.text = newVisitViewModel.selectType[0].name
         
     }
     @IBAction func getPurposes(_ sender:UIButton){
@@ -79,7 +80,7 @@ class NewVisitViewController: UIViewController  , DelegateClient {
         selectorPickerView.reloadAllComponents()
         handlePickerPostionViewAnimation(anchor: selectorPickerVIewYPostion, centerConstant: 0)
         handlePickerPostionViewAnimation(anchor: selectionSaveButtonYPostion, centerConstant: 5)
-        chosenPurpose.text = newVisitViewModel.dedupePurpose[0]
+        chosenPurpose.text = newVisitViewModel.selectPurpose[0].name
     }
     
     
@@ -87,10 +88,7 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     @IBAction func SaveButton(_ sender: UIButton) {
  
         if (validator()){
-            self.newAddVisitViewModel.fetchAddVisit()
-//            let chosenClientId = self.chosenClientObject.id
-//            guard let chosenDate = self.chosenDate.text  ,let chosenType = self.chosenType.text , let chosenPurpose = self.chosenPurpose.text ,  let Price = self.PriceTextField.text ,  let description = self.descriptionTextFeild.text   else {return}
-//            self.newAddVisitViewModel.fetchAddVisit(saleId: <#T##String#>, clientId: String(chosenClientId), type: <#T##String#>, purpose: <#T##String#>, purposValue: Price, comment: description, longtitde: currentLongtude, latidue: currentLatitude)
+            self.newAddVisitViewModel.fetchAddVisit(clientId: String(chosenClientObject.id), purposValue: PriceTextField.text ?? "", type: String(chosentypeID), purpose: String(chosenPurposID), comment: descriptionTextFeild.text ?? "", longtitde: currentLongtude, latitude: currentLatitude)
             newAddVisitViewModel.showError = { (error) in
                 print("==================================\(error)=================================")
                 self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
@@ -178,9 +176,6 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-      
-        
         hideSelectorPickeriewWhenTappedAround()
         self.selectorPickerView.layer.cornerRadius = 27
         self.selectorPickerView.clipsToBounds = true
@@ -209,11 +204,14 @@ class NewVisitViewController: UIViewController  , DelegateClient {
             self.selectorPickerView.reloadAllComponents()
         }
         newVisitViewModel.fetchNewVisit()
+        newVisitViewModel.reloadData = {
+            self.chosentypeID = self.newVisitViewModel.selectType[0].id
+            self.chosenPurposID = self.newVisitViewModel.selectPurpose[0].id
+        }
         handleDatePicker()
         DatePickerView.addTarget(self, action: #selector(NewVisitViewController.putDateIntoITsLable), for: .valueChanged )
         
     }
-    
     
     
     //MARK: date func

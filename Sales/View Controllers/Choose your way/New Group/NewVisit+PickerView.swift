@@ -19,10 +19,10 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
         
         
         if toViewController == selectController.type{
-            return newVisitViewModel.dedupetype.count
+            return newVisitViewModel.selectType.count
           
         }else {
-            return newVisitViewModel.dedupePurpose.count
+            return newVisitViewModel.selectPurpose.count
         }
         
         
@@ -32,9 +32,9 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
         
         
           if toViewController == selectController.type{
-            return newVisitViewModel.dedupetype[row]
+            return newVisitViewModel.selectType[row].name
         } else{
-            return newVisitViewModel.dedupePurpose[row]
+            return newVisitViewModel.selectPurpose[row].name
         }
         
     }
@@ -42,9 +42,12 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
          if toViewController == selectController.type{
-            self.chosenType.text = newVisitViewModel.dedupetype[row]
+             self.chosenType.text = newVisitViewModel.selectType[row].name
+            self.chosentypeID = newVisitViewModel.selectType[row].id
+
         } else{
-            self.chosenPurpose.text = newVisitViewModel.dedupePurpose[row]
+              self.chosenPurpose.text = newVisitViewModel.selectPurpose[row].name
+             self.chosenPurposID = newVisitViewModel.selectPurpose[row].id
         }
         
     }

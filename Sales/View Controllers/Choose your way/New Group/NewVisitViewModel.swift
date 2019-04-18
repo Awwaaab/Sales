@@ -14,18 +14,15 @@ class NewVisitViewMode {
     
     //MARK: properties
     private var client : APIClient
-    
+    //AV means add visit
     var selectCLient : [ClientsAV] = []
     var currentCLient : [ClientsAV] = []
     var selectType : [TypesAV] = []
+    var selectPurpose : [PurposesAV] = []
   
     
     
-    // geting the type , Purpose in array to put it into a picker view
-    var onlytype : [String] = []
-    var dedupetype : [String] = []
-    var onlyPurpose : [String] = []
-    var dedupePurpose : [String] = []
+ 
     //MARK: UI
     
     var showError : ((Error) -> Void)?
@@ -63,20 +60,13 @@ class NewVisitViewMode {
                 case .success(let rootNewVisits):
                     
                     self.selectCLient = rootNewVisits.clients
-//                    print(self.selectCLient)
+//                   print(self.selectCLient)
                     self.currentCLient =  rootNewVisits.clients
-                    for otype in rootNewVisits.types{
-                        self.onlytype.append(otype.name)
-                    }
-                    for opurpose in rootNewVisits.purposes{
-                        self.onlyPurpose.append(opurpose.name)
-                    }
-                    
-                    self.dedupetype = self.removeDuplicates(array: self.onlytype)
-                    self.dedupePurpose = self.removeDuplicates(array: self.onlyPurpose)
-                    
-                    
-                    
+                    self.selectType = rootNewVisits.types
+                     self.selectPurpose = rootNewVisits.purposes
+                    print(self.selectType)
+                    print("should be selected pupose object here:\(self.selectPurpose)")
+      
                     self.reloadData?()
                 case .error(let error):
                     self.showError!(error)
