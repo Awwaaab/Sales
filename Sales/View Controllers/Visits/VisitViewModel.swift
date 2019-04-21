@@ -29,7 +29,7 @@ class VisitViewMode {
     
     func fetchVisits(){
         if let client = client as? Unsplash{
-            let endpoint = unsplashEndpoint.visit(user_id: CustomUserDefaults.userID, number: "6")
+            let endpoint = unsplashEndpoint.visit(user_id: CustomUserDefaults.userID, number: "0")
             client.fetechClients(with: endpoint, completion: { (either : Either<visitRoot>) in
                 switch either {
                 case .success(let rootVisits):
@@ -39,7 +39,6 @@ class VisitViewMode {
                 case .error(let error):
                     self.showError!(error)
                 }
-               
             })
         }
     }

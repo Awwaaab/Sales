@@ -42,7 +42,6 @@ class BalanceViewModel {
                 case .error(let error):
                     self.showError!(error)
                 }
-               
             })
         }
     }
