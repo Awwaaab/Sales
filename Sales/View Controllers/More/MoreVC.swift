@@ -15,6 +15,13 @@ class MoreVC: UIViewController {
     var MenuImage : [UIImage] = [ #imageLiteral(resourceName: "Repoerts24Px") , #imageLiteral(resourceName: "VisitCalendar24Px")]
     var MenuName : [String] = ["Reporst", "Visit Calendar"]
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MenuTableView.reloadData()
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
    handelDelegateAndDataSource()

@@ -11,7 +11,7 @@ import UIKit
 
 class VisitTableViewCell: UITableViewCell {
     // this table view cell that serve visits,reports,client,balance
-    // mn ala5er kda hya el cell eltawiiiila
+    // mn ala5er kda hya el cell eltawila
     
     @IBOutlet weak var firstAPIDataLabel: UILabel!
     @IBOutlet weak var secondAPIDataLabel: UILabel!

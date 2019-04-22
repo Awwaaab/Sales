@@ -10,7 +10,7 @@ import UIKit
 
 class NewCLient: UIViewController  {
     
-    
+    // still want to apply textfield delegate and handle keyboard show a disappear 
    
     
     @IBOutlet weak var TextYAnchor: NSLayoutConstraint!
@@ -32,38 +32,54 @@ class NewCLient: UIViewController  {
     
     
     @IBAction func writeName(_ sender : UIButton){
-        handleTextAnimation(anchor: DoneButtonYAnchor, centerConstant: -50)
-        handleTextAnimation(anchor: TextYAnchor, centerConstant: -100)
+        self.view.handleObjectAnimation(objectAnchor: DoneButtonYAnchor, centerConstant: -50)
+        self.view.handleObjectAnimation(objectAnchor: TextYAnchor, centerConstant: -100)
         DataTextField.placeholder = "Write CLient Name Here :)"
+        textFieldInUse = .name
+        
     }
     @IBAction func writePhone(_ sender : UIButton){
-        handleTextAnimation(anchor: DoneButtonYAnchor, centerConstant: -50)
-        handleTextAnimation(anchor: TextYAnchor, centerConstant: -100)
+        self.view.handleObjectAnimation(objectAnchor: DoneButtonYAnchor, centerConstant: -50)
+        self.view.handleObjectAnimation(objectAnchor: TextYAnchor, centerConstant: -100)
         DataTextField.placeholder = "Write CLient Phon Here :)"
+        textFieldInUse = .phone
     }
     @IBAction func writeAdress(_ sender : UIButton){
-        handleTextAnimation(anchor: DoneButtonYAnchor, centerConstant: -50)
-        handleTextAnimation(anchor: TextYAnchor, centerConstant: -100)
+        self.view.handleObjectAnimation(objectAnchor: DoneButtonYAnchor, centerConstant: -50)
+        self.view.handleObjectAnimation(objectAnchor: TextYAnchor, centerConstant: -100)
         DataTextField.placeholder = "Write CLient Adress Here :)"
+        textFieldInUse = .adress
     }
     @IBAction func doneButton(_ sender : UIButton){
-        handleTextAnimation(anchor: DoneButtonYAnchor, centerConstant: 400)
-        handleTextAnimation(anchor: TextYAnchor, centerConstant: 350)
+        self.view.handleObjectAnimation(objectAnchor: DoneButtonYAnchor, centerConstant: 400)
+        self.view.handleObjectAnimation(objectAnchor: TextYAnchor, centerConstant: 350)
          DataTextField.placeholder = ""
+        
+        switch textFieldInUse {
+        case .name:
+            self.ClientnameLabel.text = DataTextField.text
+        case .phone:
+            self.ClientPhoneLabel.text = DataTextField.text
+        case .adress:
+            self.ClientAdressLabel.text = DataTextField.text
+        default:
+            print("something went wrong")
+        }
+        self.DataTextField.text = ""
     }
     @IBAction func SelectButtons(_ sender : UIButton){
   
         switch sender.tag {
         case 0:
-            moveToSelector = "department"
+            moveToSelector = .Department
         case 1:
-            moveToSelector = "Country"
+            moveToSelector = .Country
         case 2:
-            moveToSelector = "City"
+            moveToSelector = .City
         case 3:
-            moveToSelector = "Region"
+            moveToSelector = .Region
         default:
-            moveToSelector = "other"
+            moveToSelector = .other
         }
         
         print(moveToSelector)
@@ -72,16 +88,10 @@ class NewCLient: UIViewController  {
           selectorDelegate?.MoveSelector(Selector: moveToSelector)
     }
     
-    var moveToSelector : String!
+    var moveToSelector : SelectorType!
     weak var selectorDelegate : SelectorDelegate?
- 
+    var textFieldInUse : TextFieldInUse!
     
-    func handleTextAnimation(anchor:NSLayoutConstraint , centerConstant : CGFloat){
-        
-        anchor.constant = centerConstant
-        UIView.animate(withDuration: 0.35) {
-            self.view.layoutIfNeeded()}
-    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier ==  "GoToMultiSelectors" {
@@ -99,3 +109,14 @@ class NewCLient: UIViewController  {
 
 
 }
+
+
+enum SelectorType{
+    case Department , Country , City , Region , other
+}
+
+enum TextFieldInUse {
+    case name , phone , adress
+}
+
+

@@ -20,17 +20,6 @@ extension CALayer{
 
 
 
-
-//    func SWAlertcontroller(error:String){
-//        let alertcont = UIAlertController(title: " Network Error ",message: error  ,preferredStyle:.alert)
-//        let alertactCancel = UIAlertAction(title: "Ok", style: .default,  handler: { (action) in
-//            self.navigationController?.popViewController(animated: true)
-//        })
-//        alertcont.addAction(alertactCancel)
-//        self.present(alertcont, animated: true, completion: nil)
-//
-//    }
-//}
 extension UIViewController {
     func showAlertController(alerTitle : String , alertMessage : String , alertPreferredStyle:UIAlertControllerStyle ,alertActionTitle : String , alertActoinStyle : UIAlertActionStyle,handler: ((UIAlertAction) -> Void)? = nil){
          let alertcont = UIAlertController(title: alerTitle,message: alertMessage,preferredStyle:alertPreferredStyle)

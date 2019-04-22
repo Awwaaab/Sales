@@ -30,6 +30,7 @@ enum unsplashEndpoint  : EndPoint{
         latitude: String
     )
     case user(email: String , password:String)
+    case visitReport(start_date: String , end_date: String, client_id:String)
     var baseURL : String {
         return Unsplash.baseurl
     }
@@ -43,6 +44,7 @@ enum unsplashEndpoint  : EndPoint{
         case .newVisit : return "/visit/add"
         case .addVisit : return "/visit/store"
         case .user : return "/user/login"
+        case .visitReport : return "/reports/show_clients"
         }
     }
     var urlParametares: [URLQueryItem] {
@@ -74,6 +76,12 @@ enum unsplashEndpoint  : EndPoint{
         case .user(let email , let password): return [
             URLQueryItem(name: "email", value: email),
             URLQueryItem(name: "password", value: password)
+            ]
+ 
+        case .visitReport(let StartDate , let endDate , let clientID) : return [
+            URLQueryItem(name: "start_date", value: StartDate),
+            URLQueryItem(name: "end_date", value: endDate),
+            URLQueryItem(name: "client_id", value: clientID)
             ]
         }
       

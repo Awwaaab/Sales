@@ -10,5 +10,5 @@ import UIKit
 
 
 protocol SelectorDelegate : NSObjectProtocol {
-    func MoveSelector(Selector : String)
+    func MoveSelector(Selector : SelectorType)
 }

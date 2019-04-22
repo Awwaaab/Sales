@@ -60,8 +60,8 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     @IBAction func getdate(_ sender:UIButton){
         let current = Date()
         setDate(date: current)
-        handlePickerPostionViewAnimation(anchor: DatePickerVIewYPostion, centerConstant: -120)
-        handlePickerPostionViewAnimation(anchor: selectionSaveButtonYPostion, centerConstant: 5)
+        self.view.handleObjectAnimation(objectAnchor: DatePickerVIewYPostion, centerConstant: -120)
+        self.view.handleObjectAnimation(objectAnchor: selectionSaveButtonYPostion, centerConstant: 5)
     }
     @IBAction func getClient(_ sender:UIButton){
         performSegue(withIdentifier: "GetClient", sender: sender)
@@ -70,16 +70,16 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     @IBAction func gettype(_ sender:UIButton){
         toViewController = selectController.type
         selectorPickerView.reloadAllComponents()
-        handlePickerPostionViewAnimation(anchor: selectorPickerVIewYPostion, centerConstant: 0)
-        handlePickerPostionViewAnimation(anchor: selectionSaveButtonYPostion, centerConstant: 5)
+        self.view.handleObjectAnimation(objectAnchor: selectorPickerVIewYPostion, centerConstant: 0)
+        self.view.handleObjectAnimation(objectAnchor: selectionSaveButtonYPostion, centerConstant: 5)
         chosenType.text = newVisitViewModel.selectType[0].name
         
     }
     @IBAction func getPurposes(_ sender:UIButton){
         toViewController = selectController.purposes
         selectorPickerView.reloadAllComponents()
-        handlePickerPostionViewAnimation(anchor: selectorPickerVIewYPostion, centerConstant: 0)
-        handlePickerPostionViewAnimation(anchor: selectionSaveButtonYPostion, centerConstant: 5)
+        self.view.handleObjectAnimation(objectAnchor: selectorPickerVIewYPostion, centerConstant: 0)
+        self.view.handleObjectAnimation(objectAnchor: selectionSaveButtonYPostion, centerConstant: 5)
         chosenPurpose.text = newVisitViewModel.selectPurpose[0].name
     }
     
@@ -127,12 +127,12 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     
     private func hideSelectorAndDatePickerWithAnimation(){
         if selectorPickerVIewYPostion.constant == 0 {
-            handlePickerPostionViewAnimation(anchor: selectorPickerVIewYPostion, centerConstant: 600)
-            handlePickerPostionViewAnimation(anchor: selectionSaveButtonYPostion, centerConstant: 300)
+            self.view.handleObjectAnimation(objectAnchor: selectorPickerVIewYPostion, centerConstant: 600)
+            self.view.handleObjectAnimation(objectAnchor: selectionSaveButtonYPostion, centerConstant: 300)
         }
         if DatePickerVIewYPostion.constant == -120 {
-            handlePickerPostionViewAnimation(anchor: DatePickerVIewYPostion, centerConstant: 480)
-            handlePickerPostionViewAnimation(anchor: selectionSaveButtonYPostion, centerConstant: 300)
+            self.view.handleObjectAnimation(objectAnchor: DatePickerVIewYPostion, centerConstant: 480)
+            self.view.handleObjectAnimation(objectAnchor: selectionSaveButtonYPostion, centerConstant: 300)
         }
     }
     

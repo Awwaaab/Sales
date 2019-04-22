@@ -21,7 +21,20 @@ extension MoreVC : UITableViewDataSource , UITableViewDelegate {
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
+      
+        
+        switch indexPath.row {
+        case 0:
+            performSegue(withIdentifier: "GoToReborts", sender: self)
+        case 1:
+            print("this masseged from didSelectRowAt\(indexPath.row)")
+        default:
+             print("this masseged from didSelectRowAt\(indexPath.row)")
+        }
+        
+        
+       
+        
     }
 
 
