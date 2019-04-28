@@ -8,7 +8,7 @@
 
 import Foundation
 
-class  unsplash : APIClient{
+class  Unsplash : APIClient{
     static let baseurl = "http://hyper-design.com/NewSales/api"
     
     
