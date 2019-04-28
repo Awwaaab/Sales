@@ -47,26 +47,44 @@ extension UIView{
 //MARK: UserDefaults extension
 
 enum UserDefaultsKeys : String{
-    case isLogedIn , userID , user
+    case isLogedIn , userID  , clientID , client , selected
 }
 
 extension UserDefaults{
     
     //MARK: Check Login
+
+    
+    func setSelected(clientID : String ,client : String){
+        set(clientID, forKey: UserDefaultsKeys.clientID.rawValue) ;
+        set(client, forKey: UserDefaultsKeys.client.rawValue) ;
+    }
+    func setSelectedClient(selected : Bool){
+        set(selected, forKey: UserDefaultsKeys.selected.rawValue)
+    }
+   
+    func didSelectedClient() -> Bool{
+        return bool(forKey: UserDefaultsKeys.selected.rawValue)
+    }
+    
+    
     func setLoggedIn(value: Bool) {
         set(value, forKey: UserDefaultsKeys.isLogedIn.rawValue)
         //synchronize()
     }
-    
     func isLoggedIn()-> Bool {
         return bool(forKey: UserDefaultsKeys.isLogedIn.rawValue)
     }
     func setUserID(ID : String){
         set(ID, forKey: UserDefaultsKeys.userID.rawValue)
     }
-    func getUserID()-> String {
-        return UserDefaultsKeys.userID.rawValue
-    }
+//    func getUserID()-> String {
+//        return UserDefaultsKeys.userID.rawValue
+//    }
+   
+//    func getSelectedClient() -> String{
+//        return UserDefaultsKeys.client.rawValue
+//    }
     
     
 }
@@ -74,6 +92,8 @@ extension UserDefaults{
 
 class CustomUserDefaults: UserDefaults {
      static let userID = UserDefaults.standard.value(forKey: UserDefaultsKeys.userID.rawValue) as! String
+
+    
 }
 
 
@@ -104,11 +124,14 @@ extension UIViewController {
         self.present(alertcont, animated: true, completion: nil)
     }
 }
+//MARK: UIDatePiker extension
+// adding background and cornerRadius to datePiker
 
-
-
-
-
-
-
-
+extension UIDatePicker {
+    
+    func handleDatePicker(cornerRadius : CGFloat , backgroundColor : UIColor ){
+        self.layer.cornerRadius = cornerRadius
+        self.clipsToBounds = true
+        self.backgroundColor = backgroundColor
+    }
+}

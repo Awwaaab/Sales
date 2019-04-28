@@ -12,14 +12,77 @@ class Reports: UIViewController {
     
     @IBOutlet weak var Datepicker: UIDatePicker!
     @IBOutlet weak var AfterFilterTableView: UITableView!
+    @IBOutlet weak var BeforeFilterImage: UIImageView!
     @IBOutlet weak var startDateLabel: UILabel!
-    @IBOutlet weak var EndDateLabel: UILabel!
+    @IBOutlet weak var endDateLabel: UILabel!
+    @IBOutlet weak var selectedClientLabel: UILabel!
     @IBOutlet weak var DoneYAnchor: NSLayoutConstraint!
+    @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var DatepickerYAnchor: NSLayoutConstraint!
     
     
     
     
+    let reportsViewModel = ReportsViewMode(client: Unsplash())
+    
+    //    var chosenCLient : ClientsAV?
+    var selectedClientID : String?
+    
+    
+    var selectDateType : DateFilter!
+    let currentDate = Date()
+    let  DateForAPI = "yyyy-MM-dd"
+    let DateForLabel =  "dd MMM, yyyy"
+    var startDate : Date?
+    var endDate : Date?
+    var tableViewObserverKeyPath =  "contentSize"
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        AfterFilterTableView.addObserver(self, forKeyPath: tableViewObserverKeyPath, options: .new, context: nil)
+    
+//        TableViewISHeadin(show: true)
+        Datepicker.addTarget(self, action: #selector(Reports.setUpDate), for: .valueChanged)
+        handleDelegateAndDatasource()
+        UserDefaults.standard.setSelectedClient(selected: false)
+        Datepicker.handleDatePicker(cornerRadius: 20, backgroundColor: UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1))
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if UserDefaults.standard.didSelectedClient(){
+            selectedClientLabel.text = UserDefaults.standard.value(forKey: UserDefaultsKeys.client.rawValue) as? String
+            selectedClientID = (UserDefaults.standard.value(forKey: UserDefaultsKeys.clientID.rawValue) as! String)
+            
+        }
+    }
+    // if we add Observer it into viewdidLoad remove it from deinit
+    // if we add Observer it in viewWillAppear remove it from viewWillDisAppear
+
+    deinit {
+        AfterFilterTableView.removeObserver(self, forKeyPath: tableViewObserverKeyPath)
+    }
+    
+    
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let obj = object as? UITableView {
+            if obj == self.AfterFilterTableView && keyPath == tableViewObserverKeyPath {
+                tableViewHeight.constant = AfterFilterTableView.contentSize.height
+
+            }
+        }
+    }
+
+    
+    @IBAction func selectClient(_ sender: UIButton) {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let controller = storyBoard.instantiateViewController(withIdentifier: "SelectClient") as? SelectClient
+        self.navigationController?.show(controller!, sender: self)
+        
+    }
     
     // you can also put the datePiker and done button into view and move all the view all , do it later
     @IBAction func selectDate(_ sender:UIButton){
@@ -35,74 +98,95 @@ class Reports: UIViewController {
         
         self.view.handleObjectAnimation(objectAnchor: DatepickerYAnchor, centerConstant: 0)
         self.view.handleObjectAnimation(objectAnchor: DoneYAnchor, centerConstant: 150)
-       // reseting the date picker
-        let current = Date()
-        Datepicker.date = current
+        // reseting the date picker
         
-//
+        Datepicker.date = self.currentDate
+        
+        //
     }
     @IBAction func doneButton(_ sender: UIButton) {
         self.view.handleObjectAnimation(objectAnchor: DatepickerYAnchor, centerConstant: -500)
         self.view.handleObjectAnimation(objectAnchor: DoneYAnchor, centerConstant: -350)
-      
-        let current = Date()
-       
-     
-        
-        let startDateAPIForamt = formatter(date: startDate ?? current, dateFormat: DateForAPI)
-        let endDateAPIForamt = formatter(date: endDate ?? current, dateFormat: DateForAPI)
-        print( startDateAPIForamt + "\n" +  endDateAPIForamt )
-        if startDate != nil && endDate != nil {
-            reportsViewModel.fetchReportVisits(startDate: startDateAPIForamt , endDate : endDateAPIForamt)
-            reportsViewModel.reloadData = {
-                self.AfterFilterTableView.reloadData()
-            }
+        pickDate()
+    }
+    
+    @IBAction func getReborts(_ sender: UIButton) {
+        LoadVisitReport()
+        reportsViewModel.showError = {
+            (error) in
+            print("==================================\(error)=================================")
+            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+                self.tabBarController?.selectedIndex = 0
+                
+            })
         }
-    
     }
     
     
-    var selectDateType : DateFilter!
-
-    let  DateForAPI = "yyyy-MM-dd"
-    let DateForLabel =  "dd MMM, yyyy"
-    var startDate : Date?
-    var endDate : Date?
-   
-    let reportsViewModel = ReportsViewMode(client: Unsplash())
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-      
-        Datepicker.addTarget(self, action: #selector(Reports.setUpDate), for: .valueChanged)
-         handleDelegateAndDatasource()
+    func LoadVisitReport(){
+        let startDateAPIForamt = formatter(date: startDate ?? currentDate, dateFormat: DateForAPI)
+        let endDateAPIForamt = formatter(date: endDate ?? currentDate, dateFormat: DateForAPI)
+        reportsViewModel.fetchReportVisits(startDate: startDateAPIForamt , endDate : endDateAPIForamt , ClientID : selectedClientID ?? "4")
+        reportsViewModel.reloadData = {
+            self.AfterFilterTableView.reloadData()
+            if self.reportsViewModel.visits.count == 0 {
+                self.showAlertController(alerTitle: "Heads up", alertMessage: "sorry , we can't find any data related to your with this time range and this client", alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+                    self.TableViewISHeadin(show :true)
+                })
+            }else {
+                self.TableViewISHeadin(show :false)
+            }
+            
+        }
     }
+    
+    
+    
+    
 
+    
+    
     @objc func setUpDate(){
-
+        pickDate()
+    }
+    
+    private func formatter(date : Date , dateFormat : String) -> String{
+        let formatter = DateFormatter()
+        formatter.dateFormat = dateFormat
+        return formatter.string(from: date)
+    }
+    
+    func pickDate(){
         switch selectDateType {
         case .startDate:
             startDate = Datepicker.date
             self.startDateLabel.text = formatter(date: startDate!, dateFormat: DateForLabel)
         case .endDate:
             endDate = Datepicker.date
-            self.EndDateLabel.text = formatter(date: endDate!, dateFormat: DateForLabel)
+            self.endDateLabel.text = formatter(date: endDate!, dateFormat: DateForLabel)
         default:
             print("print error selectDate filter sender")
         }
     }
     
-   private func formatter(date : Date , dateFormat : String) -> String{
-        let formatter = DateFormatter()
-        formatter.dateFormat = dateFormat
-        return formatter.string(from: date)
+    private func TableViewISHeadin(show :Bool){
+        self.AfterFilterTableView.isHidden = show
+        self.BeforeFilterImage.isHidden = !show
     }
-    
 }
+
 
 enum DateFilter{
     case startDate , endDate
 }
 
-
+/*
+ 3- make the page scrolle as a one slide (add an observer)
+ 4- re-arrange your code and write down a comments for your logic
+ - activity indecator while loading
+ -handle fetch error accournding to get client
+ 
+ 
+ 
+ 
+ */

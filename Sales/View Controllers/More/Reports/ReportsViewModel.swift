@@ -34,9 +34,9 @@ class ReportsViewMode {
     }
     
     
-    func fetchReportVisits(startDate : String , endDate : String){
+    func fetchReportVisits(startDate : String , endDate : String ,ClientID : String){
         if let client = client as? Unsplash{
-            let endpoint = unsplashEndpoint.visitReport(start_date: startDate, end_date: endDate, client_id: "4")
+            let endpoint = unsplashEndpoint.visitReport(start_date: startDate, end_date: endDate, client_id: ClientID )
             client.fetechClients(with: endpoint, completion: { (either : Either<visitRoot>) in
                 switch either {
                 case .success(let rootVisits):

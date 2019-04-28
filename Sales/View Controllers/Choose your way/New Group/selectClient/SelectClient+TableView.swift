@@ -8,6 +8,9 @@
 
 import UIKit
 extension SelectClient : UITableViewDelegate , UITableViewDataSource {
+    
+
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return newVisitViewModel.currentCLient.count
     }
@@ -18,7 +21,12 @@ extension SelectClient : UITableViewDelegate , UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.ChosenCLient = newVisitViewModel.currentCLient[indexPath.row]
+       
+      
         delegateClient?.moveData(data: ChosenCLient)
+        print(ChosenCLient)
+        UserDefaults.standard.setSelectedClient(selected: true)
+        UserDefaults.standard.setSelected(clientID: String(ChosenCLient.id), client: ChosenCLient.name)
         self.navigationController?.popViewController(animated: true)
     }
 }

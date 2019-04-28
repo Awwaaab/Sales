@@ -9,7 +9,7 @@
 import UIKit
 
 class SelectClient: UIViewController  {
-   
+       let reportsInstance = Reports()
     @IBOutlet weak var selectClientTableView : UITableView!
     @IBOutlet weak var clientsSearchBar : UISearchBar!
     var ChosenCLient : ClientsAV!

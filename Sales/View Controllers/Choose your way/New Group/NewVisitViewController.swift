@@ -108,12 +108,6 @@ class NewVisitViewController: UIViewController  , DelegateClient {
         hideSelectorAndDatePickerWithAnimation()
     }
     
-    private func handleDatePicker(){
-        DatePickerView.layer.cornerRadius = 20
-        DatePickerView.clipsToBounds = true
-        DatePickerView.backgroundColor = UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1)
-    }
-    
     
     private func hideSelectorPickeriewWhenTappedAround() {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(NewVisitViewController.dismissSelectorPickeriew))
@@ -184,7 +178,7 @@ class NewVisitViewController: UIViewController  , DelegateClient {
         hideSelectorPickeriewWhenTappedAround()
         self.selectorPickerView.layer.cornerRadius = 27
         self.selectorPickerView.clipsToBounds = true
-        
+        DatePickerView.handleDatePicker(cornerRadius: 20, backgroundColor: UIColor(red: 240/255, green: 240/255, blue: 240/255, alpha: 1))
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -212,7 +206,7 @@ class NewVisitViewController: UIViewController  , DelegateClient {
             self.chosentypeID = self.newVisitViewModel.selectType[0].id
             self.chosenPurposID = self.newVisitViewModel.selectPurpose[0].id
         }
-        handleDatePicker()
+     
         DatePickerView.addTarget(self, action: #selector(NewVisitViewController.putDateIntoITsLable), for: .valueChanged )
         
     }
