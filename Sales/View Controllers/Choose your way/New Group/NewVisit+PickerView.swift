@@ -52,13 +52,7 @@ extension NewVisitViewController : UIPickerViewDataSource ,UIPickerViewDelegate{
         
     }
    
- 
-//    func handlePickerPostionViewAnimation(anchor:NSLayoutConstraint , centerConstant : CGFloat){
-//
-//        anchor.constant = centerConstant
-//        UIView.animate(withDuration: 0.35) {
-//            self.view.layoutIfNeeded()}
-//    }
+
 }
 
 extension NewVisitViewController :  UITextFieldDelegate {

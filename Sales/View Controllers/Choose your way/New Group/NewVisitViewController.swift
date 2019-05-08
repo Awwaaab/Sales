@@ -95,8 +95,8 @@ class NewVisitViewController: UIViewController  , DelegateClient {
                 })
             }
             newAddVisitViewModel.showError = { (error) in
-                print("==================================\(error)=================================")
-                self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
+                print("==================================\(error)========\(error.localizedDescription)=========================" )
+                self.showAlertController(alerTitle: "Network error", alertMessage: "Hmmm. seems that you are not connected", alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default)
                 
                 print("<<<<<this is what you are looking for\(error.localizedDescription)>>>>>>>")
             }
@@ -194,8 +194,8 @@ class NewVisitViewController: UIViewController  , DelegateClient {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         newVisitViewModel.showError = { (error) in
-            print("==================================\(error)=================================")
-            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+            print("==================================\(error)========\(error.localizedDescription)=========================" )
+            self.showAlertController(alerTitle: "Network error", alertMessage: "Hmmm. seems that you are not connected", alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
                 self.navigationController?.popViewController(animated: true)
             })
         }

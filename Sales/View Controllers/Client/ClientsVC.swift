@@ -51,8 +51,8 @@ class ClientsVC: UIViewController {
         super.viewWillAppear(animated)
         
         clientViewModel.showError = { (error) in
-            print("==================================\(error)=================================")
-            self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
+            print("==================================\(error)========\(error.localizedDescription)=========================" )
+            self.showAlertController(alerTitle: "Network error", alertMessage: "Hmmm. seems that you are not connected", alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
                 self.tabBarController?.selectedIndex=0
                 
             })
