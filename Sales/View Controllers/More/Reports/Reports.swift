@@ -11,14 +11,13 @@ import UIKit
 class Reports: UIViewController {
     
     @IBOutlet weak var Datepicker: UIDatePicker!
-    @IBOutlet weak var AfterFilterTableView: UITableView!
-    @IBOutlet weak var BeforeFilterImage: UIImageView!
+    @IBOutlet weak var reportsTableView: UITableView!
     @IBOutlet weak var startDateLabel: UILabel!
     @IBOutlet weak var endDateLabel: UILabel!
     @IBOutlet weak var selectedClientLabel: UILabel!
-    @IBOutlet weak var DoneYAnchor: NSLayoutConstraint!
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
     @IBOutlet weak var DatepickerYAnchor: NSLayoutConstraint!
+    @IBOutlet weak var reportsImage: UIImageView!
     
     
     
@@ -39,9 +38,9 @@ class Reports: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+          reportsTableView.handleTableViewWithImage(tableViewIsHidden: true, image: self.reportsImage)
+        reportsTableView.addObserver(self, forKeyPath: tableViewObserverKeyPath, options: .new, context: nil)
         
-        AfterFilterTableView.addObserver(self, forKeyPath: tableViewObserverKeyPath, options: .new, context: nil)
-    
 //        TableViewISHeadin(show: true)
         Datepicker.addTarget(self, action: #selector(Reports.setUpDate), for: .valueChanged)
         handleDelegateAndDatasource()
@@ -58,19 +57,19 @@ class Reports: UIViewController {
             
         }
     }
-    // if we add Observer it into viewdidLoad remove it from deinit
+    // if we add Observer it into viewDidLoad remove it from deinit
     // if we add Observer it in viewWillAppear remove it from viewWillDisAppear
 
     deinit {
-        AfterFilterTableView.removeObserver(self, forKeyPath: tableViewObserverKeyPath)
+        reportsTableView.removeObserver(self, forKeyPath: tableViewObserverKeyPath)
     }
     
     
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
         if let obj = object as? UITableView {
-            if obj == self.AfterFilterTableView && keyPath == tableViewObserverKeyPath {
-                tableViewHeight.constant = AfterFilterTableView.contentSize.height
+            if obj == self.reportsTableView && keyPath == tableViewObserverKeyPath {
+                tableViewHeight.constant = reportsTableView.contentSize.height
 
             }
         }
@@ -97,7 +96,7 @@ class Reports: UIViewController {
         }
         
         self.view.handleObjectAnimation(objectAnchor: DatepickerYAnchor, centerConstant: 0)
-        self.view.handleObjectAnimation(objectAnchor: DoneYAnchor, centerConstant: 150)
+
         // reseting the date picker
         
         Datepicker.date = self.currentDate
@@ -105,8 +104,7 @@ class Reports: UIViewController {
         //
     }
     @IBAction func doneButton(_ sender: UIButton) {
-        self.view.handleObjectAnimation(objectAnchor: DatepickerYAnchor, centerConstant: -500)
-        self.view.handleObjectAnimation(objectAnchor: DoneYAnchor, centerConstant: -350)
+        self.view.handleObjectAnimation(objectAnchor: DatepickerYAnchor, centerConstant: -600)
         pickDate()
     }
     
@@ -128,13 +126,13 @@ class Reports: UIViewController {
         let endDateAPIForamt = formatter(date: endDate ?? currentDate, dateFormat: DateForAPI)
         reportsViewModel.fetchReportVisits(startDate: startDateAPIForamt , endDate : endDateAPIForamt , ClientID : selectedClientID ?? "4")
         reportsViewModel.reloadData = {
-            self.AfterFilterTableView.reloadData()
+            self.reportsTableView.reloadData()
             if self.reportsViewModel.visits.count == 0 {
                 self.showAlertController(alerTitle: "Heads up", alertMessage: "sorry , we can't find any data related to your with this time range and this client", alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
-                    self.TableViewISHeadin(show :true)
+                    self.reportsTableView.handleTableViewWithImage(tableViewIsHidden: true, image: self.reportsImage)
                 })
             }else {
-                self.TableViewISHeadin(show :false)
+                 self.reportsTableView.handleTableViewWithImage(tableViewIsHidden: false, image: self.reportsImage)
             }
             
         }
@@ -169,10 +167,7 @@ class Reports: UIViewController {
         }
     }
     
-    private func TableViewISHeadin(show :Bool){
-        self.AfterFilterTableView.isHidden = show
-        self.BeforeFilterImage.isHidden = !show
-    }
+    
 }
 
 
@@ -181,12 +176,9 @@ enum DateFilter{
 }
 
 /*
- 3- make the page scrolle as a one slide (add an observer)
- 4- re-arrange your code and write down a comments for your logic
- - activity indecator while loading
- -handle fetch error accournding to get client
  
- 
+
+ 1 - handle fetch error accournding to get client
  
  
  */

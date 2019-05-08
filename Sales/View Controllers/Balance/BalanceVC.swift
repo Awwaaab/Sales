@@ -23,7 +23,7 @@ class BalanceVC: UIViewController {
         
         balanceTabelView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         handleDelegateAndDatasource()
-        balanceTabelView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :MainScrollView)
+        balanceTabelView.handlActivityIndicatorWithTableView(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :MainScrollView)
         
     }
     
@@ -38,7 +38,7 @@ class BalanceVC: UIViewController {
             
         }
         balanceViewModel.reloadData = {
-            self.balanceTabelView.handlAnimation(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView : self.MainScrollView)
+            self.balanceTabelView.handlActivityIndicatorWithTableView(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView : self.MainScrollView)
             self.noOfBalance.text = self.balanceViewModel.Balance
         }
         balanceViewModel.fetchBalance()

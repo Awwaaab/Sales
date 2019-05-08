@@ -22,7 +22,7 @@ extension Reports : UITableViewDataSource , UITableViewDelegate{
 
     
     func handleDelegateAndDatasource(){
-        AfterFilterTableView.delegate = self
-        AfterFilterTableView.dataSource = self
+        reportsTableView.delegate = self
+        reportsTableView.dataSource = self
     }
 }

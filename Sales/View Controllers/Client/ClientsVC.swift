@@ -44,7 +44,7 @@ class ClientsVC: UIViewController {
         clientsSearchBar.isHidden = true
         clientsSearchBar.returnKeyType = UIReturnKeyType.done
         handlingTableViewDelegateAndDatasource()
-        clientsTableView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :nil)
+        clientsTableView.handlActivityIndicatorWithTableView(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -59,7 +59,7 @@ class ClientsVC: UIViewController {
             
         }
         clientViewModel.reloadData = {
-            self.clientsTableView.handlAnimation(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView :nil)
+            self.clientsTableView.handlActivityIndicatorWithTableView(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView :nil)
         }
         clientViewModel.fetchclients()
         

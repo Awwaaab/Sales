@@ -11,24 +11,54 @@ import NVActivityIndicatorView
 
 
 //MARK: tableView extension
+//extension UITableView {
+//    func handlActivityIndicatorWithTableView(animationIsOn : Bool ,activityIndicator : NVActivityIndicatorView ,scrolView : UIScrollView?){
+//        if animationIsOn == true {
+//           
+//            activityIndicator.startAnimating()
+//            self.isHidden = true
+//            scrolView?.isHidden = true
+//        }else{
+//            self.reloadData()
+//            activityIndicator.stopAnimating()
+//            self.isHidden = false
+//            scrolView?.isHidden = false
+//        }
+//    }
+//}
+
+
 extension UITableView {
-    func handlAnimation(animationIsOn : Bool ,activityIndicator : NVActivityIndicatorView ,scrolView : UIScrollView?){
+    func handlActivityIndicatorWithTableView(animationIsOn : Bool , activityIndicator : Any ,scrolView : UIScrollView?
+        
+        ){
         if animationIsOn == true {
-           
-            activityIndicator.startAnimating()
+            
+            (activityIndicator as? UIActivityIndicatorView)?.startAnimating()
+            (activityIndicator as? NVActivityIndicatorView)?.startAnimating()
+            
             self.isHidden = true
             scrolView?.isHidden = true
         }else{
             self.reloadData()
-            activityIndicator.stopAnimating()
+            
+            if let UIActivity = activityIndicator as? UIActivityIndicatorView   {
+                UIActivity.stopAnimating()
+            } else if let NVActivity = activityIndicator as? NVActivityIndicatorView {
+                 NVActivity.stopAnimating()
+            }
+            
             self.isHidden = false
             scrolView?.isHidden = false
         }
     }
+    
+    func handleTableViewWithImage(tableViewIsHidden  : Bool , image : UIImageView){
+        self.isHidden = tableViewIsHidden
+        image.isHidden = !tableViewIsHidden
+    }
+    
 }
-
-
-
 
 
 //MARK: View extension

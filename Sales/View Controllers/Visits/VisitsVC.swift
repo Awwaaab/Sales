@@ -22,7 +22,7 @@ class VisitsVC: UIViewController {
         super.viewWillAppear(animated)
        
            
-            VisitsTableView.handlAnimation(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :nil)
+            VisitsTableView.handlActivityIndicatorWithTableView(animationIsOn: true, activityIndicator: activityIndicatorView,scrolView :nil)
             VisitViewModel.showError = { (error) in
                 print("==================================\(error)=================================")
                 self.showAlertController(alerTitle: "Network error", alertMessage: error.localizedDescription, alertPreferredStyle: .alert, alertActionTitle: "Ok", alertActoinStyle: .default, handler: { (action) in
@@ -34,7 +34,7 @@ class VisitsVC: UIViewController {
             
             VisitViewModel.reloadData = {
                 
-                self.VisitsTableView.handlAnimation(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView : nil)
+                self.VisitsTableView.handlActivityIndicatorWithTableView(animationIsOn: false, activityIndicator: self.activityIndicatorView,scrolView : nil)
             }
             
             VisitViewModel.fetchVisits()
