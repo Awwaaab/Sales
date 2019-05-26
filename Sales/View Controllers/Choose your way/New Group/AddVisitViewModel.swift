@@ -28,11 +28,6 @@ class AddVisitViewMode {
         self.client = client
     }
     
-    
-    
-    
-    
-    
     func fetchAddVisit(clientId:String , purposValue : String  , type : String , purpose : String , comment : String , longtitde : String , latitude : String){
         if let client = client as? Unsplash{
             let endPoint = unsplashEndpoint.addVisit(sale: CustomUserDefaults.userID, client: clientId, type: type, purpose: purpose, purpose_value: purposValue, comment: comment, longitude: longtitde, latitude: latitude)

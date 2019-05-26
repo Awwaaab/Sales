@@ -56,11 +56,11 @@ class NewCLient: UIViewController  {
          DataTextField.placeholder = ""
         
         switch textFieldInUse {
-        case .name:
+        case .name?:
             self.ClientnameLabel.text = DataTextField.text
-        case .phone:
+        case .phone?:
             self.ClientPhoneLabel.text = DataTextField.text
-        case .adress:
+        case .adress?:
             self.ClientAdressLabel.text = DataTextField.text
         default:
             print("something went wrong")

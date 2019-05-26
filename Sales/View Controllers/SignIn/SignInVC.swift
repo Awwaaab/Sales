@@ -69,7 +69,8 @@ class SignInVC: UIViewController , UITextFieldDelegate{
         let storyBoard = UIStoryboard(name: "Main", bundle: nil)
         let controller = storyBoard.instantiateViewController(withIdentifier: "SignIn") as! SignInVC
         controller.someBoolain = true
-        self.show(controller, sender: self)
+//        self.show(controller, sender: self)
+        self.navigationController?.present(controller, animated: true, completion: nil)
         
         
        

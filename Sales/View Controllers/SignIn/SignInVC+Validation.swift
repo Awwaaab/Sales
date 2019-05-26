@@ -15,9 +15,9 @@ extension SignInVC {
         valid = true
         for x in SingInANDPassword{
             switch x.textContentType{
-            case .emailAddress:
+            case .emailAddress?:
                 if (x.text?.isEmpty)!{
-                    x.attributedPlaceholder = NSAttributedString(string: "please enter your email", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
+                    x.attributedPlaceholder = NSAttributedString(string: "please enter your email", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
                     valid = false
                 }else{
                     valid = isValidEmail(email: x.text)
@@ -25,10 +25,10 @@ extension SignInVC {
                         self.AnimationShakeTextField(textField: x)
                     }
                 }
-            case .password:
+            case .password?:
                 if (x.text?.isEmpty)!{
                     spaceValidator(txt: x)
-                    x.attributedPlaceholder = NSAttributedString(string: "please enter your password", attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
+                    x.attributedPlaceholder = NSAttributedString(string: "please enter your password", attributes: [NSAttributedString.Key.foregroundColor : UIColor.red])
                     valid = false
                 }
             default:

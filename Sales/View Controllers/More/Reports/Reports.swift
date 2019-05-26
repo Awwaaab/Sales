@@ -156,10 +156,10 @@ class Reports: UIViewController {
     
     func pickDate(){
         switch selectDateType {
-        case .startDate:
+        case .startDate?:
             startDate = Datepicker.date
             self.startDateLabel.text = formatter(date: startDate!, dateFormat: DateForLabel)
-        case .endDate:
+        case .endDate?:
             endDate = Datepicker.date
             self.endDateLabel.text = formatter(date: endDate!, dateFormat: DateForLabel)
         default:
